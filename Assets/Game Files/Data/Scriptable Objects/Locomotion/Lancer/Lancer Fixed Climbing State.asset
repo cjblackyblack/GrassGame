@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16a910c2c7823144c82dca515aff9ec8, type: 3}
+  m_Name: Lancer Fixed Climbing State
+  m_EditorClassIdentifier: 
+  SmartStates:
+  - {fileID: 11400000, guid: a180a6161ba02c64ab66cf9a6e95e042, type: 2}
+  - {fileID: 11400000, guid: 89833a52dba927b4db52b04d0c8ef889, type: 2}
+  - {fileID: 11400000, guid: 497419f2966a9cf449e2b7b92134d0f4, type: 2}
+  - {fileID: 11400000, guid: befd5802f60124f41be808cb70028dbe, type: 2}
+  - {fileID: 11400000, guid: 9d2b42a8453174a48854a9f5456b2feb, type: 2}
+  - {fileID: 11400000, guid: c80bb67be7c124f4b921a6b15ca63a5f, type: 2}
+  - {fileID: 11400000, guid: 612019bff8f77024195a44df5640a6a0, type: 2}
+  - {fileID: 11400000, guid: 480b3443d96ceea419cb135135e631f1, type: 2}
+  bonusOrientationMethod: 0
+  OrientationSharpness: 0
+  BonusOrientationSharpness: 0
+  ClimbMoveThreshold: 0.25
+  AnchoringDuration: 0.05
+  AnchTest: 1

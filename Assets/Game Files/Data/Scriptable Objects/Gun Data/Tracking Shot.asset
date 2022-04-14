@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4e563d139761a84e811d89c251f5866, type: 3}
+  m_Name: Tracking Shot
+  m_EditorClassIdentifier: 
+  MaxTime: 100
+  Bullets:
+  - Frame: 1
+    Bullet: {fileID: 4741028549928026584, guid: 0f1ab231d47bd5445a54623b082ea9b1, type: 3}
+    Direction: {x: 0, y: 0, z: 0}

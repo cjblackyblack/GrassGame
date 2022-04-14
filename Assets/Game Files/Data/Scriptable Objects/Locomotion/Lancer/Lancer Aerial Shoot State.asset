@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 757bccff74eb124459ebf552d31edc5f, type: 3}
+  m_Name: Lancer Aerial Shoot State
+  m_EditorClassIdentifier: 
+  SmartStates:
+  - {fileID: 11400000, guid: 0eae391b1a31a2741befeee1991c40cb, type: 2}
+  - {fileID: 11400000, guid: 48cda1a0272a6b94a84af4bbf910dd5d, type: 2}
+  - {fileID: 11400000, guid: 0effbe2c86d6eb24f9ace659fc24f4d9, type: 2}
+  - {fileID: 11400000, guid: c9212f31b7ffa744f89603487bdf4283, type: 2}
+  - {fileID: 11400000, guid: a180f5978f4cae740a5e87726b7f5cc5, type: 2}
+  - {fileID: 11400000, guid: c80bb67be7c124f4b921a6b15ca63a5f, type: 2}
+  - {fileID: 11400000, guid: 612019bff8f77024195a44df5640a6a0, type: 2}
+  - {fileID: 11400000, guid: 480b3443d96ceea419cb135135e631f1, type: 2}
+  bonusOrientationMethod: 1
+  OrientationSharpness: 15
+  BonusOrientationSharpness: 1000
+  MaxAirMoveSpeed: 10
+  AirAccelerationSpeed: 35
+  AirFriction: 0.95
+  Drag: 1
+  NoLandAnimationTime: 12
+  RotationInfluence: 7
+  CollisionHeight:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 1
+      value: 1.5
+      inSlope: 0.0007803179
+      outSlope: 0.0007803179
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.051198274
+      outWeight: 0.22004358
+    - serializedVersion: 3
+      time: 6.0663676
+      value: 1.3666942
+      inSlope: Infinity
+      outSlope: Infinity
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.0806734
+      outWeight: 0
+    - serializedVersion: 3
+      time: 13.214124
+      value: 1.3127217
+      inSlope: Infinity
+      outSlope: Infinity
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 16.88343
+      value: 1.3129123
+      inSlope: -0.0037059726
+      outSlope: -0.0037059726
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.7746646
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  CollisionYOffset:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 1
+      value: 0.75109863
+      inSlope: 0.035679057
+      outSlope: 0.035679057
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.10551907
+    - serializedVersion: 3
+      time: 6.3418574
+      value: 0.883177
+      inSlope: Infinity
+      outSlope: Infinity
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    - serializedVersion: 3
+      time: 9.8148155
+      value: 1
+      inSlope: Infinity
+      outSlope: Infinity
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 15
+      value: 0.99934185
+      inSlope: -0.0010103974
+      outSlope: -0.0010103974
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.39651415
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e6e22f96f2be07429176dfa1a361d67, type: 3}
+  m_Name: SFX - Melee Stab
+  m_EditorClassIdentifier: 
+  PossibleClips:
+  - {fileID: 8300000, guid: 4ef966b29ff76e14487f1f835af3930a, type: 3}
+  - {fileID: 8300000, guid: 78bfe2bdd5a19b946a7797a585355104, type: 3}
+  - {fileID: 8300000, guid: bfae7e9e040135d4cac9262b192f2b28, type: 3}
+  PitchRange: {x: 1, y: 1}

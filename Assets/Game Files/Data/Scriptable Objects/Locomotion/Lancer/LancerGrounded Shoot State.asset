@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc070a43dca24c545b09d5672b779f02, type: 3}
+  m_Name: LancerGrounded Shoot State
+  m_EditorClassIdentifier: 
+  SmartStates:
+  - {fileID: 11400000, guid: d3525fea976f62444a954bb993d07ec7, type: 2}
+  - {fileID: 11400000, guid: 2f655bf932dd91440b8c26d669d53cfb, type: 2}
+  - {fileID: 11400000, guid: 710911b3eb9f99742ae84554c80b5aa9, type: 2}
+  - {fileID: 11400000, guid: fd25de900504de545affd04a2b3a4ab5, type: 2}
+  - {fileID: 11400000, guid: 0a7ea94f24ae75f43b73e134d498237b, type: 2}
+  - {fileID: 11400000, guid: e51186a2309c2d3499e980bc8d55dc77, type: 2}
+  - {fileID: 11400000, guid: 33319b66e1a31fc40bf19bf6a60d75b3, type: 2}
+  - {fileID: 11400000, guid: c6aac63bfcf96684aa5d07e8fbecb4cf, type: 2}
+  bonusOrientationMethod: 1
+  OrientationSharpness: 1000
+  BonusOrientationSharpness: 15
+  MaxStableMoveSpeed: 5.5
+  StableMovementSharpness: 25
+  FinishRotationTime: 6
+  friction: 0.85

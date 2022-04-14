@@ -1,0 +1,198 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3897031178026809517
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3897031178026809516}
+  m_Layer: 0
+  m_Name: Mesh
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3897031178026809516
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3897031178026809517}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5881138090249108617}
+  m_Father: {fileID: 3897031178721612157}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3897031178721612032
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3897031178721612157}
+  - component: {fileID: 3897031178721612158}
+  - component: {fileID: 3897031178721612159}
+  m_Layer: 0
+  m_Name: Grass Object
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3897031178721612157
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3897031178721612032}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.37, y: 0, z: 3.12}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3897031178026809516}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3897031178721612158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3897031178721612032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62165f637a509fa4a8f2c78db3001a86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Stats:
+    HP: 0
+    MaxHP: 0
+    MP: 0
+    MaxMP: 0
+    Strength: 0
+    Magic: 0
+    Defense: 0
+    Resistance: 0
+    MoveSpeed: 0
+    AirMoveSpeed: 0
+    Luck: 0
+  BaseObjectProperties:
+    Name: 
+    Priority: 0
+    BaseAlliance: 0
+    chemistryMaterial: 0
+    chemistryState: 0
+    Weaknesses: 0
+    Resistances: 0
+    Immunities: 0
+  LocalTimeScale: 0
+  Hurtboxes: []
+  Hitboxes: []
+  TargetPosiitions: []
+--- !u!135 &3897031178721612159
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3897031178721612032}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.33
+  m_Center: {x: 0, y: 0.33, z: 0}
+--- !u!1001 &5808594784722093639
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3897031178026809516}
+    m_Modifications:
+    - target: {fileID: 72543305646029518, guid: 6ab3af63e010ed84bb504c5f6e212936,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 72543305646029518, guid: 6ab3af63e010ed84bb504c5f6e212936,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 72543305646029518, guid: 6ab3af63e010ed84bb504c5f6e212936,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 72543305646029518, guid: 6ab3af63e010ed84bb504c5f6e212936,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 72543305646029518, guid: 6ab3af63e010ed84bb504c5f6e212936,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 72543305646029518, guid: 6ab3af63e010ed84bb504c5f6e212936,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 72543305646029518, guid: 6ab3af63e010ed84bb504c5f6e212936,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 72543305646029518, guid: 6ab3af63e010ed84bb504c5f6e212936,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 72543305646029518, guid: 6ab3af63e010ed84bb504c5f6e212936,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 72543305646029518, guid: 6ab3af63e010ed84bb504c5f6e212936,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 72543305646029518, guid: 6ab3af63e010ed84bb504c5f6e212936,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1837987212535522152, guid: 6ab3af63e010ed84bb504c5f6e212936,
+        type: 3}
+      propertyPath: m_Name
+      value: Grass Patch 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2087076252537684126, guid: 6ab3af63e010ed84bb504c5f6e212936,
+        type: 3}
+      propertyPath: m_LODs.Array.data[2].screenRelativeHeight
+      value: 0.04
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6ab3af63e010ed84bb504c5f6e212936, type: 3}
+--- !u!4 &5881138090249108617 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 72543305646029518, guid: 6ab3af63e010ed84bb504c5f6e212936,
+    type: 3}
+  m_PrefabInstance: {fileID: 5808594784722093639}
+  m_PrefabAsset: {fileID: 0}

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e6e22f96f2be07429176dfa1a361d67, type: 3}
+  m_Name: SFX - Melee Hit Connect
+  m_EditorClassIdentifier: 
+  PossibleClips:
+  - {fileID: 8300000, guid: 7bc47814a312b154fa070dc1a6774e5a, type: 3}
+  - {fileID: 8300000, guid: 70bf9d92495ae9643944b88217e4db45, type: 3}
+  - {fileID: 8300000, guid: 1167db48c35718d4bb5410eb3099201e, type: 3}
+  PitchRange: {x: 0.5, y: 0.7}
