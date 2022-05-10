@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Debug
   <ID>k__BackingField: 999
-  <Type>k__BackingField: 0
+  <Type>k__BackingField: 7
   <MaxStackCount>k__BackingField: 8
   <Icon>k__BackingField: {fileID: 0}
   metadata:

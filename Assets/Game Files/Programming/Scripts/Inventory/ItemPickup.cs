@@ -4,19 +4,22 @@ using UnityEngine;
 using Sirenix.OdinInspector;
 
 [RequireComponent(typeof(Collider))]
-public class ItemPickup : MonoBehaviour {
+public class ItemPickup : TangibleObject {
 
     [Title("Settings")]
-    [SerializeField] private InventoryItem item;
+    public InventoryItem item;
     [field: SerializeField] public int Count { get; set; }
+    public bool canBePickedUp = true;
 
     [Title("Object References")]
-    [SerializeField] [Tooltip("Object the item gravitates towards")] private GameObject target;
+    [SerializeField] [Tooltip("Object the item gravitates towards")] private GameObject gravityTarget;
 
     private Collider sphereCollider;
     private Rigidbody rb;
 
     // ------------------------------------------------------------------------------------------------------------
+
+    #region Unity Functions
 
     private void Awake() {
         sphereCollider = GetComponent<Collider>();
@@ -24,7 +27,7 @@ public class ItemPickup : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider other) {
-        if(other.gameObject == target) {
+        if(other.gameObject == gravityTarget) {
             Inventory inv = other.GetComponentInParent<Inventory>();
             if(inv) {
                 inv.AddItem(item, Count, null);
@@ -34,18 +37,26 @@ public class ItemPickup : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-        if(target) {
-            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, 20f * Time.deltaTime);
+        if(gravityTarget) {
+            transform.position = Vector3.MoveTowards(transform.position, gravityTarget.transform.position, 20f * Time.deltaTime);
         }
     }
 
+    #endregion
+
     // ------------------------------------------------------------------------------------------------------------
 
-    public void SetTarget(GameObject newTarget) {
-        if(target)
+
+
+    // ------------------------------------------------------------------------------------------------------------
+
+    #region Gravity Targets
+
+    public void SetGravityTarget(GameObject newTarget) {
+        if(gravityTarget)
             return;
 
-        target = newTarget;
+        gravityTarget = newTarget;
         sphereCollider.isTrigger = true;
         if(rb) {
             rb.useGravity = false;
@@ -53,8 +64,8 @@ public class ItemPickup : MonoBehaviour {
         }
     }
 
-    public void SetTargetDelayed(GameObject newTarget, float delay, bool gravity = true) {
-        if(target)
+    public void SetGravityTargetDelayed(GameObject newTarget, float delay, bool gravity = true) {
+        if(gravityTarget)
             return;
 
         sphereCollider.isTrigger = true;
@@ -67,8 +78,10 @@ public class ItemPickup : MonoBehaviour {
         IEnumerator Set() {
             yield return new WaitForSeconds(delay);
             rb.useGravity = false;
-            target = newTarget;
+            gravityTarget = newTarget;
         }
     }
+
+    #endregion
 
 }
