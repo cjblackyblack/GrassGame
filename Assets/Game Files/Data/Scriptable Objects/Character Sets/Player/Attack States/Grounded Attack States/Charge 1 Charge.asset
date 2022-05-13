@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bc1bb41ef83c0941805849d7ce97184, type: 3}
-  m_Name: Aerial Charge Land
+  m_Name: Charge 1 Charge
   m_EditorClassIdentifier: 
-  AnimationState: Aerial Charge Land
+  AnimationState: Charge 1 Charge
   AnimationTransitionTime: 0
   AnimationTransitionOffset: 0
-  MaxTime: 40
+  MaxTime: 50
   VFX: []
   BodyVFX: []
   SFX:
@@ -341,7 +341,7 @@ MonoBehaviour:
     TurnAroundTime: 10
     TrackingResistance: 0
   hitboxes:
-  - MaxTime: 40
+  - MaxTime: 50
     ActionTarget: 2
     RefreshID: 1
     ShareID: 1
@@ -349,7 +349,7 @@ MonoBehaviour:
     ShareIncomingHitboxes: 1
     Hitbox: 0
     HitboxGroup: 1
-    ActiveFrames: {x: 0, y: 5}
+    ActiveFrames: {x: 20, y: 40}
     StatusEffects: []
     Damage: 10
     FlatDamage: 0

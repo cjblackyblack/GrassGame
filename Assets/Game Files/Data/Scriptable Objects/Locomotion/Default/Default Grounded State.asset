@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 23551a0bef202dc4bb2fcb8d98a108f9, type: 3}
-  m_Name: Lancer Grounded State
+  m_Name: Default Grounded State
   m_EditorClassIdentifier: 
   SmartStates:
   - {fileID: 11400000, guid: ff33ceab73b7cf04ab608cf41e8cdd91, type: 2}

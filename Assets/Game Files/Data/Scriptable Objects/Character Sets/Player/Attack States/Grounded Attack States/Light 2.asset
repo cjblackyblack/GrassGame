@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bc1bb41ef83c0941805849d7ce97184, type: 3}
-  m_Name: Aerial Charge Land
+  m_Name: Light 2
   m_EditorClassIdentifier: 
-  AnimationState: Aerial Charge Land
+  AnimationState: Light 2
   AnimationTransitionTime: 0
   AnimationTransitionOffset: 0
-  MaxTime: 40
+  MaxTime: 50
   VFX: []
   BodyVFX: []
   SFX:
-  - SFX: {fileID: 11400000, guid: 2a9e58d8fe4612142be5e65cca2fbbb4, type: 2}
-    Time: 20
+  - SFX: {fileID: 11400000, guid: 56be89a7018ac3644be8a5abc485ae54, type: 2}
+    Time: 5
   StateTransitions: []
   MotionCurve:
     ForwardCurve:
@@ -46,7 +46,7 @@ MonoBehaviour:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 20
-        value: 2.3469386
+        value: 0
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 0
@@ -54,8 +54,8 @@ MonoBehaviour:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 29.31935
-        value: 1.9438777
+        time: 26.290426
+        value: 1
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 0
@@ -63,7 +63,7 @@ MonoBehaviour:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 45.498333
+        time: 37.210995
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -72,7 +72,7 @@ MonoBehaviour:
         inWeight: 0.33333334
         outWeight: 0
       - serializedVersion: 3
-        time: 65.26106
+        time: 39.93864
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -319,7 +319,7 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 3
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 34
@@ -328,7 +328,7 @@ MonoBehaviour:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: 3
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 34
@@ -341,7 +341,7 @@ MonoBehaviour:
     TurnAroundTime: 10
     TrackingResistance: 0
   hitboxes:
-  - MaxTime: 40
+  - MaxTime: 50
     ActionTarget: 2
     RefreshID: 1
     ShareID: 1
@@ -349,20 +349,20 @@ MonoBehaviour:
     ShareIncomingHitboxes: 1
     Hitbox: 0
     HitboxGroup: 1
-    ActiveFrames: {x: 0, y: 5}
+    ActiveFrames: {x: 5, y: 25}
     StatusEffects: []
-    Damage: 10
+    Damage: 5
     FlatDamage: 0
     IgnoreProtections: 0
     UseMagic: 0
     Unstoppable: 0
-    Hitstun: 40
-    HitStopTime: 0.06
+    Hitstun: 20
+    HitStopTime: 0.04
     HitstopType: 0
     BreakthroughType: 0
     KnockbackType: 0
-    KnockbackStrength: 10
-    KnockbackDirection: {x: 0, y: 0.1, z: 1}
+    KnockbackStrength: 1.5
+    KnockbackDirection: {x: 0, y: 1, z: 1}
     HitboxProcesses:
     - {fileID: 11400000, guid: c5f583890bd62744aaaa6cccd8409ef4, type: 2}
   TangibilityFrames: []

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc070a43dca24c545b09d5672b779f02, type: 3}
-  m_Name: LancerGrounded Shoot State
+  m_Name: Default Grounded Shoot State
   m_EditorClassIdentifier: 
   SmartStates:
   - {fileID: 11400000, guid: d3525fea976f62444a954bb993d07ec7, type: 2}

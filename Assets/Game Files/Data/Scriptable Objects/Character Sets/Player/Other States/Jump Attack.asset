@@ -10,26 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b731cf602861bc40a70160cfee817bf, type: 3}
-  m_Name: Aerial Attack 1
+  m_Name: Jump Attack
   m_EditorClassIdentifier: 
-  AnimationState: Slapshot
+  AnimationState: Aerial Heavy Uproot 1
   AnimationTransitionTime: 0
   AnimationTransitionOffset: 0
-  MaxTime: 36
+  MaxTime: 40
   VFX: []
   BodyVFX: []
   SFX:
   - SFX: {fileID: 11400000, guid: 56be89a7018ac3644be8a5abc485ae54, type: 2}
     Time: 7
-  StateTransitions:
-  - MaxTime: 36
-    TransitionWindow: {x: 21, y: 36}
-    TransitionType: 2
-    TransitionState: {fileID: 11400000, guid: b0b97737c837e2743ac2e81e5b5bf9d6, type: 2}
-  - MaxTime: 36
-    TransitionWindow: {x: 0, y: 36}
-    TransitionType: 0
-    TransitionState: {fileID: 11400000, guid: c9212f31b7ffa744f89603487bdf4283, type: 2}
+  StateTransitions: []
   MotionCurve:
     ForwardCurve:
       serializedVersion: 2
@@ -304,7 +296,7 @@ MonoBehaviour:
     TurnAroundTime: 4
     TrackingResistance: 0.8
   hitboxes:
-  - MaxTime: 36
+  - MaxTime: 40
     ActionTarget: 2
     RefreshID: 1
     ShareID: 1
@@ -312,7 +304,7 @@ MonoBehaviour:
     ShareIncomingHitboxes: 1
     Hitbox: 1
     HitboxGroup: 1
-    ActiveFrames: {x: 8, y: 20}
+    ActiveFrames: {x: 6, y: 20}
     StatusEffects: []
     Damage: 6
     FlatDamage: 0
@@ -325,31 +317,7 @@ MonoBehaviour:
     BreakthroughType: 0
     KnockbackType: 0
     KnockbackStrength: 1
-    KnockbackDirection: {x: 0, y: 1, z: 2}
-    HitboxProcesses:
-    - {fileID: 11400000, guid: c5f583890bd62744aaaa6cccd8409ef4, type: 2}
-  - MaxTime: 36
-    ActionTarget: 2
-    RefreshID: 0
-    ShareID: 0
-    AttackBoxesIndividually: 0
-    ShareIncomingHitboxes: 1
-    Hitbox: 2
-    HitboxGroup: 1
-    ActiveFrames: {x: 8, y: 20}
-    StatusEffects: []
-    Damage: 6
-    FlatDamage: 0
-    IgnoreProtections: 0
-    UseMagic: 0
-    Unstoppable: 0
-    Hitstun: 18
-    HitStopTime: 0.04
-    HitstopType: 0
-    BreakthroughType: 0
-    KnockbackType: 0
-    KnockbackStrength: 1
-    KnockbackDirection: {x: 0, y: 1, z: 2}
+    KnockbackDirection: {x: 0, y: 0, z: 0}
     HitboxProcesses:
     - {fileID: 11400000, guid: c5f583890bd62744aaaa6cccd8409ef4, type: 2}
   TangibilityFrames: []

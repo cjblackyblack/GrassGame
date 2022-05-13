@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bc1bb41ef83c0941805849d7ce97184, type: 3}
-  m_Name: Attack 1
+  m_Name: Light 1
   m_EditorClassIdentifier: 
-  AnimationState: Vertical Slash
+  AnimationState: Light 1
   AnimationTransitionTime: 0
   AnimationTransitionOffset: 0
-  MaxTime: 45
+  MaxTime: 49
   VFX: []
   BodyVFX: []
   SFX:
   - SFX: {fileID: 11400000, guid: 56be89a7018ac3644be8a5abc485ae54, type: 2}
     Time: 12
   StateTransitions:
-  - MaxTime: 45
+  - MaxTime: 49
     TransitionWindow: {x: 0, y: 45}
     TransitionType: 2
     TransitionState: {fileID: 11400000, guid: 283c52edb85941f40a4609cb09f8e5e5, type: 2}
@@ -345,7 +345,7 @@ MonoBehaviour:
     TurnAroundTime: 10
     TrackingResistance: 0
   hitboxes:
-  - MaxTime: 45
+  - MaxTime: 49
     ActionTarget: 2
     RefreshID: 1
     ShareID: 1
@@ -361,30 +361,6 @@ MonoBehaviour:
     UseMagic: 0
     Unstoppable: 0
     Hitstun: 15
-    HitStopTime: 0.04
-    HitstopType: 0
-    BreakthroughType: 0
-    KnockbackType: 0
-    KnockbackStrength: 1
-    KnockbackDirection: {x: 0, y: 0, z: 1}
-    HitboxProcesses:
-    - {fileID: 11400000, guid: c5f583890bd62744aaaa6cccd8409ef4, type: 2}
-  - MaxTime: 45
-    ActionTarget: 2
-    RefreshID: 0
-    ShareID: 0
-    AttackBoxesIndividually: 0
-    ShareIncomingHitboxes: 1
-    Hitbox: 1
-    HitboxGroup: 1
-    ActiveFrames: {x: 12, y: 30}
-    StatusEffects: []
-    Damage: 3
-    FlatDamage: 0
-    IgnoreProtections: 0
-    UseMagic: 0
-    Unstoppable: 0
-    Hitstun: 10
     HitStopTime: 0.04
     HitstopType: 0
     BreakthroughType: 0

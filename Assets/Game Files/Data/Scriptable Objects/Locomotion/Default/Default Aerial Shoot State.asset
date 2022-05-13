@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 757bccff74eb124459ebf552d31edc5f, type: 3}
-  m_Name: Lancer Aerial Shoot State
+  m_Name: Default Aerial Shoot State
   m_EditorClassIdentifier: 
   SmartStates:
   - {fileID: 11400000, guid: 0eae391b1a31a2741befeee1991c40cb, type: 2}

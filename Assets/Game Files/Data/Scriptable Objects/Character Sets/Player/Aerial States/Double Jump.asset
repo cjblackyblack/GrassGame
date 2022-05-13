@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16845138cbb1cf2468a600719654b004, type: 3}
-  m_Name: Aerial Dodge
+  m_Name: Double Jump
   m_EditorClassIdentifier: 
-  AnimationState: Jump
+  AnimationState: Double Jump
   AnimationTransitionTime: 0
   AnimationTransitionOffset: 0
   MaxTime: 30
