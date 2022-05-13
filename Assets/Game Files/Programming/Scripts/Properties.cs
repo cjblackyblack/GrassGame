@@ -301,13 +301,13 @@ public class StateTransition
                 }
             case TransitionType.LightCharge:
                 {
-                    if (smartObject.Controller.Button1Buffer > 0 && smartObject.Controller.Button1Hold && smartObject.Controller.Button1Buffer == 0 && smartObject.CurrentFrame >= TransitionWindow.x && smartObject.CurrentFrame <= TransitionWindow.y)
+                    if (smartObject.Controller.Button1Buffer > 0 && smartObject.Controller.Button1Hold && smartObject.Controller.Button1Buffer == 0 && smartObject.CurrentFrame == TransitionWindow.y)
                         return true;
                     return false;
                 }
             case TransitionType.HeavyCharge:
                 {
-                    if (smartObject.Controller.Button2Buffer > 0 && smartObject.Controller.Button2Hold && smartObject.Controller.Button2Buffer == 0 && smartObject.CurrentFrame >= TransitionWindow.x && smartObject.CurrentFrame <= TransitionWindow.y)
+                    if (smartObject.Controller.Button2Buffer > 0 && smartObject.Controller.Button2Hold && smartObject.Controller.Button2Buffer == 0 && smartObject.CurrentFrame == TransitionWindow.y)
                         return true;
                     return false;
                 }

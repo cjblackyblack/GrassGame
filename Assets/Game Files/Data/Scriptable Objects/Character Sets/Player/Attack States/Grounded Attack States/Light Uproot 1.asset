@@ -23,9 +23,25 @@ MonoBehaviour:
     Time: 12
   StateTransitions:
   - MaxTime: 42
-    TransitionWindow: {x: 0, y: 45}
+    TransitionWindow: {x: 25, y: 36}
     TransitionType: 2
     TransitionState: {fileID: 11400000, guid: 283c52edb85941f40a4609cb09f8e5e5, type: 2}
+  - MaxTime: 42
+    TransitionWindow: {x: 37, y: 42}
+    TransitionType: 2
+    TransitionState: {fileID: 11400000, guid: 91314eeca951d114fb392c56950d5441, type: 2}
+  - MaxTime: 42
+    TransitionWindow: {x: 25, y: 36}
+    TransitionType: 3
+    TransitionState: {fileID: 0}
+  - MaxTime: 42
+    TransitionWindow: {x: 37, y: 42}
+    TransitionType: 3
+    TransitionState: {fileID: 0}
+  - MaxTime: 42
+    TransitionWindow: {x: 0, y: 25}
+    TransitionType: 0
+    TransitionState: {fileID: 0}
   MotionCurve:
     ForwardCurve:
       serializedVersion: 2

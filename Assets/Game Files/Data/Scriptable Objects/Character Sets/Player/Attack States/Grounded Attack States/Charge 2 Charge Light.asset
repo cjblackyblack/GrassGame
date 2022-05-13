@@ -9,60 +9,80 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b731cf602861bc40a70160cfee817bf, type: 3}
-  m_Name: Aerial Heavy 1
+  m_Script: {fileID: 11500000, guid: 4bc1bb41ef83c0941805849d7ce97184, type: 3}
+  m_Name: Charge 2 Charge Light
   m_EditorClassIdentifier: 
-  AnimationState: Aerial Heavy 1
+  AnimationState: Charge 2 Charge
   AnimationTransitionTime: 0
   AnimationTransitionOffset: 0
-  MaxTime: 55
+  MaxTime: 63
   VFX: []
   BodyVFX: []
   SFX:
-  - SFX: {fileID: 11400000, guid: 56be89a7018ac3644be8a5abc485ae54, type: 2}
-    Time: 7
+  - SFX: {fileID: 11400000, guid: 2a9e58d8fe4612142be5e65cca2fbbb4, type: 2}
+    Time: 20
   StateTransitions:
-  - MaxTime: 55
-    TransitionWindow: {x: 35, y: 45}
-    TransitionType: 2
-    TransitionState: {fileID: 11400000, guid: c1c7ac5893b973f4e931545dc779a853, type: 2}
-  - MaxTime: 55
-    TransitionWindow: {x: 45, y: 55}
-    TransitionType: 2
-    TransitionState: {fileID: 11400000, guid: 8bee19d1d65d73e41ac56a3a90fffe1d, type: 2}
-  - MaxTime: 55
-    TransitionWindow: {x: 35, y: 45}
-    TransitionType: 3
-    TransitionState: {fileID: 11400000, guid: 11aeafe5f2d1a7542ada13dc868dbc4f, type: 2}
-  - MaxTime: 55
-    TransitionWindow: {x: 45, y: 55}
-    TransitionType: 3
-    TransitionState: {fileID: 11400000, guid: d47ff6acfd4e0a14aa9093055d121a28, type: 2}
-  - MaxTime: 55
-    TransitionWindow: {x: 0, y: 35}
-    TransitionType: 5
-    TransitionState: {fileID: 11400000, guid: 755f903e83894644caa5a7844367ca23, type: 2}
+  - MaxTime: 63
+    TransitionWindow: {x: 0, y: 63}
+    TransitionType: 4
+    TransitionState: {fileID: 11400000, guid: a23225f04866eed44aa872b72bf24a26, type: 2}
   MotionCurve:
     ForwardCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 3
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 0
         weightedMode: 0
         inWeight: 0
-        outWeight: 0.33333334
+        outWeight: 0
       - serializedVersion: 3
-        time: 30
-        value: 3
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
+        time: 5
+        value: 2.5
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 20
+        value: 2.3469386
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 29.31935
+        value: 1.9438777
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 45.498333
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      - serializedVersion: 3
+        time: 65.26106
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -96,9 +116,9 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
-        inSlope: -1
-        outSlope: -1
+        value: 0
+        inSlope: 0
+        outSlope: 0
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
@@ -106,27 +126,9 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0
-      - serializedVersion: 3
-        time: 60
-        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 80
-        value: 0
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0
@@ -162,30 +164,21 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
         weightedMode: 0
         inWeight: 0
-        outWeight: 0
+        outWeight: 0.33333334
       - serializedVersion: 3
-        time: 7
-        value: -0.0059814453
-        inSlope: 0.14254597
-        outSlope: 0.14254597
-        tangentMode: 0
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.12476781
-      - serializedVersion: 3
-        time: 30
-        value: 1
-        inSlope: -0.003121771
-        outSlope: -0.003121771
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 1
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -203,7 +196,7 @@ MonoBehaviour:
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1
+        time: 40
         value: 0
         inSlope: 0
         outSlope: 0
@@ -220,32 +213,14 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 0
         value: 1
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 0
+        inSlope: -0.16666667
+        outSlope: -0.16666667
+        tangentMode: 34
         weightedMode: 0
         inWeight: 0
-        outWeight: 0
+        outWeight: 0.33333334
       - serializedVersion: 3
         time: 6
-        value: 0
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.8023181
-        outWeight: 0
-      - serializedVersion: 3
-        time: 27
-        value: 0
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 28
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -254,13 +229,22 @@ MonoBehaviour:
         inWeight: 0.33333334
         outWeight: 0
       - serializedVersion: 3
-        time: 30
+        time: 15.173835
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 40
         value: 0
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0
+        inWeight: 0.33333334
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -270,21 +254,66 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 2
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 0
         weightedMode: 0
         inWeight: 0
-        outWeight: 0.33333334
+        outWeight: 0
       - serializedVersion: 3
-        time: 1
-        value: 2
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
+        time: 5
+        value: 2.5
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 10
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 18.37782
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 35.36809
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 35.975456
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      - serializedVersion: 3
+        time: 40
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -294,7 +323,7 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 5
+        value: 3
         inSlope: 0
         outSlope: 0
         tangentMode: 34
@@ -303,7 +332,7 @@ MonoBehaviour:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: 5
+        value: 3
         inSlope: 0
         outSlope: 0
         tangentMode: 34
@@ -313,31 +342,31 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    TurnAroundTime: 4
-    TrackingResistance: 0.8
+    TurnAroundTime: 10
+    TrackingResistance: 0
   hitboxes:
-  - MaxTime: 55
+  - MaxTime: 63
     ActionTarget: 2
     RefreshID: 1
     ShareID: 1
     AttackBoxesIndividually: 0
     ShareIncomingHitboxes: 1
-    Hitbox: 1
+    Hitbox: 0
     HitboxGroup: 1
-    ActiveFrames: {x: 8, y: 20}
+    ActiveFrames: {x: 20, y: 40}
     StatusEffects: []
-    Damage: 6
+    Damage: 10
     FlatDamage: 0
     IgnoreProtections: 0
     UseMagic: 0
     Unstoppable: 0
-    Hitstun: 15
-    HitStopTime: 0.04
+    Hitstun: 40
+    HitStopTime: 0.06
     HitstopType: 0
     BreakthroughType: 0
     KnockbackType: 0
-    KnockbackStrength: 1
-    KnockbackDirection: {x: 0, y: 1, z: 2}
+    KnockbackStrength: 10
+    KnockbackDirection: {x: 0, y: 0.1, z: 1}
     HitboxProcesses:
     - {fileID: 11400000, guid: c5f583890bd62744aaaa6cccd8409ef4, type: 2}
   TangibilityFrames: []
@@ -347,4 +376,4 @@ MonoBehaviour:
   - {fileID: 4431882959470827133, guid: 4aa7fec143d7c5345ae147d66d87bf6f, type: 3}
   - {fileID: 4431882959470827133, guid: 4aa7fec143d7c5345ae147d66d87bf6f, type: 3}
   HitFX: {fileID: 11400000, guid: 8143ff93377cd8b459947b83fe436c3f, type: 2}
-  EntryFriction: 0.2
+  Projectiles: []

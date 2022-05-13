@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b731cf602861bc40a70160cfee817bf, type: 3}
-  m_Name: Aerial Charge Charge
+  m_Name: Aerial Charge Heavy Charge
   m_EditorClassIdentifier: 
   AnimationState: Aerial Charge Charge
   AnimationTransitionTime: 0
@@ -21,7 +21,11 @@ MonoBehaviour:
   SFX:
   - SFX: {fileID: 11400000, guid: 56be89a7018ac3644be8a5abc485ae54, type: 2}
     Time: 7
-  StateTransitions: []
+  StateTransitions:
+  - MaxTime: 35
+    TransitionWindow: {x: 0, y: 35}
+    TransitionType: 5
+    TransitionState: {fileID: 11400000, guid: 11870785190b85346b96304603e60054, type: 2}
   MotionCurve:
     ForwardCurve:
       serializedVersion: 2

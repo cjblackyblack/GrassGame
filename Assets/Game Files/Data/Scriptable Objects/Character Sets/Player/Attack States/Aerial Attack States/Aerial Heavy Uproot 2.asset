@@ -10,36 +10,36 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b731cf602861bc40a70160cfee817bf, type: 3}
-  m_Name: Aerial Heavy 1
+  m_Name: Aerial Heavy Uproot 2
   m_EditorClassIdentifier: 
-  AnimationState: Aerial Heavy 1
+  AnimationState: Aerial Heavy Uproot 1
   AnimationTransitionTime: 0
   AnimationTransitionOffset: 0
-  MaxTime: 55
+  MaxTime: 40
   VFX: []
   BodyVFX: []
   SFX:
   - SFX: {fileID: 11400000, guid: 56be89a7018ac3644be8a5abc485ae54, type: 2}
     Time: 7
   StateTransitions:
-  - MaxTime: 55
-    TransitionWindow: {x: 35, y: 45}
+  - MaxTime: 40
+    TransitionWindow: {x: 25, y: 35}
     TransitionType: 2
-    TransitionState: {fileID: 11400000, guid: c1c7ac5893b973f4e931545dc779a853, type: 2}
-  - MaxTime: 55
-    TransitionWindow: {x: 45, y: 55}
+    TransitionState: {fileID: 11400000, guid: 244e7efa0dd29924aa053bb1c6e74c56, type: 2}
+  - MaxTime: 40
+    TransitionWindow: {x: 36, y: 40}
     TransitionType: 2
-    TransitionState: {fileID: 11400000, guid: 8bee19d1d65d73e41ac56a3a90fffe1d, type: 2}
-  - MaxTime: 55
-    TransitionWindow: {x: 35, y: 45}
+    TransitionState: {fileID: 11400000, guid: 7e6ed971bca7d344da4e16f353d4cbbb, type: 2}
+  - MaxTime: 40
+    TransitionWindow: {x: 25, y: 35}
     TransitionType: 3
-    TransitionState: {fileID: 11400000, guid: 11aeafe5f2d1a7542ada13dc868dbc4f, type: 2}
-  - MaxTime: 55
-    TransitionWindow: {x: 45, y: 55}
+    TransitionState: {fileID: 11400000, guid: 01b496236f94ac94b898898d4a2d9cfe, type: 2}
+  - MaxTime: 40
+    TransitionWindow: {x: 36, y: 40}
     TransitionType: 3
     TransitionState: {fileID: 11400000, guid: d47ff6acfd4e0a14aa9093055d121a28, type: 2}
-  - MaxTime: 55
-    TransitionWindow: {x: 0, y: 35}
+  - MaxTime: 40
+    TransitionWindow: {x: 0, y: 25}
     TransitionType: 5
     TransitionState: {fileID: 11400000, guid: 755f903e83894644caa5a7844367ca23, type: 2}
   MotionCurve:
@@ -316,7 +316,7 @@ MonoBehaviour:
     TurnAroundTime: 4
     TrackingResistance: 0.8
   hitboxes:
-  - MaxTime: 55
+  - MaxTime: 40
     ActionTarget: 2
     RefreshID: 1
     ShareID: 1
@@ -324,7 +324,7 @@ MonoBehaviour:
     ShareIncomingHitboxes: 1
     Hitbox: 1
     HitboxGroup: 1
-    ActiveFrames: {x: 8, y: 20}
+    ActiveFrames: {x: 6, y: 20}
     StatusEffects: []
     Damage: 6
     FlatDamage: 0
@@ -337,7 +337,7 @@ MonoBehaviour:
     BreakthroughType: 0
     KnockbackType: 0
     KnockbackStrength: 1
-    KnockbackDirection: {x: 0, y: 1, z: 2}
+    KnockbackDirection: {x: 0, y: 0, z: 0}
     HitboxProcesses:
     - {fileID: 11400000, guid: c5f583890bd62744aaaa6cccd8409ef4, type: 2}
   TangibilityFrames: []

@@ -21,7 +21,11 @@ MonoBehaviour:
   SFX:
   - SFX: {fileID: 11400000, guid: 2a9e58d8fe4612142be5e65cca2fbbb4, type: 2}
     Time: 19
-  StateTransitions: []
+  StateTransitions:
+  - MaxTime: 60
+    TransitionWindow: {x: 40, y: 60}
+    TransitionType: 0
+    TransitionState: {fileID: 11400000, guid: c9212f31b7ffa744f89603487bdf4283, type: 2}
   MotionCurve:
     ForwardCurve:
       serializedVersion: 2

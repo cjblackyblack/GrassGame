@@ -15,17 +15,33 @@ MonoBehaviour:
   AnimationState: Light 1
   AnimationTransitionTime: 0
   AnimationTransitionOffset: 0
-  MaxTime: 49
+  MaxTime: 40
   VFX: []
   BodyVFX: []
   SFX:
   - SFX: {fileID: 11400000, guid: 56be89a7018ac3644be8a5abc485ae54, type: 2}
     Time: 12
   StateTransitions:
-  - MaxTime: 49
-    TransitionWindow: {x: 0, y: 45}
+  - MaxTime: 40
+    TransitionWindow: {x: 20, y: 32}
     TransitionType: 2
     TransitionState: {fileID: 11400000, guid: 283c52edb85941f40a4609cb09f8e5e5, type: 2}
+  - MaxTime: 40
+    TransitionWindow: {x: 33, y: 40}
+    TransitionType: 0
+    TransitionState: {fileID: 11400000, guid: 351c699e78827834991b5b970f6a8337, type: 2}
+  - MaxTime: 40
+    TransitionWindow: {x: 20, y: 32}
+    TransitionType: 3
+    TransitionState: {fileID: 11400000, guid: 9ec7bae14ee2faa47a05760ca1619dc3, type: 2}
+  - MaxTime: 40
+    TransitionWindow: {x: 33, y: 40}
+    TransitionType: 3
+    TransitionState: {fileID: 11400000, guid: f5277232aa09d7449b99dd11a1a91f1d, type: 2}
+  - MaxTime: 40
+    TransitionWindow: {x: 0, y: 20}
+    TransitionType: 4
+    TransitionState: {fileID: 11400000, guid: 522658a03b81af74c8c3915de586fc3b, type: 2}
   MotionCurve:
     ForwardCurve:
       serializedVersion: 2
@@ -345,7 +361,7 @@ MonoBehaviour:
     TurnAroundTime: 10
     TrackingResistance: 0
   hitboxes:
-  - MaxTime: 49
+  - MaxTime: 40
     ActionTarget: 2
     RefreshID: 1
     ShareID: 1

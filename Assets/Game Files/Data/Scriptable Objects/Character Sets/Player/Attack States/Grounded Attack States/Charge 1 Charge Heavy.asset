@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bc1bb41ef83c0941805849d7ce97184, type: 3}
-  m_Name: Charge 1 Charge
+  m_Name: Charge 1 Charge Heavy
   m_EditorClassIdentifier: 
   AnimationState: Charge 1 Charge
   AnimationTransitionTime: 0
@@ -21,7 +21,11 @@ MonoBehaviour:
   SFX:
   - SFX: {fileID: 11400000, guid: 2a9e58d8fe4612142be5e65cca2fbbb4, type: 2}
     Time: 20
-  StateTransitions: []
+  StateTransitions:
+  - MaxTime: 50
+    TransitionWindow: {x: 0, y: 50}
+    TransitionType: 5
+    TransitionState: {fileID: 11400000, guid: 62f50a9cdb1f7214497f99e785d2692f, type: 2}
   MotionCurve:
     ForwardCurve:
       serializedVersion: 2

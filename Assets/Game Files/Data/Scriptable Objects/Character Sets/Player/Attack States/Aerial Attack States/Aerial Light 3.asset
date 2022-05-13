@@ -21,7 +21,27 @@ MonoBehaviour:
   SFX:
   - SFX: {fileID: 11400000, guid: 56be89a7018ac3644be8a5abc485ae54, type: 2}
     Time: 7
-  StateTransitions: []
+  StateTransitions:
+  - MaxTime: 51
+    TransitionWindow: {x: 30, y: 40}
+    TransitionType: 2
+    TransitionState: {fileID: 11400000, guid: 244e7efa0dd29924aa053bb1c6e74c56, type: 2}
+  - MaxTime: 51
+    TransitionWindow: {x: 41, y: 51}
+    TransitionType: 2
+    TransitionState: {fileID: 11400000, guid: 7e6ed971bca7d344da4e16f353d4cbbb, type: 2}
+  - MaxTime: 51
+    TransitionWindow: {x: 30, y: 40}
+    TransitionType: 3
+    TransitionState: {fileID: 11400000, guid: 01b496236f94ac94b898898d4a2d9cfe, type: 2}
+  - MaxTime: 51
+    TransitionWindow: {x: 41, y: 51}
+    TransitionType: 3
+    TransitionState: {fileID: 11400000, guid: d47ff6acfd4e0a14aa9093055d121a28, type: 2}
+  - MaxTime: 51
+    TransitionWindow: {x: 30, y: 51}
+    TransitionType: 4
+    TransitionState: {fileID: 11400000, guid: 2ca307e9f4e47244fbac31002ce7b45f, type: 2}
   MotionCurve:
     ForwardCurve:
       serializedVersion: 2
