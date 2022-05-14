@@ -24,7 +24,7 @@ MonoBehaviour:
   JumpScalableForwardSpeed: 10
   TangibilityFrames:
   - Hurtbox: 1
-    BoxGroup: 3
+    BoxGroup: 1
     ActiveTangibility: 3
     ActiveFrames:
       serializedVersion: 2
@@ -197,3 +197,4 @@ MonoBehaviour:
       m_RotationOrder: 4
     TurnAroundTime: 4
     TrackingResistance: 0
+  StateTransitions: []

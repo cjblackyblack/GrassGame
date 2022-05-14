@@ -19,7 +19,7 @@ public class AttackState : SmartState
 	{
 		base.OnEnter(smartObject);
 
-		smartObject.Controller.Button1Buffer = 0;
+		//smartObject.Controller.Button1Buffer = 0;
 
 		smartObject.MovementVector = smartObject.MovementVector == Vector3.zero ? smartObject.Motor.CharacterForward : smartObject.InputVector.normalized;
 		smartObject.LocomotionStateMachine.ChangeLocomotionState(LocomotionStates.Grounded);

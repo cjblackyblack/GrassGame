@@ -51,30 +51,32 @@ public class FallState : SmartState
             smartObject.ActionStateMachine.ChangeActionState(ActionStates.Jump);
         }
 
-        if (smartObject.Controller.Button1Buffer > 0 && smartObject.Cooldown <= 0)
-            if (smartObject.ActionStateMachine.PreviousActionEnum == ActionStates.Attack && smartObject.CurrentFrame < 6)
-            {
-                for (int i = (smartObject.ActionStateMachine.PreviousActionState as AttackState).StateTransitions.Length; i <= 0; i--)
-                {
-                    if ((smartObject.ActionStateMachine.PreviousActionState as AttackState).StateTransitions[i].CanTransition(smartObject, smartObject.ActionStateMachine.PreviousActionState))
-                    {
-                        smartObject.ActionStateMachine.ChangeActionState((smartObject.ActionStateMachine.PreviousActionState as AttackState).StateTransitions[i].TransitionState);
-                    }
-                }
-            }
-            else
-                smartObject.ActionStateMachine.ChangeActionState(ActionStates.Attack);
+    //if ((smartObject.Controller.Button1Buffer > 0 || smartObject.Controller.Button2Buffer > 0) && smartObject.Cooldown <= 0)
+    //  if (smartObject.ActionStateMachine.PreviousActionEnum == ActionStates.Attack && smartObject.CurrentFrame < 6)
+    //    if (smartObject.ActionStateMachine.PreviousActionState as AttackState != null)
+    //    {
+    //            for (int i = (smartObject.ActionStateMachine.PreviousActionState as AttackState).StateTransitions.Length; i <= 0; i--)
+    //            {
+    //                if ((smartObject.ActionStateMachine.PreviousActionState as AttackState).StateTransitions[i].CanTransition(smartObject, smartObject.ActionStateMachine.PreviousActionState))
+    //                {
+    //                    smartObject.ActionStateMachine.ChangeActionState((smartObject.ActionStateMachine.PreviousActionState as AttackState).StateTransitions[i].TransitionState);
+    //                }
+    //            }
+    //        }
+    //        else
+    //            smartObject.ActionStateMachine.ChangeActionState(ActionStates.Attack);
 
-        if (smartObject.Controller.Button1Buffer > 0 && smartObject.Cooldown <= 0)
-            smartObject.ActionStateMachine.ChangeActionState(ActionStates.Attack);
 
-        if ((smartObject.Controller.Button3Buffer > 0 || smartObject.Controller.Button3Hold) && !smartObject.Motor.GroundingStatus.IsStableOnGround && smartObject.Cooldown <= 0)
-        {
-            smartObject.LocomotionStateMachine.ChangeLocomotionState(LocomotionStates.AerialShoot);
-            smartObject.ActionStateMachine.ChangeActionState(ActionStates.Idle);
-        }
 
-        if (smartObject.Motor.GroundingStatus.IsStableOnGround)
+    if ((smartObject.Controller.Button1Buffer > 0 || smartObject.Controller.Button2Buffer > 0))
+      smartObject.ActionStateMachine.ChangeActionState(ActionStates.Attack);
+
+    //if (smartObject.Controller.Button3Buffer > 0)
+    //{
+    //  smartObject.ActionStateMachine.ChangeActionState(ActionStates.Dodge);
+    //}
+
+    if (smartObject.Motor.GroundingStatus.IsStableOnGround)
             smartObject.ActionStateMachine.ChangeActionState(ActionStates.Idle);
 
         if (smartObject.Controller.Button4Buffer > 0 && smartObject.CurrentAirTime > CoyoteTime && smartObject.AirJumps > 0)

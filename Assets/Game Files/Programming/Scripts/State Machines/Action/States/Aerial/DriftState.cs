@@ -66,14 +66,13 @@ public class DriftState : SmartState
 	public override void AfterCharacterUpdate(SmartObject smartObject, float deltaTime)
 	{
 
-        if (smartObject.Controller.Button1Buffer > 0 && smartObject.Cooldown <= 0)
+        if ((smartObject.Controller.Button1Buffer > 0 || smartObject.Controller.Button2Buffer > 0))
             smartObject.ActionStateMachine.ChangeActionState(ActionStates.Attack);
 
-        if ((smartObject.Controller.Button3Buffer > 0 || smartObject.Controller.Button3Hold) && !smartObject.Motor.GroundingStatus.IsStableOnGround && smartObject.Cooldown <= 0)
-        {
-            smartObject.LocomotionStateMachine.ChangeLocomotionState(LocomotionStates.AerialShoot);
-            smartObject.ActionStateMachine.ChangeActionState(ActionStates.Move);
-        }
+        //if ((smartObject.Controller.Button3Buffer > 0) && !smartObject.Motor.GroundingStatus.IsStableOnGround)
+        //{
+        //    smartObject.ActionStateMachine.ChangeActionState(ActionStates.Dodge);
+        //}
 
         if (smartObject.Motor.GroundingStatus.IsStableOnGround)
             smartObject.ActionStateMachine.ChangeActionState(ActionStates.Idle);

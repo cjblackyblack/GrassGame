@@ -3,43 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "CharacterState/ActionState/GroundedShoot/Boost")]
-public class BoostShootState : SmartState
+[CreateAssetMenu(menuName = "CharacterState/ActionState/Grounded/Dodge")]
+public class DodgeState : SmartState
 {
-	public int MinTime;
 	public TangibilityFrames[] TangibilityFrames;
 	public MotionCurve MotionCurve;
-	public float DirectionControl;
-	public int CoyoteTime;
-
-
 
 	public override void OnEnter(SmartObject smartObject)
 	{
-		if (smartObject.LocomotionStateMachine.PreviousLocomotionEnum == LocomotionStates.Grounded && smartObject.ActionStateMachine.PreviousActionEnum == ActionStates.Dodge)
-		{
-
-		}
-		else
-		{
-			smartObject.CurrentTime = -1;
-			smartObject.CurrentFrame = -1;
-		}
-		if (AnimationTransitionTime != 0)
-		{
-			smartObject.Animator.CrossFadeInFixedTime(AnimationState, AnimationTransitionTime, 0, AnimationTransitionOffset);
-
-		}
-		else
-		{
-			smartObject.Animator.Play(AnimationState, 0, 0);
-
-		}
+		base.OnEnter(smartObject);
 		smartObject.Controller.Button4Buffer = 0;
 
-		smartObject.LocomotionStateMachine.ChangeLocomotionState(LocomotionStates.GroundedShoot);
+
 		smartObject.MovementVector = smartObject.MovementVector == Vector3.zero ? smartObject.Motor.CharacterForward : smartObject.InputVector.normalized;
-		smartObject.ToggleBodyVFX(BodyVFX[0].BodyVFX, true);
 	}
 
 	public override void OnExit(SmartObject smartObject)
@@ -47,23 +23,13 @@ public class BoostShootState : SmartState
 
 		smartObject.GravityModifier = 1;
 		//CombatUtilities.ResetTangibilityFrames(smartObject, TangibilityFrames);
-		for (int i = 0; i < BodyVFX.Length; i++)
-			smartObject.ToggleBodyVFX(BodyVFX[i].BodyVFX, false);
 	}
 
 	public override void BeforeCharacterUpdate(SmartObject smartObject, float deltaTime)
 	{
 		//smartObject.MovementVector = smartObject.InputVector;
-		if (smartObject.CurrentAirTime <= CoyoteTime && smartObject.Controller.Button4Buffer > 0)
-		{
-			smartObject.LocomotionStateMachine.ChangeLocomotionState(LocomotionStates.GroundedShoot);
-			smartObject.ActionStateMachine.ChangeActionState(ActionStates.Jump);
-		}
-
-		smartObject.MovementVector = Vector3.Slerp(smartObject.MovementVector, smartObject.InputVector == Vector3.zero ? smartObject.StoredMovementVector : smartObject.InputVector.normalized, DirectionControl);
 		MotionCurve.GravityMod(smartObject);
-		if (TangibilityFrames.Length > 0)
-			CombatUtilities.CreateTangibilityFrames(smartObject, TangibilityFrames);
+		CombatUtilities.CreateTangibilityFrames(smartObject, TangibilityFrames);
 	}
 
 	public override void UpdateRotation(SmartObject smartObject, ref Quaternion currentRotation, float deltaTime)
@@ -79,16 +45,16 @@ public class BoostShootState : SmartState
 
 	public override void UpdateVelocity(SmartObject smartObject, ref Vector3 currentVelocity, float deltaTime)
 	{
-		if (smartObject.LocomotionStateMachine.CurrentLocomotionEnum == LocomotionStates.GroundedShoot)
+		if (smartObject.LocomotionStateMachine.CurrentLocomotionEnum == LocomotionStates.Grounded)
 		{
-			currentVelocity = MotionCurve.GetFixedTotalCurve(smartObject, true);
+			currentVelocity = MotionCurve.GetFixedTotalCurve(smartObject);
 			float currentVelocityMagnitude = currentVelocity.magnitude;
 
 
-			//if (smartObject.CurrentFrame < MotionCurve.TurnAroundTime && (smartObject.InputVector != Vector3.zero) && smartObject.OrientationMethod != OrientationMethod.TowardsCamera)
-			//{
-			//		smartObject.Motor.RotateCharacter(MotionCurve.TurnAroundRotation(smartObject, ref currentVelocity, true));
-			//}
+			if (smartObject.CurrentFrame < MotionCurve.TurnAroundTime && (smartObject.InputVector != Vector3.zero) && smartObject.OrientationMethod != OrientationMethod.TowardsCamera)
+			{
+				smartObject.Motor.RotateCharacter(MotionCurve.TurnAroundRotation(smartObject, ref currentVelocity, true));
+			}
 
 			Vector3 effectiveGroundNormal = smartObject.Motor.GroundingStatus.GroundNormal;
 			if (currentVelocityMagnitude > 0f && smartObject.Motor.GroundingStatus.SnappingPrevented)
@@ -109,7 +75,7 @@ public class BoostShootState : SmartState
 			currentVelocity = smartObject.Motor.GetDirectionTangentToSurface(currentVelocity, effectiveGroundNormal) * currentVelocityMagnitude;
 
 			// Calculate target velocity
-			Vector3 inputRight = Vector3.Cross(currentVelocity, smartObject.Motor.CharacterUp);
+			Vector3 inputRight = Vector3.Cross(smartObject.Motor.CharacterForward, smartObject.Motor.CharacterUp);
 			Vector3 reorientedInput = Vector3.Cross(effectiveGroundNormal, inputRight).normalized * currentVelocityMagnitude; ;
 			Vector3 targetMovementVelocity = reorientedInput * 1;
 
@@ -118,7 +84,7 @@ public class BoostShootState : SmartState
 			//currentVelocity += smartObject.StoredVelocity * deltaTime;
 			//smartObject.StoredVelocity *= friction;
 		}
-		else if (smartObject.LocomotionStateMachine.CurrentLocomotionEnum == LocomotionStates.AerialShoot)
+		else if (smartObject.LocomotionStateMachine.CurrentLocomotionEnum == LocomotionStates.Aerial)
 		{
 			Vector3 addedVelocity = Vector3.zero;
 
@@ -159,31 +125,8 @@ public class BoostShootState : SmartState
 	}
 	public override void AfterCharacterUpdate(SmartObject smartObject, float deltaTime)
 	{
-		CreateVFX(smartObject);
-		CreateBodyVFX(smartObject);
-		CreateSFX(smartObject);
-
 		base.AfterCharacterUpdate(smartObject, deltaTime);
-
-		//if (smartObject.CurrentFrame > MaxTime)
-		//	smartObject.ActionStateMachine.ChangeActionState(ActionStates.Idle);
-
-		if (smartObject.CurrentFrame > MinTime)
-		{
-			if (smartObject.Controller.Button2ReleaseBuffer > 0 || smartObject.Controller.Button2Hold == false)
-				smartObject.ActionStateMachine.ChangeActionState(ActionStates.Idle);
-
-			//if (smartObject.Controller.Button1Buffer > 0 && smartObject.Cooldown <= 0)
-			//	smartObject.ActionStateMachine.ChangeActionState(ActionStates.Attack);
-		}
-
-		if ((smartObject.Controller.Button3ReleaseBuffer > 0 || !smartObject.Controller.Button3Hold))
-		{
-			smartObject.LocomotionStateMachine.ChangeLocomotionState(LocomotionStates.Grounded);
-			smartObject.ActionStateMachine.ChangeActionState(ActionStates.Dodge);
-		}
-
-		if (smartObject.Controller.Button4Buffer > 0 && ((smartObject.LocomotionStateMachine.CurrentLocomotionEnum == LocomotionStates.Grounded) || (smartObject.CurrentAirTime > CoyoteTime && smartObject.AirJumps > 0 && smartObject.LocomotionStateMachine.CurrentLocomotionEnum == LocomotionStates.Aerial)))
-			smartObject.ActionStateMachine.ChangeActionState(ActionStates.Jump);
+		if (smartObject.CurrentFrame > MaxTime)
+			smartObject.ActionStateMachine.ChangeActionState(ActionStates.Idle);
 	}
 }

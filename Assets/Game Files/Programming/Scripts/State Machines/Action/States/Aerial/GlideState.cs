@@ -68,17 +68,17 @@ public class GlideState : SmartState
         CreateBodyVFX(smartObject);
         CreateSFX(smartObject);
 
-        if (smartObject.Controller.Button1Buffer > 0 && smartObject.Cooldown <= 0)
-            if(AttackState != null)
+
+    if ((smartObject.Controller.Button1Buffer > 0 || smartObject.Controller.Button2Buffer > 0))
+      if (AttackState != null)
                 smartObject.ActionStateMachine.ChangeActionState(AttackState);
             else
                 smartObject.ActionStateMachine.ChangeActionState(ActionStates.Attack);
 
-        if ((smartObject.Controller.Button3Buffer > 0 || smartObject.Controller.Button3Hold) && smartObject.Cooldown <= 0)
-        {
-            smartObject.LocomotionStateMachine.ChangeLocomotionState(LocomotionStates.AerialShoot);
-            smartObject.ActionStateMachine.ChangeActionState(ActionStates.Jump);
-        }
+        //if ((smartObject.Controller.Button3Buffer > 0 || smartObject.Controller.Button3Hold))
+        //{
+        //    smartObject.ActionStateMachine.ChangeActionState(ActionStates.Dodge);
+        //}
 
         if (smartObject.CurrentFrame > MinTime)
             if (!smartObject.Controller.Button4Hold || smartObject.Controller.Button4ReleaseBuffer > 0 || smartObject.CurrentFrame > MaxTime)

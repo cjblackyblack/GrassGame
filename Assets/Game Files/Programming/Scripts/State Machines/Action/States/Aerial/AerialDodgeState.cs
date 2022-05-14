@@ -10,6 +10,7 @@ public class AerialDodgeState : SmartState
 	public float JumpScalableForwardSpeed;
 	public TangibilityFrames[] TangibilityFrames;
 	public MotionCurve MotionCurve;
+	public StateTransition[] StateTransitions;
 
 	public override void OnEnter(SmartObject smartObject)
 	{
@@ -77,6 +78,12 @@ public class AerialDodgeState : SmartState
 		base.AfterCharacterUpdate(smartObject, deltaTime);
 		if (smartObject.CurrentFrame > MaxTime)
 			smartObject.ActionStateMachine.ChangeActionState(ActionStates.Idle);
+
+		if (StateTransitions != null)
+			for (int i = 0; i < StateTransitions.Length; i++)
+				if (StateTransitions[i].CanTransition(smartObject))
+					smartObject.ActionStateMachine.ChangeActionState(StateTransitions[i].TransitionState);
+
 	}
 
 	public void Jump(SmartObject smartObject, ref Vector3 currentVelocity, float deltaTime)

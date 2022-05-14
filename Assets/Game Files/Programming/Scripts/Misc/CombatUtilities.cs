@@ -133,18 +133,19 @@ public static class CombatUtilities
 	public static void ResetTangibilityFrames(SmartObject smartObject, TangibilityFrames[] tangibilityFrames)
 	{
 		for (int i = 0; i < tangibilityFrames.Length; i++)
-			if (tangibilityFrames[i].Hurtbox) {
+			if (tangibilityFrames[i].Hurtbox) 
+			{
 				for (int j = 0; j < smartObject.Hurtboxes.Count; j++)
-					if (BoxGroupMatch(smartObject.Hitboxes[j].GetComponent<CombatBox>().CombatBoxGroup, tangibilityFrames[i].BoxGroup))
+					if (BoxGroupMatch(smartObject.Hurtboxes[j].GetComponent<CombatBox>().CombatBoxGroup, tangibilityFrames[i].BoxGroup))
 					{
-						smartObject.Hitboxes[j].GetComponent<CombatBox>().IntangibleFrames = 0;
-						smartObject.Hitboxes[j].GetComponent<CombatBox>().IFrames = 0;
-						smartObject.Hitboxes[j].GetComponent<CombatBox>().GuardFrames = 0;
-						smartObject.Hitboxes[j].GetComponent<CombatBox>().ArmorFrames = 0;
+						smartObject.Hurtboxes[j].GetComponent<CombatBox>().IntangibleFrames = 0;
+						smartObject.Hurtboxes[j].GetComponent<CombatBox>().IFrames = 0;
+						smartObject.Hurtboxes[j].GetComponent<CombatBox>().GuardFrames = 0;
+						smartObject.Hurtboxes[j].GetComponent<CombatBox>().ArmorFrames = 0;
 					}
 			}
 			else
-				for (int j = 0; j < smartObject.Hurtboxes.Count; j++)
+				for (int j = 0; j < smartObject.Hitboxes.Length; j++)
 					if (BoxGroupMatch(smartObject.Hitboxes[j].GetComponent<CombatBox>().CombatBoxGroup, tangibilityFrames[i].BoxGroup))
 					{
 						smartObject.Hitboxes[j].GetComponent<CombatBox>().IntangibleFrames = 0;

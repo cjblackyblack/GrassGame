@@ -37,7 +37,7 @@ public class JumpShootState : SmartState
             {
                 smartObject.Animator.Play(AnimationState, 0, 0);
             }
-            if (smartObject.ActionStateMachine.PreviousActionEnum == ActionStates.Boost && (smartObject.LocomotionStateMachine.CurrentLocomotionEnum == LocomotionStates.Grounded || smartObject.LocomotionStateMachine.CurrentLocomotionEnum == LocomotionStates.GroundedShoot))
+            if (smartObject.ActionStateMachine.PreviousActionEnum == ActionStates.Dodge && (smartObject.LocomotionStateMachine.CurrentLocomotionEnum == LocomotionStates.Grounded || smartObject.LocomotionStateMachine.CurrentLocomotionEnum == LocomotionStates.GroundedShoot))
             { 
                 smartObject.CurrentTime = JumpFrame - 1;
                 smartObject.CurrentFrame = JumpFrame - 1; 

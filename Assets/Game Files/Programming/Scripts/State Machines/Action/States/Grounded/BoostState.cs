@@ -17,7 +17,7 @@ public class BoostState : SmartState
 
 	public override void OnEnter(SmartObject smartObject)
 	{
-		if (smartObject.LocomotionStateMachine.PreviousLocomotionEnum == LocomotionStates.GroundedShoot && smartObject.ActionStateMachine.PreviousActionEnum == ActionStates.Boost)
+		if (smartObject.LocomotionStateMachine.PreviousLocomotionEnum == LocomotionStates.GroundedShoot && smartObject.ActionStateMachine.PreviousActionEnum == ActionStates.Dodge)
 		{
 
 		}
@@ -171,8 +171,9 @@ public class BoostState : SmartState
 			if (smartObject.Controller.Button2ReleaseBuffer > 0 || smartObject.Controller.Button2Hold == false)
 				smartObject.ActionStateMachine.ChangeActionState(ActionStates.Idle);
 
-			if (smartObject.Controller.Button1Buffer > 0 && smartObject.Cooldown <= 0)
-				if(BoostAttack)
+
+			if ((smartObject.Controller.Button1Buffer > 0 || smartObject.Controller.Button2Buffer > 0) && smartObject.Cooldown <= 0)
+				if (BoostAttack)
 					smartObject.ActionStateMachine.ChangeActionState(BoostAttack);
 			else
 					smartObject.ActionStateMachine.ChangeActionState(ActionStates.Attack);
@@ -180,8 +181,8 @@ public class BoostState : SmartState
 
 		if ((smartObject.Controller.Button3Buffer > 0 || smartObject.Controller.Button3Hold == true) && smartObject.Cooldown <= 0)
 		{
-			smartObject.LocomotionStateMachine.ChangeLocomotionState(LocomotionStates.GroundedShoot);
-			smartObject.ActionStateMachine.ChangeActionState(ActionStates.Boost);
+			//smartObject.LocomotionStateMachine.ChangeLocomotionState(LocomotionStates.GroundedShoot);
+			smartObject.ActionStateMachine.ChangeActionState(ActionStates.Dodge);
 		}
 
 		if (smartObject.Controller.Button4Buffer > 0 && ((smartObject.LocomotionStateMachine.CurrentLocomotionEnum == LocomotionStates.Grounded) || (smartObject.CurrentAirTime > CoyoteTime && smartObject.AirJumps > 0 && smartObject.LocomotionStateMachine.CurrentLocomotionEnum == LocomotionStates.Aerial)))

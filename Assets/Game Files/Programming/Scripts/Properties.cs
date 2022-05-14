@@ -48,7 +48,7 @@ public enum LocomotionStates
 { 
     Grounded, 
     Aerial,
-    GroundedShoot,
+    GroundedShoot, //variant states for holding a gun out like DMC / Bayonetta
     AerialShoot,
     Climbing,
     Flying, 
@@ -66,7 +66,7 @@ public enum ActionStates
     Idle, 
     Move, 
     Jump, 
-    Boost, 
+    Dodge, 
     Attack,
     Blocked,
     Guard, 

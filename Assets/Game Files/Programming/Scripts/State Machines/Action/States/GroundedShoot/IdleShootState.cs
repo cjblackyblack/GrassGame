@@ -36,7 +36,7 @@ public class IdleShootState : SmartState
 		//	smartObject.ActionStateMachine.ChangeActionState(ActionStates.Attack);
 
 		if (smartObject.Controller.Button2Buffer > 0)
-			smartObject.ActionStateMachine.ChangeActionState(ActionStates.Boost);
+			smartObject.ActionStateMachine.ChangeActionState(ActionStates.Dodge);
 
 		if ((smartObject.Controller.Button3ReleaseBuffer > 0 || !smartObject.Controller.Button3Hold))
 		{

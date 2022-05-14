@@ -108,7 +108,7 @@ public class LocomotionAerialShootState : LocomotionState
         if (smartObject.Motor.GroundingStatus.IsStableOnGround)
         {
             //Debug.Log(smartObject.AirTime);
-            if (smartObject.CurrentAirTime > NoLandAnimationTime && smartObject.ActionStateMachine.CurrentActionEnum != ActionStates.Boost)
+            if (smartObject.CurrentAirTime > NoLandAnimationTime && smartObject.ActionStateMachine.CurrentActionEnum != ActionStates.Dodge)
                 smartObject.ActionStateMachine.ChangeActionState(smartObject.LocomotionStateMachine.LandState);
 
             if (smartObject.CurrentAirTime > 6 && (smartObject.ActionStateMachine.CurrentActionEnum != ActionStates.Jump))

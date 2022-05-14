@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c75374fc360d1c242b73eb4a491fbee3, type: 3}
   m_Name: Move
   m_EditorClassIdentifier: 
-  AnimationState: Move
+  AnimationState: Run
   AnimationTransitionTime: 0
   AnimationTransitionOffset: 0
   MaxTime: 0
+  VFX: []
+  BodyVFX: []
+  SFX: []
   MaxStableMoveSpeed: 6.5
   StableMovementSharpness: 30

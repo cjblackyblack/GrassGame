@@ -13,9 +13,9 @@ public class JumpState : SmartState
     public float jumpCapsuleResume;
     public float FallVelocity;
     public MotionCurve MotionCurve;
+  public StateTransition[] StateTransitions;
 
-
-    public override void OnEnter(SmartObject smartObject)
+  public override void OnEnter(SmartObject smartObject)
 	{
         if (((smartObject.LocomotionStateMachine.PreviousLocomotionEnum == LocomotionStates.GroundedShoot)|| smartObject.LocomotionStateMachine.PreviousLocomotionEnum == LocomotionStates.AerialShoot) && smartObject.ActionStateMachine.PreviousActionEnum == ActionStates.Jump)
         {
@@ -37,7 +37,7 @@ public class JumpState : SmartState
                 smartObject.Animator.Play(AnimationState, 0, 0);
             }
             smartObject.Controller.Button4Buffer = 0;
-            if (smartObject.ActionStateMachine.PreviousActionEnum == ActionStates.Boost && (smartObject.LocomotionStateMachine.CurrentLocomotionEnum == LocomotionStates.Grounded || smartObject.LocomotionStateMachine.CurrentLocomotionEnum == LocomotionStates.GroundedShoot))
+            if (smartObject.ActionStateMachine.PreviousActionEnum == ActionStates.Dodge && (smartObject.LocomotionStateMachine.CurrentLocomotionEnum == LocomotionStates.Grounded || smartObject.LocomotionStateMachine.CurrentLocomotionEnum == LocomotionStates.GroundedShoot))
             { 
                 smartObject.CurrentTime = JumpFrame - 1; 
                 smartObject.CurrentFrame = JumpFrame - 1; 
@@ -95,8 +95,8 @@ public class JumpState : SmartState
     public override void AfterCharacterUpdate(SmartObject smartObject, float deltaTime)
 	{
 
-        if (smartObject.Controller.Button1Buffer > 0 && smartObject.CurrentAirTime > 0 && smartObject.Cooldown <= 0)
-            smartObject.ActionStateMachine.ChangeActionState(ActionStates.Attack);
+        //if (smartObject.Controller.Button1Buffer > 0 && smartObject.CurrentAirTime > 0 && smartObject.Cooldown <= 0)
+        //    smartObject.ActionStateMachine.ChangeActionState(ActionStates.Attack);
 
 
         float yVel = Vector3.Project(smartObject.Motor.BaseVelocity, smartObject.Motor.CharacterUp).y;
@@ -106,18 +106,21 @@ public class JumpState : SmartState
             smartObject.Motor.SetGroundSolvingActivation(true);
         }
 
-        if ((smartObject.Controller.Button3Buffer > 0 || smartObject.Controller.Button3Hold) && smartObject.Cooldown <= 0)
-        {
-            if (smartObject.CurrentAirTime == 0)
-                smartObject.LocomotionStateMachine.ChangeLocomotionState(LocomotionStates.GroundedShoot);
-            else
-                smartObject.LocomotionStateMachine.ChangeLocomotionState(LocomotionStates.AerialShoot);
-        }
+        //if ((smartObject.Controller.Button3Buffer > 0 || smartObject.Controller.Button3Hold) && smartObject.Cooldown <= 0)
+        //{
+        //    if (smartObject.CurrentAirTime == 0)
+        //        smartObject.LocomotionStateMachine.ChangeLocomotionState(LocomotionStates.GroundedShoot);
+        //    else
+        //        smartObject.LocomotionStateMachine.ChangeLocomotionState(LocomotionStates.AerialShoot);
+        //}
 
-      // if(smartObject.Controller.Button4Buffer > 0 && smartObject.CurrentTime > JumpFrame + 3) 
-      //     smartObject.ActionStateMachine.ChangeActionState(ActionStates.Jump);
+    if (StateTransitions != null)
+      for (int i = 0; i < StateTransitions.Length; i++)
+        if (StateTransitions[i].CanTransition(smartObject))
+          smartObject.ActionStateMachine.ChangeActionState(StateTransitions[i].TransitionState);
 
-    }
+
+  }
 
     public void Jump(SmartObject smartObject, ref Vector3 currentVelocity, float deltaTime)
     {
