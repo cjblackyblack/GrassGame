@@ -6,9 +6,19 @@ using Sirenix.OdinInspector;
 
 public class Inventory : MonoBehaviour {
 
-    [Title("Inventory")]
-    [SerializeField] private InventorySlot[] slots;
-    [field: SerializeField] public int SlotCount { get; set; }
+    [TitleGroup("Inventory"), SerializeField]
+    private InventorySlot[] slots;
+    [field: TitleGroup("Inventory"), SerializeField, OnValueChanged("OnUpdateInventorySize"), MinValue(0)]
+    public int SlotCount { get; set; }
+    [field: TitleGroup("Inventory"), SerializeField, ReadOnly, PropertyOrder(1)]
+    public int FullInventorySize { get; protected set; }
+
+    // ---
+
+    protected virtual void OnUpdateInventorySize() {
+        FullInventorySize = SlotCount;
+        // TODO - update actual inventory to match
+    }
 
     // ------------------------------------------------------------------------------------------------------------
 
@@ -127,7 +137,7 @@ public class Inventory : MonoBehaviour {
 
     [TitleGroup("Buttons")] [Button]
     private void ResetSlots() {
-        slots = new InventorySlot[SlotCount];
+        slots = new InventorySlot[FullInventorySize];
     }
 
     #endregion
