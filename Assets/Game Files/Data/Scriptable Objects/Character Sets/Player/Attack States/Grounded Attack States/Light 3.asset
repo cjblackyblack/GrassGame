@@ -40,8 +40,12 @@ MonoBehaviour:
     TransitionState: {fileID: 11400000, guid: f5277232aa09d7449b99dd11a1a91f1d, type: 2}
   - MaxTime: 46
     TransitionWindow: {x: 0, y: 30}
-    TransitionType: 0
+    TransitionType: 4
     TransitionState: {fileID: 11400000, guid: d64800ab98025354086a5977e28ed96e, type: 2}
+  - MaxTime: 46
+    TransitionWindow: {x: 30, y: 46}
+    TransitionType: 0
+    TransitionState: {fileID: 11400000, guid: f42ac6da929db514baef2dda8d9995ab, type: 2}
   MotionCurve:
     ForwardCurve:
       serializedVersion: 2
@@ -132,9 +136,9 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
+        value: 1
+        inSlope: -1
+        outSlope: -1
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
@@ -142,12 +146,21 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 1
         value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 46
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0
+        outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -369,7 +382,7 @@ MonoBehaviour:
     ShareIncomingHitboxes: 1
     Hitbox: 0
     HitboxGroup: 1
-    ActiveFrames: {x: 19, y: 30}
+    ActiveFrames: {x: 12, y: 25}
     StatusEffects: []
     Damage: 6
     FlatDamage: 0
@@ -381,7 +394,7 @@ MonoBehaviour:
     HitstopType: 0
     BreakthroughType: 0
     KnockbackType: 0
-    KnockbackStrength: 7
+    KnockbackStrength: 4
     KnockbackDirection: {x: 0, y: 0, z: 1}
     HitboxProcesses:
     - {fileID: 11400000, guid: c5f583890bd62744aaaa6cccd8409ef4, type: 2}
@@ -393,3 +406,4 @@ MonoBehaviour:
   - {fileID: 4431882959470827133, guid: 4aa7fec143d7c5345ae147d66d87bf6f, type: 3}
   HitFX: {fileID: 11400000, guid: 8143ff93377cd8b459947b83fe436c3f, type: 2}
   Projectiles: []
+  LockRotation: 0

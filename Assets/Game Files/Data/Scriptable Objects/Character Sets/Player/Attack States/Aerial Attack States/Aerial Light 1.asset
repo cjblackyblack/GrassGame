@@ -15,30 +15,30 @@ MonoBehaviour:
   AnimationState: Aerial Light 1
   AnimationTransitionTime: 0
   AnimationTransitionOffset: 0
-  MaxTime: 44
+  MaxTime: 35
   VFX: []
   BodyVFX: []
   SFX:
   - SFX: {fileID: 11400000, guid: 56be89a7018ac3644be8a5abc485ae54, type: 2}
     Time: 7
   StateTransitions:
-  - MaxTime: 44
-    TransitionWindow: {x: 16, y: 35}
+  - MaxTime: 35
+    TransitionWindow: {x: 16, y: 28}
     TransitionType: 2
     TransitionState: {fileID: 11400000, guid: c1c7ac5893b973f4e931545dc779a853, type: 2}
-  - MaxTime: 44
-    TransitionWindow: {x: 36, y: 44}
+  - MaxTime: 35
+    TransitionWindow: {x: 29, y: 35}
     TransitionType: 2
     TransitionState: {fileID: 11400000, guid: 8bee19d1d65d73e41ac56a3a90fffe1d, type: 2}
-  - MaxTime: 44
-    TransitionWindow: {x: 16, y: 35}
+  - MaxTime: 35
+    TransitionWindow: {x: 16, y: 28}
     TransitionType: 3
     TransitionState: {fileID: 11400000, guid: 11aeafe5f2d1a7542ada13dc868dbc4f, type: 2}
-  - MaxTime: 44
-    TransitionWindow: {x: 36, y: 44}
+  - MaxTime: 35
+    TransitionWindow: {x: 29, y: 35}
     TransitionType: 3
     TransitionState: {fileID: 11400000, guid: d47ff6acfd4e0a14aa9093055d121a28, type: 2}
-  - MaxTime: 44
+  - MaxTime: 35
     TransitionWindow: {x: 0, y: 16}
     TransitionType: 4
     TransitionState: {fileID: 11400000, guid: 2ca307e9f4e47244fbac31002ce7b45f, type: 2}
@@ -170,22 +170,22 @@ MonoBehaviour:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 7
+        time: 6.09407
         value: -0.0059814453
-        inSlope: 0.14254597
-        outSlope: 0.14254597
+        inSlope: 0.008041095
+        outSlope: 0.008041095
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.12476781
+        outWeight: 0.09502151
       - serializedVersion: 3
-        time: 30
+        time: 35.535347
         value: 1
-        inSlope: -0.003121771
-        outSlope: -0.003121771
+        inSlope: 0.04861014
+        outSlope: 0.04861014
         tangentMode: 0
         weightedMode: 0
-        inWeight: 1
+        inWeight: 0.19740209
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -316,13 +316,13 @@ MonoBehaviour:
     TurnAroundTime: 4
     TrackingResistance: 0.8
   hitboxes:
-  - MaxTime: 44
+  - MaxTime: 35
     ActionTarget: 2
     RefreshID: 1
     ShareID: 1
     AttackBoxesIndividually: 0
     ShareIncomingHitboxes: 1
-    Hitbox: 1
+    Hitbox: 0
     HitboxGroup: 1
     ActiveFrames: {x: 8, y: 20}
     StatusEffects: []

@@ -42,6 +42,10 @@ MonoBehaviour:
     TransitionWindow: {x: 0, y: 28}
     TransitionType: 5
     TransitionState: {fileID: 11400000, guid: b815c2492e4638e4cbac4648a6f16699, type: 2}
+  - MaxTime: 48
+    TransitionWindow: {x: 28, y: 48}
+    TransitionType: 0
+    TransitionState: {fileID: 11400000, guid: f42ac6da929db514baef2dda8d9995ab, type: 2}
   MotionCurve:
     ForwardCurve:
       serializedVersion: 2
@@ -369,7 +373,7 @@ MonoBehaviour:
     ShareIncomingHitboxes: 1
     Hitbox: 0
     HitboxGroup: 1
-    ActiveFrames: {x: 12, y: 30}
+    ActiveFrames: {x: 12, y: 25}
     StatusEffects: []
     Damage: 5
     FlatDamage: 0
@@ -377,7 +381,7 @@ MonoBehaviour:
     UseMagic: 0
     Unstoppable: 0
     Hitstun: 15
-    HitStopTime: 0.04
+    HitStopTime: 0.02
     HitstopType: 0
     BreakthroughType: 0
     KnockbackType: 0
@@ -393,3 +397,4 @@ MonoBehaviour:
   - {fileID: 4431882959470827133, guid: 4aa7fec143d7c5345ae147d66d87bf6f, type: 3}
   HitFX: {fileID: 11400000, guid: 8143ff93377cd8b459947b83fe436c3f, type: 2}
   Projectiles: []
+  LockRotation: 0

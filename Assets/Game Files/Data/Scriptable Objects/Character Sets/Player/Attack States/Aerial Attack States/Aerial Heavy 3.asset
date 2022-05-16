@@ -170,7 +170,7 @@ MonoBehaviour:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 7
+        time: 36.368385
         value: -0.0059814453
         inSlope: 0.14254597
         outSlope: 0.14254597
@@ -179,7 +179,7 @@ MonoBehaviour:
         inWeight: 0.33333334
         outWeight: 0.12476781
       - serializedVersion: 3
-        time: 30
+        time: 45.408737
         value: 1
         inSlope: -0.003121771
         outSlope: -0.003121771
@@ -322,7 +322,7 @@ MonoBehaviour:
     ShareID: 1
     AttackBoxesIndividually: 0
     ShareIncomingHitboxes: 1
-    Hitbox: 1
+    Hitbox: 0
     HitboxGroup: 1
     ActiveFrames: {x: 8, y: 20}
     StatusEffects: []
@@ -336,8 +336,32 @@ MonoBehaviour:
     HitstopType: 0
     BreakthroughType: 0
     KnockbackType: 0
-    KnockbackStrength: 1
-    KnockbackDirection: {x: 0, y: 1, z: 2}
+    KnockbackStrength: 4
+    KnockbackDirection: {x: 0, y: 1, z: 1}
+    HitboxProcesses:
+    - {fileID: 11400000, guid: c5f583890bd62744aaaa6cccd8409ef4, type: 2}
+  - MaxTime: 52
+    ActionTarget: 2
+    RefreshID: 0
+    ShareID: 0
+    AttackBoxesIndividually: 0
+    ShareIncomingHitboxes: 0
+    Hitbox: 0
+    HitboxGroup: 1
+    ActiveFrames: {x: 21, y: 35}
+    StatusEffects: []
+    Damage: 0
+    FlatDamage: 0
+    IgnoreProtections: 0
+    UseMagic: 0
+    Unstoppable: 0
+    Hitstun: 0
+    HitStopTime: 0
+    HitstopType: 0
+    BreakthroughType: 0
+    KnockbackType: 0
+    KnockbackStrength: 4
+    KnockbackDirection: {x: 0, y: 1, z: 1}
     HitboxProcesses:
     - {fileID: 11400000, guid: c5f583890bd62744aaaa6cccd8409ef4, type: 2}
   TangibilityFrames: []

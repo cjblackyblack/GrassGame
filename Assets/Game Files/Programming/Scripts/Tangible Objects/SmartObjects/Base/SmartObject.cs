@@ -73,6 +73,9 @@ public class SmartObject : PhysicalObject, ICharacterController
 	public Vector3 KnockbackDir;
 	public SFX HurtSFX;
 	public Animator Animator;
+	public int PreviousAttackBuffer;
+	public int PreviousAttackTime = 6;
+	public SmartState PreviousAttack;
 
 	public override void Start()
 	{
@@ -267,6 +270,11 @@ public class SmartObject : PhysicalObject, ICharacterController
 			CurrentFrame = (int)CurrentTime;
 			ActionStateMachine.AfterCharacterUpdate(deltaTime);
 			LocomotionStateMachine.AfterCharacterUpdate(deltaTime);
+
+			if (PreviousAttackBuffer > 0)
+				PreviousAttackBuffer--;
+			else if (PreviousAttack != null)
+				PreviousAttack = null;
 		}
 	}
 

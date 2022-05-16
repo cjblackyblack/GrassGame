@@ -197,4 +197,12 @@ MonoBehaviour:
       m_RotationOrder: 4
     TurnAroundTime: 4
     TrackingResistance: 0
-  StateTransitions: []
+  StateTransitions:
+  - MaxTime: 30
+    TransitionWindow: {x: 15, y: 30}
+    TransitionType: 2
+    TransitionState: {fileID: 11400000, guid: 1de7917f1b0f6f84b9f7708ec196d88e, type: 2}
+  - MaxTime: 30
+    TransitionWindow: {x: 15, y: 30}
+    TransitionType: 3
+    TransitionState: {fileID: 11400000, guid: 1de7917f1b0f6f84b9f7708ec196d88e, type: 2}

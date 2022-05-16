@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b731cf602861bc40a70160cfee817bf, type: 3}
   m_Name: Jump Attack
   m_EditorClassIdentifier: 
-  AnimationState: Aerial Heavy Uproot 1
+  AnimationState: Jump Attack
   AnimationTransitionTime: 0
   AnimationTransitionOffset: 0
   MaxTime: 40
@@ -101,14 +101,23 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 0
         value: 1
-        inSlope: -1
-        outSlope: -1
+        inSlope: -0.45314845
+        outSlope: -0.45314845
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1
+        time: 1.8181818
+        value: 0.17609377
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 6.1239676
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -117,16 +126,7 @@ MonoBehaviour:
         inWeight: 0.33333334
         outWeight: 0
       - serializedVersion: 3
-        time: 60
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 80
+        time: 40
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -174,7 +174,7 @@ MonoBehaviour:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 7
+        time: 10.387436
         value: -0.0059814453
         inSlope: 0.14254597
         outSlope: 0.14254597
@@ -183,7 +183,7 @@ MonoBehaviour:
         inWeight: 0.33333334
         outWeight: 0.12476781
       - serializedVersion: 3
-        time: 30
+        time: 24.747463
         value: 1
         inSlope: -0.003121771
         outSlope: -0.003121771
@@ -326,9 +326,9 @@ MonoBehaviour:
     ShareID: 1
     AttackBoxesIndividually: 0
     ShareIncomingHitboxes: 1
-    Hitbox: 1
+    Hitbox: 0
     HitboxGroup: 1
-    ActiveFrames: {x: 6, y: 20}
+    ActiveFrames: {x: 0, y: 7}
     StatusEffects: []
     Damage: 6
     FlatDamage: 0
@@ -340,8 +340,56 @@ MonoBehaviour:
     HitstopType: 0
     BreakthroughType: 0
     KnockbackType: 0
-    KnockbackStrength: 1
-    KnockbackDirection: {x: 0, y: 0, z: 0}
+    KnockbackStrength: 8
+    KnockbackDirection: {x: 0, y: 1, z: 0.3}
+    HitboxProcesses:
+    - {fileID: 11400000, guid: c5f583890bd62744aaaa6cccd8409ef4, type: 2}
+  - MaxTime: 40
+    ActionTarget: 2
+    RefreshID: 1
+    ShareID: 0
+    AttackBoxesIndividually: 1
+    ShareIncomingHitboxes: 1
+    Hitbox: 0
+    HitboxGroup: 1
+    ActiveFrames: {x: 8, y: 16}
+    StatusEffects: []
+    Damage: 5
+    FlatDamage: 0
+    IgnoreProtections: 0
+    UseMagic: 0
+    Unstoppable: 0
+    Hitstun: 0
+    HitStopTime: 0
+    HitstopType: 0
+    BreakthroughType: 0
+    KnockbackType: 0
+    KnockbackStrength: 8
+    KnockbackDirection: {x: 0, y: 1, z: 0.3}
+    HitboxProcesses:
+    - {fileID: 11400000, guid: c5f583890bd62744aaaa6cccd8409ef4, type: 2}
+  - MaxTime: 40
+    ActionTarget: 2
+    RefreshID: 1
+    ShareID: 0
+    AttackBoxesIndividually: 1
+    ShareIncomingHitboxes: 1
+    Hitbox: 0
+    HitboxGroup: 0
+    ActiveFrames: {x: 17, y: 25}
+    StatusEffects: []
+    Damage: 5
+    FlatDamage: 0
+    IgnoreProtections: 0
+    UseMagic: 0
+    Unstoppable: 0
+    Hitstun: 0
+    HitStopTime: 0
+    HitstopType: 0
+    BreakthroughType: 0
+    KnockbackType: 0
+    KnockbackStrength: 4
+    KnockbackDirection: {x: 0, y: 1, z: 0.3}
     HitboxProcesses:
     - {fileID: 11400000, guid: c5f583890bd62744aaaa6cccd8409ef4, type: 2}
   TangibilityFrames: []

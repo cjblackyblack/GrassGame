@@ -21,6 +21,13 @@ public class AerialDodgeState : SmartState
 		smartObject.AirJumps--;
 		smartObject.MovementVector = new Vector3(Mathf.RoundToInt(smartObject.InputVector.x), Mathf.RoundToInt(smartObject.InputVector.y), Mathf.RoundToInt(smartObject.InputVector.z));
 
+		if (smartObject.LocomotionStateMachine.CurrentLocomotionEnum != LocomotionStates.Aerial) //we came from a state like an attack
+		{
+			smartObject.Motor.ForceUnground(0.02f);
+			smartObject.Motor.SetGroundSolvingActivation(false);
+			smartObject.LocomotionStateMachine.ChangeLocomotionState(LocomotionStates.Aerial);
+		}
+
 	}
 
 	public override void OnExit(SmartObject smartObject)
@@ -28,6 +35,7 @@ public class AerialDodgeState : SmartState
 		base.OnExit(smartObject);
 		smartObject.GravityModifier = 1;
 		CombatUtilities.ResetTangibilityFrames(smartObject, TangibilityFrames);
+		smartObject.Motor.SetGroundSolvingActivation(true);
 	}
 
 	public override void BeforeCharacterUpdate(SmartObject smartObject, float deltaTime)
@@ -97,5 +105,15 @@ public class AerialDodgeState : SmartState
 
 		currentVelocity += (((jumpDirection.normalized * (JumpPower))) - (Vector3.Project(currentVelocity, smartObject.Motor.CharacterUp)));
 		currentVelocity += (smartObject.MovementVector.normalized * JumpScalableForwardSpeed);
+	}
+
+	private void OnValidate()
+	{
+
+		if (StateTransitions.Length > 0)
+		{
+			for (int i = 0; i < StateTransitions.Length; i++)
+				StateTransitions[i].MaxTime = MaxTime;
+		}
 	}
 }

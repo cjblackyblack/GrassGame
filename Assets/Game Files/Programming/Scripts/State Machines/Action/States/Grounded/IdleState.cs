@@ -47,8 +47,25 @@ public class IdleState : SmartState
 		//			smartObject.ActionStateMachine.ChangeActionState(ActionStates.Attack);
 
 
+
 		if ((smartObject.Controller.Button1Buffer > 0 || smartObject.Controller.Button2Buffer > 0))
-			smartObject.ActionStateMachine.ChangeActionState(ActionStates.Attack);
+		{
+			if (smartObject.PreviousAttack != null && smartObject.PreviousAttackBuffer > 0)
+			{
+				for (int i = 0; i < (smartObject.PreviousAttack as AttackState).StateTransitions.Length; i++)
+				{
+					if ((smartObject.PreviousAttack as AttackState).StateTransitions[i].CanTransition(smartObject, smartObject.PreviousAttack))
+					{
+						smartObject.ActionStateMachine.ChangeActionState((smartObject.PreviousAttack as AttackState).StateTransitions[i].TransitionState);
+						break;
+					}
+				}
+			}
+			else
+			{
+				smartObject.ActionStateMachine.ChangeActionState(ActionStates.Attack);
+			}
+		}
 
 		if (smartObject.Controller.Button3Buffer > 0)
 		{

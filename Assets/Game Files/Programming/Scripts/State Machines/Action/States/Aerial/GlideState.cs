@@ -70,15 +70,23 @@ public class GlideState : SmartState
 
 
     if ((smartObject.Controller.Button1Buffer > 0 || smartObject.Controller.Button2Buffer > 0))
+    {
       if (AttackState != null)
-                smartObject.ActionStateMachine.ChangeActionState(AttackState);
-            else
-                smartObject.ActionStateMachine.ChangeActionState(ActionStates.Attack);
+        smartObject.ActionStateMachine.ChangeActionState(AttackState);
+      else if (smartObject.PreviousAttack != null && smartObject.PreviousAttackBuffer > 0)
+      {
+        if (smartObject.PreviousAttack as AerialAttackState != null)
+          for (int i = 0; i < (smartObject.PreviousAttack as AerialAttackState).StateTransitions.Length; i++)
+          {
+            if ((smartObject.PreviousAttack as AerialAttackState).StateTransitions[i].CanTransition(smartObject, smartObject.PreviousAttack))
+            {
+              smartObject.ActionStateMachine.ChangeActionState((smartObject.PreviousAttack as AerialAttackState).StateTransitions[i].TransitionState);
+              break;
+            }
+          }
+      }
+    }
 
-        //if ((smartObject.Controller.Button3Buffer > 0 || smartObject.Controller.Button3Hold))
-        //{
-        //    smartObject.ActionStateMachine.ChangeActionState(ActionStates.Dodge);
-        //}
 
         if (smartObject.CurrentFrame > MinTime)
             if (!smartObject.Controller.Button4Hold || smartObject.Controller.Button4ReleaseBuffer > 0 || smartObject.CurrentFrame > MaxTime)

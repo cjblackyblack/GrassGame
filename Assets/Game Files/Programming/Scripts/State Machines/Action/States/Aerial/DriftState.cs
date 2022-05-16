@@ -65,23 +65,31 @@ public class DriftState : SmartState
 
 	public override void AfterCharacterUpdate(SmartObject smartObject, float deltaTime)
 	{
+    if ((smartObject.Controller.Button1Buffer > 0 || smartObject.Controller.Button2Buffer > 0))
+    {
+      if (smartObject.PreviousAttack != null && smartObject.PreviousAttackBuffer > 0)
+      {
+        if (smartObject.PreviousAttack as AerialAttackState != null)
+          for (int i = 0; i < (smartObject.PreviousAttack as AerialAttackState).StateTransitions.Length; i++)
+          {
+            if ((smartObject.PreviousAttack as AerialAttackState).StateTransitions[i].CanTransition(smartObject, smartObject.PreviousAttack))
+            {
+              smartObject.ActionStateMachine.ChangeActionState((smartObject.PreviousAttack as AerialAttackState).StateTransitions[i].TransitionState);
+              break;
+            }
+          }
+      }
+      else
+      {
+        smartObject.ActionStateMachine.ChangeActionState(ActionStates.Attack);
+      }
+    }
 
-        if ((smartObject.Controller.Button1Buffer > 0 || smartObject.Controller.Button2Buffer > 0))
-            smartObject.ActionStateMachine.ChangeActionState(ActionStates.Attack);
-
-        //if ((smartObject.Controller.Button3Buffer > 0) && !smartObject.Motor.GroundingStatus.IsStableOnGround)
-        //{
-        //    smartObject.ActionStateMachine.ChangeActionState(ActionStates.Dodge);
-        //}
-
-        if (smartObject.Motor.GroundingStatus.IsStableOnGround)
+    if (smartObject.Motor.GroundingStatus.IsStableOnGround)
             smartObject.ActionStateMachine.ChangeActionState(ActionStates.Idle);
 
         if (smartObject.Controller.Button4Buffer > 0 && smartObject.CurrentAirTime > CoyoteTime && smartObject.AirJumps > 0)
             smartObject.ActionStateMachine.ChangeActionState(ActionStates.Jump);
-
-        //if (smartObject.Controller.Button2Buffer > 0)
-        //    smartObject.ActionStateMachine.ChangeActionState(ActionStates.Boost);
 
     }
 }

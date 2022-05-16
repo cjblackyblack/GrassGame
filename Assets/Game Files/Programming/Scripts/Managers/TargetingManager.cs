@@ -86,11 +86,11 @@ public class TargetingManager : Singleton<TargetingManager>
 		if (PlayerManager.Instance.PlayerController.lookInput == Vector2.zero)
 			tryTargetSwitch = false;                                 
 
-		//if (lockedOn && (((tryTargetSwitch && !targetSwitched) || !tryTargetSwitch) && PlayerManager.Instance.PlayerController.ButtonLockReleaseBuffer > 0) )
-		//{
-			//tryTargetSwitch = false;
-			//ToggleLockOn();
-		//}
+		if (lockedOn && (((tryTargetSwitch && !targetSwitched) || !tryTargetSwitch) && PlayerManager.Instance.PlayerController.ButtonLockReleaseBuffer > 0) )
+		{
+			tryTargetSwitch = false;
+			ToggleLockOn();
+		}
 
 	}
 

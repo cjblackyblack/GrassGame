@@ -21,7 +21,11 @@ MonoBehaviour:
   SFX:
   - SFX: {fileID: 11400000, guid: 2a9e58d8fe4612142be5e65cca2fbbb4, type: 2}
     Time: 20
-  StateTransitions: []
+  StateTransitions:
+  - MaxTime: 46
+    TransitionWindow: {x: 38, y: 46}
+    TransitionType: 0
+    TransitionState: {fileID: 0}
   MotionCurve:
     ForwardCurve:
       serializedVersion: 2
@@ -349,7 +353,7 @@ MonoBehaviour:
     ShareIncomingHitboxes: 1
     Hitbox: 0
     HitboxGroup: 1
-    ActiveFrames: {x: 20, y: 40}
+    ActiveFrames: {x: 7, y: 20}
     StatusEffects: []
     Damage: 10
     FlatDamage: 0
@@ -358,6 +362,30 @@ MonoBehaviour:
     Unstoppable: 0
     Hitstun: 40
     HitStopTime: 0.06
+    HitstopType: 0
+    BreakthroughType: 0
+    KnockbackType: 0
+    KnockbackStrength: 6
+    KnockbackDirection: {x: 0, y: 0.1, z: 1}
+    HitboxProcesses:
+    - {fileID: 11400000, guid: c5f583890bd62744aaaa6cccd8409ef4, type: 2}
+  - MaxTime: 46
+    ActionTarget: 0
+    RefreshID: 0
+    ShareID: 0
+    AttackBoxesIndividually: 0
+    ShareIncomingHitboxes: 0
+    Hitbox: 0
+    HitboxGroup: 1
+    ActiveFrames: {x: 21, y: 28}
+    StatusEffects: []
+    Damage: 0
+    FlatDamage: 0
+    IgnoreProtections: 0
+    UseMagic: 0
+    Unstoppable: 0
+    Hitstun: 0
+    HitStopTime: 0
     HitstopType: 0
     BreakthroughType: 0
     KnockbackType: 0
@@ -373,3 +401,4 @@ MonoBehaviour:
   - {fileID: 4431882959470827133, guid: 4aa7fec143d7c5345ae147d66d87bf6f, type: 3}
   HitFX: {fileID: 11400000, guid: 8143ff93377cd8b459947b83fe436c3f, type: 2}
   Projectiles: []
+  LockRotation: 0

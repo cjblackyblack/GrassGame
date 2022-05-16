@@ -322,7 +322,7 @@ MonoBehaviour:
     ShareID: 1
     AttackBoxesIndividually: 0
     ShareIncomingHitboxes: 1
-    Hitbox: 1
+    Hitbox: 0
     HitboxGroup: 1
     ActiveFrames: {x: 6, y: 20}
     StatusEffects: []

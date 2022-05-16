@@ -170,7 +170,7 @@ MonoBehaviour:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 7
+        time: 18.056013
         value: -0.0059814453
         inSlope: 0.14254597
         outSlope: 0.14254597
@@ -322,7 +322,7 @@ MonoBehaviour:
     ShareID: 1
     AttackBoxesIndividually: 0
     ShareIncomingHitboxes: 1
-    Hitbox: 1
+    Hitbox: 0
     HitboxGroup: 1
     ActiveFrames: {x: 8, y: 20}
     StatusEffects: []

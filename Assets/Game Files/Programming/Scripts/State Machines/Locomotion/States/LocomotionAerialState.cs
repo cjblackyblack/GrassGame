@@ -18,14 +18,20 @@ public class LocomotionAerialState : LocomotionState
     public override void OnEnter(SmartObject smartObject)
 	{
         smartObject.Motor.StepHandling = KinematicCharacterController.StepHandlingMethod.None;
-        smartObject.Controller.Button3ReleaseBuffer = 0;
+
+    //smartObject.Motor.InteractiveRigidbodyHandling = false;
+    //smartObject.Motor.SimulatedCharacterMass = 0.1f;
+    smartObject.Controller.Button3ReleaseBuffer = 0;
     }
 
 	public override void OnExit(SmartObject smartObject)
 	{
 
         smartObject.Motor.SetCapsuleDimensions(smartObject.CharacterRadius, smartObject.CharacterHeight, smartObject.CharacterCenter.y);
-        smartObject.Motor.StepHandling = KinematicCharacterController.StepHandlingMethod.Extra;
+
+    //smartObject.Motor.InteractiveRigidbodyHandling = true;
+    //smartObject.Motor.SimulatedCharacterMass = 1f;
+    smartObject.Motor.StepHandling = KinematicCharacterController.StepHandlingMethod.Extra;
     }
 
 	public override void UpdateRotation(SmartObject smartObject, ref Quaternion currentRotation, float deltaTime)
@@ -65,7 +71,9 @@ public class LocomotionAerialState : LocomotionState
     {
         float yVel = Vector3.Project(currentVelocity, smartObject.Motor.CharacterUp).y;
 
-        smartObject.Motor.SetCapsuleDimensions(smartObject.CharacterRadius, CollisionHeight.Evaluate(yVel), CollisionYOffset.Evaluate(yVel));
+        //smartObject.Motor.SetCapsuleDimensions(smartObject.CharacterRadius, CollisionHeight.Evaluate(yVel), CollisionYOffset.Evaluate(yVel));
+
+
         // Gravity
         currentVelocity += ((smartObject.Gravity * smartObject.GravityModifier)) * deltaTime;
 

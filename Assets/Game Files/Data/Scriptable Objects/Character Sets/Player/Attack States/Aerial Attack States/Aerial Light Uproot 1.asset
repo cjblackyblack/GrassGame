@@ -15,31 +15,31 @@ MonoBehaviour:
   AnimationState: Aerial Light Uproot 1
   AnimationTransitionTime: 0
   AnimationTransitionOffset: 0
-  MaxTime: 70
+  MaxTime: 58
   VFX: []
   BodyVFX: []
   SFX:
   - SFX: {fileID: 11400000, guid: 56be89a7018ac3644be8a5abc485ae54, type: 2}
     Time: 7
   StateTransitions:
-  - MaxTime: 70
-    TransitionWindow: {x: 55, y: 65}
+  - MaxTime: 58
+    TransitionWindow: {x: 42, y: 52}
     TransitionType: 2
     TransitionState: {fileID: 11400000, guid: 6064b9a891ea5a84cb6876053327f40b, type: 2}
-  - MaxTime: 70
-    TransitionWindow: {x: 65, y: 70}
+  - MaxTime: 58
+    TransitionWindow: {x: 53, y: 58}
     TransitionType: 2
     TransitionState: {fileID: 11400000, guid: 7e6ed971bca7d344da4e16f353d4cbbb, type: 2}
-  - MaxTime: 70
-    TransitionWindow: {x: 55, y: 65}
+  - MaxTime: 58
+    TransitionWindow: {x: 42, y: 52}
     TransitionType: 3
     TransitionState: {fileID: 11400000, guid: 53e127e395de30040b0a9044627999d4, type: 2}
-  - MaxTime: 70
-    TransitionWindow: {x: 65, y: 70}
+  - MaxTime: 58
+    TransitionWindow: {x: 53, y: 58}
     TransitionType: 3
     TransitionState: {fileID: 11400000, guid: bae3eff1fe4467847b3064184ccdce17, type: 2}
-  - MaxTime: 70
-    TransitionWindow: {x: 0, y: 55}
+  - MaxTime: 58
+    TransitionWindow: {x: 0, y: 42}
     TransitionType: 4
     TransitionState: {fileID: 11400000, guid: 2ca307e9f4e47244fbac31002ce7b45f, type: 2}
   MotionCurve:
@@ -170,22 +170,22 @@ MonoBehaviour:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 7
+        time: 52.383118
         value: -0.0059814453
-        inSlope: 0.14254597
-        outSlope: 0.14254597
+        inSlope: 0.07512507
+        outSlope: 0.07512507
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.12476781
+        outWeight: 0.42613232
       - serializedVersion: 3
-        time: 30
+        time: 66.52015
         value: 1
-        inSlope: -0.003121771
-        outSlope: -0.003121771
+        inSlope: 0.051384084
+        outSlope: 0.051384084
         tangentMode: 0
         weightedMode: 0
-        inWeight: 1
+        inWeight: 0.44999135
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -316,13 +316,13 @@ MonoBehaviour:
     TurnAroundTime: 4
     TrackingResistance: 0.8
   hitboxes:
-  - MaxTime: 70
+  - MaxTime: 58
     ActionTarget: 2
     RefreshID: 1
     ShareID: 1
     AttackBoxesIndividually: 0
     ShareIncomingHitboxes: 1
-    Hitbox: 1
+    Hitbox: 0
     HitboxGroup: 1
     ActiveFrames: {x: 8, y: 20}
     StatusEffects: []

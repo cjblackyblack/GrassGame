@@ -127,9 +127,13 @@ public class AerialAttackState : SmartState
 
 
 		if (smartObject.CurrentFrame > MaxTime)
+		{
+			smartObject.PreviousAttackBuffer = smartObject.PreviousAttackTime;
+			smartObject.PreviousAttack = this;
 			smartObject.ActionStateMachine.ChangeActionState(ActionStates.Idle);
+		}
 
-		if(StateTransitions != null)
+		if (StateTransitions != null)
 			for (int i = 0; i < StateTransitions.Length; i++)
 				if (StateTransitions[i].CanTransition(smartObject))
 					smartObject.ActionStateMachine.ChangeActionState(StateTransitions[i].TransitionState);

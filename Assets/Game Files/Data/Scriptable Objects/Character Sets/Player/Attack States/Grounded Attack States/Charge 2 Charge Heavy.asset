@@ -26,6 +26,10 @@ MonoBehaviour:
     TransitionWindow: {x: 0, y: 63}
     TransitionType: 5
     TransitionState: {fileID: 11400000, guid: 5c46759068bc8344287ce31271005b84, type: 2}
+  - MaxTime: 63
+    TransitionWindow: {x: 0, y: 63}
+    TransitionType: 0
+    TransitionState: {fileID: 11400000, guid: f42ac6da929db514baef2dda8d9995ab, type: 2}
   MotionCurve:
     ForwardCurve:
       serializedVersion: 2
@@ -377,3 +381,4 @@ MonoBehaviour:
   - {fileID: 4431882959470827133, guid: 4aa7fec143d7c5345ae147d66d87bf6f, type: 3}
   HitFX: {fileID: 11400000, guid: 8143ff93377cd8b459947b83fe436c3f, type: 2}
   Projectiles: []
+  LockRotation: 0

@@ -19,6 +19,7 @@ public class Masocube : PhysicalObject
 
 	IEnumerator TakeKnockback(Vector3 knockback) 
 	{
+		RBody.velocity *= 0;
 		Vector3 startPos = transform.position;
 		transform.position = startPos + (Random.insideUnitSphere * 0.1f);
 		yield return new WaitForSeconds(0.01f);

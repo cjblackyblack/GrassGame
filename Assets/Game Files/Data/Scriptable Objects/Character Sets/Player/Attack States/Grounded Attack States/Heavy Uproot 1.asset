@@ -15,15 +15,15 @@ MonoBehaviour:
   AnimationState: Heavy Uproot 1
   AnimationTransitionTime: 0
   AnimationTransitionOffset: 0
-  MaxTime: 60
+  MaxTime: 50
   VFX: []
   BodyVFX: []
   SFX:
   - SFX: {fileID: 11400000, guid: 2a9e58d8fe4612142be5e65cca2fbbb4, type: 2}
     Time: 19
   StateTransitions:
-  - MaxTime: 60
-    TransitionWindow: {x: 40, y: 60}
+  - MaxTime: 50
+    TransitionWindow: {x: 40, y: 50}
     TransitionType: 0
     TransitionState: {fileID: 11400000, guid: c9212f31b7ffa744f89603487bdf4283, type: 2}
   MotionCurve:
@@ -116,16 +116,25 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 0
         weightedMode: 0
         inWeight: 0
-        outWeight: 0.33333334
+        outWeight: 0
       - serializedVersion: 3
-        time: 1
-        value: 0
+        time: 7.8986044
+        value: 1.006875
+        inSlope: -Infinity
+        outSlope: -Infinity
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      - serializedVersion: 3
+        time: 60.247932
+        value: 1.006875
         inSlope: 0
         outSlope: 0
         tangentMode: 34
@@ -345,7 +354,7 @@ MonoBehaviour:
     TurnAroundTime: 10
     TrackingResistance: 0
   hitboxes:
-  - MaxTime: 60
+  - MaxTime: 50
     ActionTarget: 2
     RefreshID: 1
     ShareID: 1
@@ -353,7 +362,7 @@ MonoBehaviour:
     ShareIncomingHitboxes: 1
     Hitbox: 0
     HitboxGroup: 1
-    ActiveFrames: {x: 19, y: 30}
+    ActiveFrames: {x: 25, y: 35}
     StatusEffects: []
     Damage: 6
     FlatDamage: 0
@@ -365,8 +374,8 @@ MonoBehaviour:
     HitstopType: 0
     BreakthroughType: 0
     KnockbackType: 0
-    KnockbackStrength: 7
-    KnockbackDirection: {x: 0, y: 0, z: 1}
+    KnockbackStrength: 5
+    KnockbackDirection: {x: 0, y: 1, z: 0.25}
     HitboxProcesses:
     - {fileID: 11400000, guid: c5f583890bd62744aaaa6cccd8409ef4, type: 2}
   TangibilityFrames: []
@@ -377,3 +386,4 @@ MonoBehaviour:
   - {fileID: 4431882959470827133, guid: 4aa7fec143d7c5345ae147d66d87bf6f, type: 3}
   HitFX: {fileID: 11400000, guid: 8143ff93377cd8b459947b83fe436c3f, type: 2}
   Projectiles: []
+  LockRotation: 0

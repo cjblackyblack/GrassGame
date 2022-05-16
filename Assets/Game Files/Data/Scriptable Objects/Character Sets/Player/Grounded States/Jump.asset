@@ -21,9 +21,9 @@ MonoBehaviour:
   SFX:
   - SFX: {fileID: 11400000, guid: 1bf0104d42bbbc84fa9bf14a95c36fe9, type: 2}
     Time: 5
-  JumpFrame: 5
+  JumpFrame: 3
   JumpSquatFriction: 0.75
-  JumpPower: 15
+  JumpPower: 13
   JumpScalableForwardSpeed: 1.5
   jumpCapsuleResume: 60
   FallVelocity: 1
@@ -138,3 +138,20 @@ MonoBehaviour:
       m_RotationOrder: 4
     TurnAroundTime: 0
     TrackingResistance: 0
+  StateTransitions:
+  - MaxTime: 15
+    TransitionWindow: {x: 4, y: 7}
+    TransitionType: 2
+    TransitionState: {fileID: 11400000, guid: 00d41ca3b46bd8d41a835f91e35900f8, type: 2}
+  - MaxTime: 15
+    TransitionWindow: {x: 4, y: 7}
+    TransitionType: 3
+    TransitionState: {fileID: 11400000, guid: 00d41ca3b46bd8d41a835f91e35900f8, type: 2}
+  - MaxTime: 15
+    TransitionWindow: {x: 8, y: 15}
+    TransitionType: 2
+    TransitionState: {fileID: 11400000, guid: 1de7917f1b0f6f84b9f7708ec196d88e, type: 2}
+  - MaxTime: 15
+    TransitionWindow: {x: 8, y: 15}
+    TransitionType: 3
+    TransitionState: {fileID: 11400000, guid: 1de7917f1b0f6f84b9f7708ec196d88e, type: 2}

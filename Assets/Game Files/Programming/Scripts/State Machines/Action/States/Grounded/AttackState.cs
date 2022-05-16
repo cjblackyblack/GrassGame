@@ -14,6 +14,7 @@ public class AttackState : SmartState
 	public GameObject[] HitParticles = new GameObject[4];// match index to PhysicalTangibility Enum for reaction none for intangible ever
 	public SFX HitFX;
 	public ProjectileContainer[] Projectiles;
+	public bool LockRotation;
 
 	public override void OnEnter(SmartObject smartObject)
 	{
@@ -21,7 +22,8 @@ public class AttackState : SmartState
 
 		//smartObject.Controller.Button1Buffer = 0;
 
-		smartObject.MovementVector = smartObject.MovementVector == Vector3.zero ? smartObject.Motor.CharacterForward : smartObject.InputVector.normalized;
+		if(!LockRotation)
+			smartObject.MovementVector = smartObject.MovementVector == Vector3.zero ? smartObject.Motor.CharacterForward : smartObject.InputVector.normalized;
 		smartObject.LocomotionStateMachine.ChangeLocomotionState(LocomotionStates.Grounded);
 	}
 
@@ -44,11 +46,11 @@ public class AttackState : SmartState
 
 	public override void UpdateRotation(SmartObject smartObject, ref Quaternion currentRotation, float deltaTime)
     {
-		Vector3 smoothedLookInputDirection = Vector3.Slerp(smartObject.Motor.CharacterForward, MotionCurve.Rotation(smartObject), 1 - Mathf.Exp(-100 * deltaTime)).normalized;
+		Vector3 smoothedLookInputDirection = Vector3.Slerp(smartObject.Motor.CharacterForward, LockRotation ? smartObject.Motor.CharacterForward : MotionCurve.Rotation(smartObject), 1 - Mathf.Exp(-100 * deltaTime)).normalized;
 
 		currentRotation = Quaternion.LookRotation(smoothedLookInputDirection, smartObject.Motor.CharacterUp);
 
-		if (smartObject.Target && Vector3.Distance(smartObject.transform.position, smartObject.Target.transform.position) > 0.8f)
+		if (smartObject.Target && Vector3.Distance(smartObject.transform.position, smartObject.Target.transform.position) > 0.8f && !LockRotation)
 		{
 			if (MotionCurve.RotationTrackingCurve.Evaluate(smartObject.CurrentFrame) > 0)
 				currentRotation = MotionCurve.TrackingRotation(smartObject, 35);
@@ -57,19 +59,20 @@ public class AttackState : SmartState
 		smartObject.LocomotionStateMachine.CurrentLocomotionState.CalculateCharacterUp(smartObject, ref currentRotation, deltaTime);
 	}
 
-    public override void UpdateVelocity(SmartObject smartObject, ref Vector3 currentVelocity, float deltaTime)
-    {
+	public override void UpdateVelocity(SmartObject smartObject, ref Vector3 currentVelocity, float deltaTime)
+	{
+		
 			currentVelocity = MotionCurve.GetFixedTotalCurve(smartObject);
 			if (smartObject.Target != null)
 				currentVelocity += MotionCurve.TrackingVelocity(smartObject);
 
 
-			if (smartObject.CurrentFrame < MotionCurve.TurnAroundTime && (smartObject.InputVector != Vector3.zero) && !smartObject.Target && smartObject.OrientationMethod != OrientationMethod.TowardsCamera)
+			if (smartObject.CurrentFrame < MotionCurve.TurnAroundTime && (smartObject.InputVector != Vector3.zero) && !smartObject.Target && smartObject.OrientationMethod != OrientationMethod.TowardsCamera && !LockRotation)
 			{
-					smartObject.Motor.RotateCharacter(MotionCurve.TurnAroundRotation(smartObject, ref currentVelocity, true));
+				smartObject.Motor.RotateCharacter(MotionCurve.TurnAroundRotation(smartObject, ref currentVelocity, true));
 			}
 
-			float currentVelocityMagnitude = currentVelocity.magnitude;																						
+			float currentVelocityMagnitude = currentVelocity.magnitude;
 
 			Vector3 effectiveGroundNormal = smartObject.Motor.GroundingStatus.GroundNormal;
 			if (currentVelocityMagnitude > 0f && smartObject.Motor.GroundingStatus.SnappingPrevented)
@@ -95,8 +98,10 @@ public class AttackState : SmartState
 			Vector3 targetMovementVelocity = reorientedInput * 1;
 
 			// Smooth movement Velocity
-			currentVelocity = Vector3.Lerp(currentVelocity, targetMovementVelocity, 1f - Mathf.Exp(-1000 * deltaTime));	
+			currentVelocity = Vector3.Lerp(currentVelocity, targetMovementVelocity, 1f - Mathf.Exp(-1000 * deltaTime));
+		
 	}
+
 
     public override void AfterCharacterUpdate(SmartObject smartObject, float deltaTime)
 	{
@@ -107,8 +112,13 @@ public class AttackState : SmartState
 		CreateBodyVFX(smartObject);
 		CreateSFX(smartObject);
 
-        if (smartObject.CurrentFrame > MaxTime)
-            smartObject.ActionStateMachine.ChangeActionState(ActionStates.Idle);
+		if (smartObject.CurrentFrame > MaxTime)
+		{
+			smartObject.PreviousAttackBuffer = smartObject.PreviousAttackTime;
+			smartObject.PreviousAttack = this;
+			smartObject.ActionStateMachine.ChangeActionState(ActionStates.Idle);
+		}
+
 		if(StateTransitions != null)
 			for (int i = 0; i < StateTransitions.Length; i++)
 				if (StateTransitions[i].CanTransition(smartObject))

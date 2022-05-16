@@ -140,4 +140,14 @@ public class JumpState : SmartState
         smartObject.ActiveAirTime = 1;
         smartObject.CurrentAirTime = 1;
     }
+
+  private void OnValidate()
+  {
+
+    if (StateTransitions.Length > 0)
+    {
+      for (int i = 0; i < StateTransitions.Length; i++)
+        StateTransitions[i].MaxTime = MaxTime;
+    }
+  }
 }
