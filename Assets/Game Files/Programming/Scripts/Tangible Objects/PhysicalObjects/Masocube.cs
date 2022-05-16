@@ -6,13 +6,18 @@ using UnityEngine;
 
 public class Masocube : PhysicalObject
 {
+	public int massCount;
+
 	private void FixedUpdate()
 	{
+		RBody.mass = massCount > 0 ? 2 : 10;
 
+		if (massCount > 0)
+			massCount--;
 	}
 	public override void TakeDamage(ref DamageInstance damageInstance)
 	{
-
+		massCount = damageInstance.hitStun;
 		StartCoroutine(TakeKnockback(((damageInstance.knockbackDirection.x * damageInstance.origin.transform.right) + (damageInstance.knockbackDirection.y * damageInstance.origin.transform.up) + (damageInstance.knockbackDirection.z * damageInstance.origin.transform.forward)) * damageInstance.knockbackStrength * RBody.mass));
 		//Debug.Log(((damageInstance.knockbackDirection.x * damageInstance.origin.transform.right) + (damageInstance.knockbackDirection.y * damageInstance.origin.transform.up) + (damageInstance.knockbackDirection.z * damageInstance.origin.transform.forward)) * damageInstance.knockbackStrength);
 	}

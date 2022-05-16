@@ -27,6 +27,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -43,15 +44,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c122224900a334bd7b15e0923fe4ae28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carrierMesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  carrierMesh: {fileID: -858141808492621082, guid: c2ca52fbc3b0e4926867f875455f2d9e,
+    type: 3}
   particleMesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
   carrierScale: {x: 0.05, y: 0.05, z: 0.05}
   particleScale: {x: 1, y: 1, z: 1}
   particleScaleVariance: 0.2
   numParticles: 50
+  carrierSampling: 0
   offsetAlongNormal: 0
-  oneNormalPerParticle: 0
+  offsetAlongNormalFraction: 1
   particleRotationRange: 15
+  oneNormalPerParticle: 0
   particleRotationBias: 0
   biasTowardRotation: {x: 0, y: 0, z: 0}
   noiseEnabled: 1
@@ -67,4 +71,3 @@ MonoBehaviour:
   takeNumber: 1
   appendTimestamp: 0
   exportOnEdit: 0
-  exportDebugMesh: 0

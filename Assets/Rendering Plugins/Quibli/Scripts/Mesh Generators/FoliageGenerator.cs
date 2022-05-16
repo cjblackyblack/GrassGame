@@ -140,7 +140,7 @@ public class FoliageGenerator : MonoBehaviour {
         if (exportOnEdit) ExportMesh();
     }
 
-    [Button]
+    [Sirenix.OdinInspector.Button]
     private void ExportMesh() {
         // Validate input.
         if (carrierMesh == null || particleMesh == null) {

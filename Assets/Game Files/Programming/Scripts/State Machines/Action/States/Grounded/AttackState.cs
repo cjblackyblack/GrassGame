@@ -166,18 +166,21 @@ public class AttackState : SmartState
 		{
 			case PhysicalObjectTangibility.Normal:
 				{
-					CreateHitFX(0, hitbox);
+					if (!hurtBox.SourceObject.IgnoreHitFX)
+						CreateHitFX(0, hitbox);
 				}
 				break;
 			case PhysicalObjectTangibility.Armor:
 				{
 					if (FlagsExtensions.HasFlag(hitbox.DamageInstance.breakthroughType, BreakthroughType.ArmorPierce))
 					{
-						CreateHitFX(0, hitbox);
+						if (!hurtBox.SourceObject.IgnoreHitFX)
+							CreateHitFX(0, hitbox);
 					}
 					else
 					{
-						CreateHitFX(1, hitbox);
+						if (!hurtBox.SourceObject.IgnoreHitFX)
+							CreateHitFX(1, hitbox);
 					}
 				}
 				break;
@@ -185,7 +188,8 @@ public class AttackState : SmartState
 				{
 					if(FlagsExtensions.HasFlag(hitbox.DamageInstance.breakthroughType, BreakthroughType.GuardPierce) || hitbox.DamageInstance.unstoppable)
 					{
-						CreateHitFX(0, hitbox);
+						if (!hurtBox.SourceObject.IgnoreHitFX)
+							CreateHitFX(0, hitbox);
 					}
 					else
 					{
