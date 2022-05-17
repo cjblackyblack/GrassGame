@@ -16,7 +16,12 @@ MonoBehaviour:
   AnimationTransitionTime: 0
   AnimationTransitionOffset: 0
   MaxTime: 46
-  VFX: []
+  VFX:
+  - VFX: {fileID: 1044676084169334, guid: 554da7648315d7f4e8c5313fa6b77a7b, type: 3}
+    Position: {x: 0, y: 0.5, z: 0}
+    Rotation: {x: 90, y: 0, z: 0}
+    Time: 10
+    Local: 1
   BodyVFX: []
   SFX:
   - SFX: {fileID: 11400000, guid: 2a9e58d8fe4612142be5e65cca2fbbb4, type: 2}
@@ -60,8 +65,8 @@ MonoBehaviour:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 5
-        value: 2.5
+        time: 2.5792332
+        value: -2.4900904
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 0
@@ -69,7 +74,16 @@ MonoBehaviour:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 20
+        time: 5
+        value: 8.808979
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 14.099808
         value: 1.7857143
         inSlope: Infinity
         outSlope: Infinity

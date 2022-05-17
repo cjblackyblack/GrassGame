@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3897031178721612157}
-  - component: {fileID: 3897031178721612158}
+  - component: {fileID: 5700536625697678917}
   - component: {fileID: 3897031178721612159}
   m_Layer: 0
   m_Name: Grass Object
@@ -63,10 +63,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3897031178026809516}
+  - {fileID: 2056150528193216883}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3897031178721612158
+--- !u!114 &5700536625697678917
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -75,12 +76,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3897031178721612032}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62165f637a509fa4a8f2c78db3001a86, type: 3}
+  m_Script: {fileID: 11500000, guid: 004b02cf05b77574f931248c61007c2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Stats:
-    HP: 0
-    MaxHP: 0
+    HP: 1
+    MaxHP: 1
     MP: 0
     MaxMP: 0
     Strength: 0
@@ -100,9 +101,17 @@ MonoBehaviour:
     Resistances: 0
     Immunities: 0
   LocalTimeScale: 0
-  Hurtboxes: []
+  Hurtboxes:
+  - {fileID: 4837784233635969903}
   Hitboxes: []
   TargetPosiitions: []
+  IgnoreHitFX: 1
+  FullGrass: {fileID: 2100000, guid: 0d64e82f59d2e904ca2571013b2a88ae, type: 2}
+  CutGrass: {fileID: 2100000, guid: 3281addfe7be9794bace75b1fcbdabac, type: 2}
+  regrowTime: 600
+  LODGroup: {fileID: 5506370609822926553}
+  GrassVFX: {fileID: 8596753428718819447, guid: cf108013385811a449e1b7934679bf78,
+    type: 3}
 --- !u!135 &3897031178721612159
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -186,13 +195,120 @@ PrefabInstance:
     - target: {fileID: 2087076252537684126, guid: 6ab3af63e010ed84bb504c5f6e212936,
         type: 3}
       propertyPath: m_LODs.Array.data[2].screenRelativeHeight
-      value: 0.04
+      value: 0.02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ab3af63e010ed84bb504c5f6e212936, type: 3}
+--- !u!205 &5506370609822926553 stripped
+LODGroup:
+  m_CorrespondingSourceObject: {fileID: 2087076252537684126, guid: 6ab3af63e010ed84bb504c5f6e212936,
+    type: 3}
+  m_PrefabInstance: {fileID: 5808594784722093639}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5881138090249108617 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 72543305646029518, guid: 6ab3af63e010ed84bb504c5f6e212936,
     type: 3}
   m_PrefabInstance: {fileID: 5808594784722093639}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7487563194989776396
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3897031178721612157}
+    m_Modifications:
+    - target: {fileID: 999837032321214607, guid: 52edbb59cef18984ba92accd49653886,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7137582198185224957, guid: 52edbb59cef18984ba92accd49653886,
+        type: 3}
+      propertyPath: m_Name
+      value: Hurtbox - Capsule
+      objectReference: {fileID: 0}
+    - target: {fileID: 8890599400902479743, guid: 52edbb59cef18984ba92accd49653886,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8890599400902479743, guid: 52edbb59cef18984ba92accd49653886,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8890599400902479743, guid: 52edbb59cef18984ba92accd49653886,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8890599400902479743, guid: 52edbb59cef18984ba92accd49653886,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8890599400902479743, guid: 52edbb59cef18984ba92accd49653886,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8890599400902479743, guid: 52edbb59cef18984ba92accd49653886,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8890599400902479743, guid: 52edbb59cef18984ba92accd49653886,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8890599400902479743, guid: 52edbb59cef18984ba92accd49653886,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8890599400902479743, guid: 52edbb59cef18984ba92accd49653886,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8890599400902479743, guid: 52edbb59cef18984ba92accd49653886,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8890599400902479743, guid: 52edbb59cef18984ba92accd49653886,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8890599400902479743, guid: 52edbb59cef18984ba92accd49653886,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8890599400902479743, guid: 52edbb59cef18984ba92accd49653886,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8890599400902479743, guid: 52edbb59cef18984ba92accd49653886,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 52edbb59cef18984ba92accd49653886, type: 3}
+--- !u!4 &2056150528193216883 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8890599400902479743, guid: 52edbb59cef18984ba92accd49653886,
+    type: 3}
+  m_PrefabInstance: {fileID: 7487563194989776396}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &4837784233635969903 stripped
+CapsuleCollider:
+  m_CorrespondingSourceObject: {fileID: 2651045881456686435, guid: 52edbb59cef18984ba92accd49653886,
+    type: 3}
+  m_PrefabInstance: {fileID: 7487563194989776396}
   m_PrefabAsset: {fileID: 0}

@@ -12,4 +12,9 @@ public class SFX : ScriptableObject
 	{
 		tangibleObject.AudioSource.PlayOneShot(PossibleClips[Random.Range(0,PossibleClips.Length)], Random.Range(PitchRange.x, PitchRange.y));
 	}
+
+	public void PlaySFX(AudioSource audioSource)
+	{
+		audioSource.PlayOneShot(PossibleClips[Random.Range(0, PossibleClips.Length)], Random.Range(PitchRange.x, PitchRange.y));
+	}
 }

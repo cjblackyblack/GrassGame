@@ -1,0 +1,34 @@
+fileFormatVersion: 2
+guid: d469a9cb2152e8b42abea62ca4fccb25
+labels:
+- hourglass
+- item
+- object
+- clock
+- timer
+- time
+- fantasy
+- loot
+- audio
+- pack
+- sound
+- effects
+timeCreated: 1461247454
+licenseType: Store
+AudioImporter:
+  serializedVersion: 6
+  defaultSettings:
+    loadType: 0
+    sampleRateSetting: 0
+    sampleRateOverride: 44100
+    compressionFormat: 1
+    quality: 1
+    conversionMode: 0
+  platformSettingOverrides: {}
+  forceToMono: 0
+  preloadAudioData: 1
+  loadInBackground: 0
+  3D: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

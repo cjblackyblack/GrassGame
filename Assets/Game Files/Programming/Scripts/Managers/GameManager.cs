@@ -93,6 +93,7 @@ public class GameManager : Singleton<GameManager>
 				{
 					if (PreviousGameState == GameState.Paused)
 						Pause(false);
+					AudioManager.Instance.PlayMusic(true, true);
 					break;
 				}
 			case GameState.Paused:

@@ -11,6 +11,7 @@ public class GrassObject : TangibleObject
 	int regrowCounter;
 
 	public LODGroup LODGroup;
+	public GameObject GrassVFX;
 
 	private void FixedUpdate()
 	{
@@ -19,6 +20,7 @@ public class GrassObject : TangibleObject
 
 		if(regrowCounter == 1)
 		{
+			Stats.HP = Stats.MaxHP;
 			foreach(MeshRenderer meshRenderer in LODGroup.transform.GetComponentsInChildren<MeshRenderer>())
 			{
 				meshRenderer.material = FullGrass;
@@ -28,10 +30,21 @@ public class GrassObject : TangibleObject
 	public override void TakeDamage(ref DamageInstance damageInstance)
 	{
 		//base.TakeDamage(ref damageInstance);
-		regrowCounter = regrowTime;
-		foreach (MeshRenderer meshRenderer in LODGroup.transform.GetComponentsInChildren<MeshRenderer>())
+		if (Stats.HP <= 0)
+			return;
+
+		Stats.HP--;
+		EntityManager.Instance.GrassFX();
+
+
+		if (Stats.HP <= 0)
 		{
-			meshRenderer.material = CutGrass;
+			Instantiate(GrassVFX, transform.position, GrassVFX.transform.rotation);
+			regrowCounter = regrowTime;
+			foreach (MeshRenderer meshRenderer in LODGroup.transform.GetComponentsInChildren<MeshRenderer>())
+			{
+				meshRenderer.material = CutGrass;
+			}
 		}
 	}
 }
