@@ -23,6 +23,7 @@ public class AerialAttackState : SmartState
 		smartObject.MovementVector = smartObject.MovementVector == Vector3.zero ? smartObject.Motor.CharacterForward : smartObject.InputVector.normalized;
 		smartObject.Motor.BaseVelocity *= EntryFriction;
 		smartObject.LocomotionStateMachine.ChangeLocomotionState(LocomotionStates.Aerial);
+		//smartObject.Motor.SetGroundSolvingActivation(true);
 	}
 
 	public override void OnExit(SmartObject smartObject)
@@ -106,10 +107,12 @@ public class AerialAttackState : SmartState
 		// Prevent air-climbing sloped walls
 		if (smartObject.Motor.GroundingStatus.FoundAnyGround)
 		{
+			Debug.Log("hitting something");
 			if (Vector3.Dot(currentVelocity + addedVelocity, addedVelocity) > 0f)
 			{
 				Vector3 perpenticularObstructionNormal = Vector3.Cross(Vector3.Cross(smartObject.Motor.CharacterUp, smartObject.Motor.GroundingStatus.GroundNormal), smartObject.Motor.CharacterUp).normalized;
 				addedVelocity = Vector3.ProjectOnPlane(addedVelocity, perpenticularObstructionNormal);
+				Debug.Log("preventing air climbing in attack");
 			}
 		}
 

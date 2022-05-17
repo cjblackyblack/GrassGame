@@ -14,8 +14,9 @@ public class LocomotionAerialState : LocomotionState
     public float RotationInfluence;
     public AnimationCurve CollisionHeight;
     public AnimationCurve CollisionYOffset;
+  public AnimationCurve Radius;
 
-    public override void OnEnter(SmartObject smartObject)
+  public override void OnEnter(SmartObject smartObject)
 	{
         smartObject.Motor.StepHandling = KinematicCharacterController.StepHandlingMethod.None;
 
@@ -71,7 +72,7 @@ public class LocomotionAerialState : LocomotionState
     {
         float yVel = Vector3.Project(currentVelocity, smartObject.Motor.CharacterUp).y;
 
-        //smartObject.Motor.SetCapsuleDimensions(smartObject.CharacterRadius, CollisionHeight.Evaluate(yVel), CollisionYOffset.Evaluate(yVel));
+        //smartObject.Motor.SetCapsuleDimensions(Radius.Evaluate(yVel), CollisionHeight.Evaluate(yVel), CollisionYOffset.Evaluate(yVel));
 
 
         // Gravity
@@ -156,13 +157,15 @@ public class LocomotionAerialState : LocomotionState
                 }
             }
 
-            // Prevent air-climbing sloped walls
-            if (smartObject.Motor.GroundingStatus.FoundAnyGround)
-            {
+    // Prevent air-climbing sloped walls
+    if (smartObject.Motor.GroundingStatus.FoundAnyGround)
+    {
+
                 if (Vector3.Dot(currentVelocity + addedVelocity, addedVelocity) > 0f)
                 {
                     Vector3 perpenticularObstructionNormal = Vector3.Cross(Vector3.Cross(smartObject.Motor.CharacterUp, smartObject.Motor.GroundingStatus.GroundNormal), smartObject.Motor.CharacterUp).normalized;
                     addedVelocity = Vector3.ProjectOnPlane(addedVelocity, perpenticularObstructionNormal);
+        //Debug.Log("preventing climbing");
                 }
             }
 
