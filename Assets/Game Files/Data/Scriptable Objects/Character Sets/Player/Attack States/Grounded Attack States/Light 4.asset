@@ -17,12 +17,28 @@ MonoBehaviour:
   AnimationTransitionOffset: 0
   MaxTime: 46
   VFX:
-  - VFX: {fileID: 1044676084169334, guid: 554da7648315d7f4e8c5313fa6b77a7b, type: 3}
-    Position: {x: 0, y: 0.5, z: 0}
-    Rotation: {x: 90, y: 0, z: 0}
-    Time: 10
+  - VFX: {fileID: 1494690074406284, guid: 9c67dbbc9dcaaa447964c83e081413c3, type: 3}
+    Position: {x: 0, y: 0.4, z: 0}
+    Rotation: {x: -90, y: 0, z: 90}
+    Time: 8
     Local: 1
-  BodyVFX: []
+  - VFX: {fileID: 1494690074406284, guid: 7a379566a84b8484dbed65ff2cd1832e, type: 3}
+    Position: {x: 0, y: 0.6, z: 0}
+    Rotation: {x: -90, y: 0, z: 270}
+    Time: 12
+    Local: 1
+  - VFX: {fileID: 1226274352160944, guid: 05825ef2958fa3d45a48307c908328bb, type: 3}
+    Position: {x: 0, y: 0.6, z: 0}
+    Rotation: {x: -90, y: 0, z: -120}
+    Time: 12
+    Local: 0
+  BodyVFX:
+  - BodyVFX: 0
+    Time: 12
+    Toggle: 1
+  - BodyVFX: 0
+    Time: 25
+    Toggle: 0
   SFX:
   - SFX: {fileID: 11400000, guid: 2a9e58d8fe4612142be5e65cca2fbbb4, type: 2}
     Time: 20
@@ -30,7 +46,7 @@ MonoBehaviour:
   - MaxTime: 46
     TransitionWindow: {x: 38, y: 46}
     TransitionType: 0
-    TransitionState: {fileID: 0}
+    TransitionState: {fileID: 11400000, guid: c9212f31b7ffa744f89603487bdf4283, type: 2}
   MotionCurve:
     ForwardCurve:
       serializedVersion: 2

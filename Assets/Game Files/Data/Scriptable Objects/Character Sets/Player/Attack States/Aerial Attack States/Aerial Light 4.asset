@@ -16,7 +16,22 @@ MonoBehaviour:
   AnimationTransitionTime: 0
   AnimationTransitionOffset: 0
   MaxTime: 55
-  VFX: []
+  VFX:
+  - VFX: {fileID: 1494690074406284, guid: 7a379566a84b8484dbed65ff2cd1832e, type: 3}
+    Position: {x: 0, y: 0, z: 0}
+    Rotation: {x: 0, y: -90, z: -30}
+    Time: 8
+    Local: 1
+  - VFX: {fileID: 1494690074406284, guid: 7a379566a84b8484dbed65ff2cd1832e, type: 3}
+    Position: {x: 0, y: 0, z: 0}
+    Rotation: {x: 0, y: -90, z: 150}
+    Time: 12
+    Local: 1
+  - VFX: {fileID: 1226274352160944, guid: 05825ef2958fa3d45a48307c908328bb, type: 3}
+    Position: {x: 0, y: 0, z: 0}
+    Rotation: {x: 0, y: -90, z: 20}
+    Time: 15
+    Local: 1
   BodyVFX: []
   SFX:
   - SFX: {fileID: 11400000, guid: 56be89a7018ac3644be8a5abc485ae54, type: 2}
@@ -328,3 +343,4 @@ MonoBehaviour:
   - {fileID: 4431882959470827133, guid: 4aa7fec143d7c5345ae147d66d87bf6f, type: 3}
   HitFX: {fileID: 11400000, guid: 8143ff93377cd8b459947b83fe436c3f, type: 2}
   EntryFriction: 0.2
+  CollisionFriction: 0.3

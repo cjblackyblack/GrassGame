@@ -507,17 +507,6 @@
                 },
                 {
                     "name": "",
-                    "id": "61ab1ea8-7c90-483e-81b8-861afcd98a1e",
-                    "path": "<Mouse>/delta",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Look",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "c6339ad9-aef4-4ce0-8bc7-aa6bd2a91cab",
                     "path": "<Gamepad>/rightStickPress",
                     "interactions": "",

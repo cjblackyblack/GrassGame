@@ -1,3 +1,4 @@
+using KinematicCharacterController;
 using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ public class AerialAttackState : SmartState
 	public GameObject[] HitParticles = new GameObject[4];// match index to PhysicalTangibility Enum for reaction none for intangible ever
 	public SFX HitFX;
 	public float EntryFriction;
-
+	public float CollisionFriction;
 	public override void OnEnter(SmartObject smartObject)
 	{
 		base.OnEnter(smartObject);
@@ -78,6 +79,7 @@ public class AerialAttackState : SmartState
 		}
 
 		currentVelocity = calculatedVelocity + storedVerticalVelocity;
+		smartObject.CachedAerialVelocity = currentVelocity;
 
 		if (smartObject.CurrentFrame < MotionCurve.TurnAroundTime && (smartObject.InputVector != Vector3.zero) && !smartObject.Target && smartObject.OrientationMethod != OrientationMethod.TowardsCamera)
 		{
@@ -101,24 +103,41 @@ public class AerialAttackState : SmartState
 			if (Vector3.Dot(currentVelocityOnInputsPlane, addedVelocity) > 0f)
 			{
 				addedVelocity = Vector3.ProjectOnPlane(addedVelocity, currentVelocityOnInputsPlane.normalized);
+
 			}
 		}
 
 		// Prevent air-climbing sloped walls
 		if (smartObject.Motor.GroundingStatus.FoundAnyGround)
 		{
-			Debug.Log("hitting something");
+			//Debug.Log("hitting something");
 			if (Vector3.Dot(currentVelocity + addedVelocity, addedVelocity) > 0f)
 			{
 				Vector3 perpenticularObstructionNormal = Vector3.Cross(Vector3.Cross(smartObject.Motor.CharacterUp, smartObject.Motor.GroundingStatus.GroundNormal), smartObject.Motor.CharacterUp).normalized;
 				addedVelocity = Vector3.ProjectOnPlane(addedVelocity, perpenticularObstructionNormal);
-				Debug.Log("preventing air climbing in attack");
+				//Debug.Log("preventing air climbing in attack");
 			}
 		}
 
 		// Apply added velocity
 		currentVelocity += addedVelocity;
 	}
+
+	public override void OnMovementHit(SmartObject smartObject, Collider hitCollider, Vector3 hitNormal, Vector3 hitPoint, ref HitStabilityReport hitStabilityReport)
+	{
+		if (!smartObject.Motor.GroundingStatus.IsStableOnGround && !hitStabilityReport.IsStable && Vector3.Dot(smartObject.Motor.CharacterUp, smartObject.Motor.BaseVelocity) > 0.25f)
+			//&& Vector3.Project(smartObject.Motor.BaseVelocity, smartObject.Motor.CharacterUp).y > MotionCurve.VerticalCurve.Evaluate(smartObject.CurrentFrame))
+		{
+			smartObject.Motor.BaseVelocity.y *= CollisionFriction;
+
+		}
+		if (Vector3.Dot(smartObject.Motor.CharacterForward.normalized, hitNormal) < -0.5f)
+		{
+			smartObject.Motor.BaseVelocity.x *= CollisionFriction;
+			smartObject.Motor.BaseVelocity.z *= CollisionFriction;
+		}
+	}
+
 
 	public override void AfterCharacterUpdate(SmartObject smartObject, float deltaTime)
 	{

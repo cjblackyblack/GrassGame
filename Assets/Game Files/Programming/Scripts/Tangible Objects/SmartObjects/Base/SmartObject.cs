@@ -76,7 +76,7 @@ public class SmartObject : PhysicalObject, ICharacterController
 	public int PreviousAttackBuffer;
 	public int PreviousAttackTime = 6;
 	public SmartState PreviousAttack;
-
+	public Vector3 CachedAerialVelocity;
 	public override void Start()
 	{
 		base.Start();
@@ -371,18 +371,20 @@ public class SmartObject : PhysicalObject, ICharacterController
 
 	public virtual void ToggleBodyVFX(BodyVFX bodyVFX, bool toggle)
 	{
-		//switch (bodyVFX)
-		//{
-		//	case BodyVFX.Weapon1:
-		//		{
-		//			BodyReferences.Weapon1.SetActive(toggle);
-		//			break;
-		//		}
-		//	case BodyVFX.Weapon2:
-		//		{
-		//			BodyReferences.Weapon2.SetActive(toggle);
-		//			break;
-		//		}
-		//}
-	}	
+		switch (bodyVFX)
+		{
+			case BodyVFX.Weapon1:
+				{
+					if(BodyReferences.Weapon1 != null)
+						BodyReferences.Weapon1.SetActive(toggle);
+					break;
+				}
+			case BodyVFX.Weapon2:
+				{
+					if (BodyReferences.Weapon2 != null)
+						BodyReferences.Weapon2.SetActive(toggle);
+					break;
+				}
+		}
+	}
 }

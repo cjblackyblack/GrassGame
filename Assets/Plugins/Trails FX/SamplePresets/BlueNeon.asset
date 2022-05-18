@@ -3,8 +3,9 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -19,6 +20,8 @@ MonoBehaviour:
   smooth: 0
   checkWorldPosition: 0
   minDistance: 0.1
+  worldPositionRelativeOption: 0
+  worldPositionRelativeTransform: {fileID: 0}
   checkScreenPosition: 1
   minPixelDistance: 10
   maxStepsPerFrame: 12
@@ -32,6 +35,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   drawBehind: 1
+  subMeshMask: -1
+  cullMode: 2
   colorOverTime:
     serializedVersion: 2
     key0: {r: 0.25735295, g: 0.3834132, b: 1, a: 1}
@@ -95,7 +100,7 @@ MonoBehaviour:
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
   cam: {fileID: 0}
-  effect: 5
+  effect: 0
   texture: {fileID: 2800000, guid: 5d67d51a1e4c947a2aaebc1c814a3b7c, type: 3}
   scale: {x: 1, y: 1, z: 1}
   scaleStartRandomMin: {x: 1, y: 1, z: 1}
@@ -103,18 +108,24 @@ MonoBehaviour:
   scaleOverTime:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 2
+    - serializedVersion: 3
       time: 0
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-    - serializedVersion: 2
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
       time: 1
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -124,10 +135,12 @@ MonoBehaviour:
   laserBandWidth: 0.2
   laserIntensity: 20
   laserFlash: 0.1
+  trailTint: {r: 0, g: 0, b: 0.1, a: 1}
   lookTarget: {fileID: 0}
   lookToCamera: 1
   textureCutOff: 0.5
   normalThreshold: 0.1
   useLastAnimationState: 0
   maxBatches: 15
+  meshPoolSize: 256
   animationStates: 

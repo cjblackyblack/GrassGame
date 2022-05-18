@@ -17,12 +17,23 @@ MonoBehaviour:
   AnimationTransitionOffset: 0
   MaxTime: 56
   VFX:
-  - VFX: {fileID: 1044676084169334, guid: 554da7648315d7f4e8c5313fa6b77a7b, type: 3}
-    Position: {x: 0, y: 0.5, z: 0}
-    Rotation: {x: 90, y: 0, z: 0}
+  - VFX: {fileID: 1875751387468568, guid: 543d278f0510e89479b75f0882dcf22d, type: 3}
+    Position: {x: 0, y: 0.5, z: 0.1}
+    Rotation: {x: 0, y: -90, z: 0}
     Time: 10
     Local: 1
-  BodyVFX: []
+  - VFX: {fileID: 1875751387468568, guid: 543d278f0510e89479b75f0882dcf22d, type: 3}
+    Position: {x: 0, y: 0.5, z: 0.1}
+    Rotation: {x: 0, y: -90, z: 0}
+    Time: 20
+    Local: 1
+  BodyVFX:
+  - BodyVFX: 0
+    Time: 10
+    Toggle: 1
+  - BodyVFX: 0
+    Time: 30
+    Toggle: 0
   SFX:
   - SFX: {fileID: 11400000, guid: 2a9e58d8fe4612142be5e65cca2fbbb4, type: 2}
     Time: 19
@@ -45,8 +56,8 @@ MonoBehaviour:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 3.2566154
-        value: -2.8178449
+        time: 3.9827724
+        value: -4.1033397
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 0
@@ -54,17 +65,17 @@ MonoBehaviour:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 6.7657533
+        time: 6.130366
         value: 0
-        inSlope: Infinity
-        outSlope: Infinity
+        inSlope: -Infinity
+        outSlope: -Infinity
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.33333334
+        outWeight: 0
       - serializedVersion: 3
         time: 12.527494
-        value: 6.9591327
+        value: 9.277906
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 0
@@ -72,7 +83,7 @@ MonoBehaviour:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 27.2722
+        time: 25.417377
         value: 4.073541
         inSlope: Infinity
         outSlope: Infinity
@@ -367,7 +378,31 @@ MonoBehaviour:
     ShareIncomingHitboxes: 1
     Hitbox: 0
     HitboxGroup: 1
-    ActiveFrames: {x: 19, y: 30}
+    ActiveFrames: {x: 19, y: 25}
+    StatusEffects: []
+    Damage: 6
+    FlatDamage: 0
+    IgnoreProtections: 0
+    UseMagic: 0
+    Unstoppable: 0
+    Hitstun: 30
+    HitStopTime: 0.04
+    HitstopType: 0
+    BreakthroughType: 0
+    KnockbackType: 0
+    KnockbackStrength: 7
+    KnockbackDirection: {x: 0, y: 0, z: 1}
+    HitboxProcesses:
+    - {fileID: 11400000, guid: c5f583890bd62744aaaa6cccd8409ef4, type: 2}
+  - MaxTime: 56
+    ActionTarget: 2
+    RefreshID: 1
+    ShareID: 1
+    AttackBoxesIndividually: 0
+    ShareIncomingHitboxes: 1
+    Hitbox: 0
+    HitboxGroup: 0
+    ActiveFrames: {x: 26, y: 30}
     StatusEffects: []
     Damage: 6
     FlatDamage: 0
