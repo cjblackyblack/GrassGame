@@ -16,8 +16,44 @@ MonoBehaviour:
   AnimationTransitionTime: 0
   AnimationTransitionOffset: 0
   MaxTime: 96
-  VFX: []
-  BodyVFX: []
+  VFX:
+  - VFX: {fileID: 1494690074406284, guid: 7a379566a84b8484dbed65ff2cd1832e, type: 3}
+    Position: {x: 0, y: 0, z: 0}
+    Rotation: {x: 0, y: 90, z: 45}
+    Time: 9
+    Local: 1
+  - VFX: {fileID: 1494690074406284, guid: 7a379566a84b8484dbed65ff2cd1832e, type: 3}
+    Position: {x: 0, y: 0, z: 0}
+    Rotation: {x: 0, y: 90, z: 225}
+    Time: 16
+    Local: 1
+  - VFX: {fileID: 1494690074406284, guid: 7a379566a84b8484dbed65ff2cd1832e, type: 3}
+    Position: {x: 0, y: 0, z: 0}
+    Rotation: {x: 0, y: 90, z: 45}
+    Time: 25
+    Local: 1
+  - VFX: {fileID: 1494690074406284, guid: 7a379566a84b8484dbed65ff2cd1832e, type: 3}
+    Position: {x: 0, y: 0, z: 0}
+    Rotation: {x: 0, y: 90, z: 225}
+    Time: 34
+    Local: 1
+  - VFX: {fileID: 1494690074406284, guid: 7a379566a84b8484dbed65ff2cd1832e, type: 3}
+    Position: {x: 0, y: 0.25, z: 0.1}
+    Rotation: {x: 0, y: 90, z: 45}
+    Time: 43
+    Local: 1
+  - VFX: {fileID: 1494690074406284, guid: 7a379566a84b8484dbed65ff2cd1832e, type: 3}
+    Position: {x: 0, y: 0.25, z: 0.1}
+    Rotation: {x: 0, y: 90, z: 150}
+    Time: 52
+    Local: 1
+  BodyVFX:
+  - BodyVFX: 0
+    Time: 10
+    Toggle: 1
+  - BodyVFX: 0
+    Time: 60
+    Toggle: 0
   SFX:
   - SFX: {fileID: 11400000, guid: 56be89a7018ac3644be8a5abc485ae54, type: 2}
     Time: 7
@@ -150,22 +186,22 @@ MonoBehaviour:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 7
-        value: -0.0059814453
-        inSlope: 0.14254597
-        outSlope: 0.14254597
+        time: 60.3926
+        value: 0.021911621
+        inSlope: 0.06428469
+        outSlope: 0.06428469
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.12476781
+        outWeight: 0.087868854
       - serializedVersion: 3
-        time: 30
+        time: 96.65892
         value: 1
-        inSlope: -0.003121771
-        outSlope: -0.003121771
+        inSlope: 0.00021187392
+        outSlope: 0.00021187392
         tangentMode: 0
         weightedMode: 0
-        inWeight: 1
+        inWeight: 0.7029092
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2

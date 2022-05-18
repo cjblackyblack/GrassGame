@@ -16,8 +16,34 @@ MonoBehaviour:
   AnimationTransitionTime: 0
   AnimationTransitionOffset: 0
   MaxTime: 58
-  VFX: []
-  BodyVFX: []
+  VFX:
+  - VFX: {fileID: 1494690074406284, guid: 7a379566a84b8484dbed65ff2cd1832e, type: 3}
+    Position: {x: 0, y: 0.25, z: 0.1}
+    Rotation: {x: 0, y: 90, z: 45}
+    Time: 12
+    Local: 1
+  - VFX: {fileID: 1494690074406284, guid: 7a379566a84b8484dbed65ff2cd1832e, type: 3}
+    Position: {x: 0, y: 0.25, z: 0}
+    Rotation: {x: 0, y: 90, z: 165}
+    Time: 18
+    Local: 1
+  - VFX: {fileID: 1494690074406284, guid: 7a379566a84b8484dbed65ff2cd1832e, type: 3}
+    Position: {x: 0, y: 0.25, z: 0}
+    Rotation: {x: 0, y: 90, z: 285}
+    Time: 27
+    Local: 1
+  - VFX: {fileID: 1494690074406284, guid: 7a379566a84b8484dbed65ff2cd1832e, type: 3}
+    Position: {x: 0, y: 0.25, z: 0.1}
+    Rotation: {x: 0, y: 90, z: 180}
+    Time: 35
+    Local: 1
+  BodyVFX:
+  - BodyVFX: 0
+    Time: 12
+    Toggle: 1
+  - BodyVFX: 0
+    Time: 42
+    Toggle: 0
   SFX:
   - SFX: {fileID: 11400000, guid: 56be89a7018ac3644be8a5abc485ae54, type: 2}
     Time: 7
