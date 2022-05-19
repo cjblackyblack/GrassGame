@@ -30,7 +30,7 @@ public class GrassObject : TangibleObject
 	public override void TakeDamage(ref DamageInstance damageInstance)
 	{
 		//base.TakeDamage(ref damageInstance);
-		if (Stats.HP <= 0)
+		if (regrowCounter > 0)
 			return;
 
 		Stats.HP--;

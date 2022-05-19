@@ -433,7 +433,7 @@ ModelImporter:
       takeName: Armature|Attack - Aerial Heavy 4
       internalID: 0
       firstFrame: 0
-      lastFrame: 17
+      lastFrame: 11
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -491,7 +491,7 @@ ModelImporter:
       takeName: Armature|Attack - Aerial Heavy Uproot 1
       internalID: 0
       firstFrame: 0
-      lastFrame: 58
+      lastFrame: 12
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

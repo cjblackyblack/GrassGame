@@ -16,7 +16,32 @@ MonoBehaviour:
   AnimationTransitionTime: 0
   AnimationTransitionOffset: 0
   MaxTime: 40
-  VFX: []
+  VFX:
+  - VFX: {fileID: 1226274352160944, guid: 05825ef2958fa3d45a48307c908328bb, type: 3}
+    Position: {x: 0, y: 0.1, z: 0}
+    Rotation: {x: 90, y: 0, z: 0}
+    Time: 4
+    Local: 1
+  - VFX: {fileID: 1226274352160944, guid: 05825ef2958fa3d45a48307c908328bb, type: 3}
+    Position: {x: 0, y: 0.2, z: 0}
+    Rotation: {x: 90, y: 0, z: 90}
+    Time: 8
+    Local: 1
+  - VFX: {fileID: 1494690074406284, guid: 7a379566a84b8484dbed65ff2cd1832e, type: 3}
+    Position: {x: 0, y: 0.5, z: 0}
+    Rotation: {x: 90, y: 0, z: 180}
+    Time: 12
+    Local: 1
+  - VFX: {fileID: 1494690074406284, guid: 7a379566a84b8484dbed65ff2cd1832e, type: 3}
+    Position: {x: 0, y: 0.6, z: 0}
+    Rotation: {x: 90, y: 0, z: 270}
+    Time: 16
+    Local: 1
+  - VFX: {fileID: 1494690074406284, guid: e4c8dc0c3dc2ab04e94c8f47a5089005, type: 3}
+    Position: {x: 0, y: 1, z: 0}
+    Rotation: {x: 90, y: 0, z: 0}
+    Time: 20
+    Local: 1
   BodyVFX: []
   SFX:
   - SFX: {fileID: 11400000, guid: 56be89a7018ac3644be8a5abc485ae54, type: 2}
@@ -335,8 +360,8 @@ MonoBehaviour:
     IgnoreProtections: 0
     UseMagic: 0
     Unstoppable: 0
-    Hitstun: 15
-    HitStopTime: 0.04
+    Hitstun: 45
+    HitStopTime: 0.02
     HitstopType: 0
     BreakthroughType: 0
     KnockbackType: 0
@@ -359,13 +384,13 @@ MonoBehaviour:
     IgnoreProtections: 0
     UseMagic: 0
     Unstoppable: 0
-    Hitstun: 0
-    HitStopTime: 0
+    Hitstun: 45
+    HitStopTime: 0.02
     HitstopType: 0
     BreakthroughType: 0
     KnockbackType: 0
     KnockbackStrength: 8
-    KnockbackDirection: {x: 0, y: 1, z: 0.3}
+    KnockbackDirection: {x: 0, y: 1, z: 0.5}
     HitboxProcesses:
     - {fileID: 11400000, guid: c5f583890bd62744aaaa6cccd8409ef4, type: 2}
   - MaxTime: 40
@@ -374,22 +399,22 @@ MonoBehaviour:
     ShareID: 0
     AttackBoxesIndividually: 1
     ShareIncomingHitboxes: 1
-    Hitbox: 0
-    HitboxGroup: 0
-    ActiveFrames: {x: 17, y: 25}
+    Hitbox: 3
+    HitboxGroup: 1
+    ActiveFrames: {x: 21, y: 25}
     StatusEffects: []
     Damage: 5
     FlatDamage: 0
     IgnoreProtections: 0
     UseMagic: 0
     Unstoppable: 0
-    Hitstun: 0
-    HitStopTime: 0
+    Hitstun: 45
+    HitStopTime: 0.04
     HitstopType: 0
     BreakthroughType: 0
     KnockbackType: 0
-    KnockbackStrength: 4
-    KnockbackDirection: {x: 0, y: 1, z: 0.3}
+    KnockbackStrength: 5
+    KnockbackDirection: {x: 0, y: 1, z: 0.5}
     HitboxProcesses:
     - {fileID: 11400000, guid: c5f583890bd62744aaaa6cccd8409ef4, type: 2}
   TangibilityFrames: []

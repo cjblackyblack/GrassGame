@@ -8,11 +8,11 @@ public abstract class Hitbox : CombatBox
 
 	public int AttackID;
 	public DamageInstance DamageInstance;
-	public Collider[] HitColliders = new Collider[16];
+	public Collider[] HitColliders = new Collider[32];
 	public List<Collider> CachedColliders;
 	public Collider Collider => GetComponent<Collider>();
 	private List<CombatBox> sortedBoxes;
-
+	public bool ShowDebug;
 	//public Vector3 CurrentPos;
 	public Vector3 PreviousPos;
 
@@ -48,7 +48,7 @@ public abstract class Hitbox : CombatBox
 						if (CombatUtilities.BoxGroupMatch(hitboxData.HitboxGroup, smartObject.Hitboxes[i].GetComponent<Hitbox>().CombatBoxGroup))//&& relatedHitbox.CombatBoxGroupIntOBS == hitBox.CombatBoxGroupIntOBS)
 						{
 							smartObject.Hitboxes[i].GetComponent<Hitbox>().AttackID = AttackID;
-							smartObject.Hitboxes[i].GetComponent<Hitbox>().HitColliders = new Collider[16];
+							smartObject.Hitboxes[i].GetComponent<Hitbox>().HitColliders = new Collider[64];
 							smartObject.Hitboxes[i].GetComponent<Hitbox>().CachedColliders = new List<Collider>();
 						}
 				}
@@ -56,7 +56,7 @@ public abstract class Hitbox : CombatBox
 		}
 		CachedColliders = new List<Collider>();
 		ShareIncomingHitboxes = hitboxData.ShareIncomingHitboxes;
-		HitColliders = new Collider[16];
+		HitColliders = new Collider[64];
 		DamageInstance = new DamageInstance(SourceObject, AttackID, hitboxData.StatusEffects, hitboxData.Unstoppable, hitboxData.Damage, hitboxData.Hitstun, hitboxData.HitStopTime, hitboxData.HitstopType,
 											hitboxData.BreakthroughType, hitboxData.KnockbackType, hitboxData.KnockbackStrength, hitboxData.KnockbackDirection,
 											hitboxData.FlatDamage, hitboxData.IgnoreProtections, hitboxData.UseMagic, hitboxData.AttackBoxesIndividually);
@@ -170,4 +170,6 @@ public abstract class Hitbox : CombatBox
 		//Gizmos.DrawWireSphere(CurrentPos, Collider.bounds.extents.x);
 
 	}
+
+
 }

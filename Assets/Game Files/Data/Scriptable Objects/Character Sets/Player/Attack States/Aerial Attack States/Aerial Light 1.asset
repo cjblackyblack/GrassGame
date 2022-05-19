@@ -34,19 +34,19 @@ MonoBehaviour:
     Time: 7
   StateTransitions:
   - MaxTime: 35
-    TransitionWindow: {x: 16, y: 28}
+    TransitionWindow: {x: 16, y: 32}
     TransitionType: 2
     TransitionState: {fileID: 11400000, guid: c1c7ac5893b973f4e931545dc779a853, type: 2}
   - MaxTime: 35
-    TransitionWindow: {x: 29, y: 35}
+    TransitionWindow: {x: 33, y: 35}
     TransitionType: 2
     TransitionState: {fileID: 11400000, guid: 8bee19d1d65d73e41ac56a3a90fffe1d, type: 2}
   - MaxTime: 35
-    TransitionWindow: {x: 16, y: 28}
+    TransitionWindow: {x: 16, y: 32}
     TransitionType: 3
     TransitionState: {fileID: 11400000, guid: 11aeafe5f2d1a7542ada13dc868dbc4f, type: 2}
   - MaxTime: 35
-    TransitionWindow: {x: 29, y: 35}
+    TransitionWindow: {x: 33, y: 35}
     TransitionType: 3
     TransitionState: {fileID: 11400000, guid: d47ff6acfd4e0a14aa9093055d121a28, type: 2}
   - MaxTime: 35
@@ -333,7 +333,7 @@ MonoBehaviour:
     ShareID: 1
     AttackBoxesIndividually: 0
     ShareIncomingHitboxes: 1
-    Hitbox: 0
+    Hitbox: 1
     HitboxGroup: 1
     ActiveFrames: {x: 8, y: 20}
     StatusEffects: []
@@ -347,8 +347,8 @@ MonoBehaviour:
     HitstopType: 0
     BreakthroughType: 0
     KnockbackType: 0
-    KnockbackStrength: 1
-    KnockbackDirection: {x: 0, y: 0, z: 0}
+    KnockbackStrength: 4
+    KnockbackDirection: {x: 0, y: 1, z: 1.5}
     HitboxProcesses:
     - {fileID: 11400000, guid: c5f583890bd62744aaaa6cccd8409ef4, type: 2}
   TangibilityFrames: []
@@ -358,5 +358,5 @@ MonoBehaviour:
   - {fileID: 4431882959470827133, guid: 4aa7fec143d7c5345ae147d66d87bf6f, type: 3}
   - {fileID: 4431882959470827133, guid: 4aa7fec143d7c5345ae147d66d87bf6f, type: 3}
   HitFX: {fileID: 11400000, guid: 8143ff93377cd8b459947b83fe436c3f, type: 2}
-  EntryFriction: 0.2
+  EntryFriction: 0
   CollisionFriction: 0.3

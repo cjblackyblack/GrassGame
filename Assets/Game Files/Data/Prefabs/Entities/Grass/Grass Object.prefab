@@ -42,8 +42,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3897031178721612157}
   - component: {fileID: 5700536625697678917}
-  - component: {fileID: 3897031178721612159}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Grass Object
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,19 +111,6 @@ MonoBehaviour:
   LODGroup: {fileID: 5506370609822926553}
   GrassVFX: {fileID: 8596753428718819447, guid: cf108013385811a449e1b7934679bf78,
     type: 3}
---- !u!135 &3897031178721612159
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3897031178721612032}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.33
-  m_Center: {x: 0, y: 0.33, z: 0}
 --- !u!1001 &5808594784722093639
 PrefabInstance:
   m_ObjectHideFlags: 0

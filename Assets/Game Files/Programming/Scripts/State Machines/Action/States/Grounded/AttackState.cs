@@ -126,39 +126,39 @@ public class AttackState : SmartState
 
 	}
 
-    protected void CreateHitboxes(SmartObject smartObject) 
-    {
-        for (int i = 0; i < hitboxes.Length; i++)
-            if (smartObject.CurrentFrame >= hitboxes[i].ActiveFrames.x && smartObject.CurrentFrame <= hitboxes[i].ActiveFrames.y)
-            {		
-                Hitbox activeHitbox = smartObject.Hitboxes[hitboxes[i].Hitbox].GetComponent<Hitbox>();
+	protected void CreateHitboxes(SmartObject smartObject)
+	{
+		for (int i = 0; i < hitboxes.Length; i++)
+			if (smartObject.CurrentFrame >= hitboxes[i].ActiveFrames.x && smartObject.CurrentFrame <= hitboxes[i].ActiveFrames.y)
+			{
+				Hitbox activeHitbox = smartObject.Hitboxes[hitboxes[i].Hitbox].GetComponent<Hitbox>();
 				activeHitbox.Active = true;
 
-                if (smartObject.CurrentFrame == hitboxes[i].ActiveFrames.x)
-                {
-                    activeHitbox.SetHitboxData(hitboxes[i]);
+				if (smartObject.CurrentFrame == hitboxes[i].ActiveFrames.x)
+				{
+					activeHitbox.SetHitboxData(hitboxes[i]);
 
-                    for (int j = 0; j < hitboxes.Length; j++) //catch any late blooming hitboxes that got unlucky with no box ID set
+					for (int j = 0; j < hitboxes.Length; j++) //catch any late blooming hitboxes that got unlucky with no box ID set
 					{
-                        if (!hitboxes[j].ShareID && !hitboxes[j].RefreshID)
-                            if (CombatUtilities.BoxGroupMatch(hitboxes[j].HitboxGroup, hitboxes[i].HitboxGroup))
-                            {
-                                smartObject.Hitboxes[hitboxes[j].Hitbox].GetComponent<Hitbox>().AttackID = activeHitbox.AttackID;
-                                smartObject.Hitboxes[hitboxes[j].Hitbox].GetComponent<Hitbox>().CombatBoxGroup = hitboxes[i].HitboxGroup;
-                            }
-                    }
-                }//share shit with other hitboxes
+						if (!hitboxes[j].ShareID && !hitboxes[j].RefreshID)
+							if (CombatUtilities.BoxGroupMatch(hitboxes[j].HitboxGroup, hitboxes[i].HitboxGroup))
+							{
+								smartObject.Hitboxes[hitboxes[j].Hitbox].GetComponent<Hitbox>().AttackID = activeHitbox.AttackID;
+								smartObject.Hitboxes[hitboxes[j].Hitbox].GetComponent<Hitbox>().CombatBoxGroup = hitboxes[i].HitboxGroup;
+							}
+					}
+				}//share shit with other hitboxes
 
 				CombatBox hitBox = activeHitbox.CheckOverlap(hitboxes[i]); //Check Overlap, Filter Hitboxes, Apply Processes to hurtboxes, should only return combat boxes that were processed
 				if (hitBox != null)
 					if (hitBox.CurrentBoxTangibility != PhysicalObjectTangibility.Intangible)
-						OnHitReaction(smartObject,activeHitbox ,hitBox);
+						OnHitReaction(smartObject, activeHitbox, hitBox);
 			}
 			else
 			{
-				smartObject.Hitboxes[hitboxes[i].Hitbox].GetComponent<Hitbox>().Active = false;	
+				smartObject.Hitboxes[hitboxes[i].Hitbox].GetComponent<Hitbox>().Active = false;
 			}
-    }
+	}
 
 	public void OnHitReaction(SmartObject smartObject,Hitbox hitbox,CombatBox hurtBox)// do FX stuff and change staes if needed
 	{

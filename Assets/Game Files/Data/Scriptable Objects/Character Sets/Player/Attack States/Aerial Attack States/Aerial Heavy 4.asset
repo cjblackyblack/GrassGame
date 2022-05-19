@@ -17,10 +17,14 @@ MonoBehaviour:
   AnimationTransitionOffset: 0
   MaxTime: 120
   VFX: []
-  BodyVFX: []
-  SFX:
-  - SFX: {fileID: 11400000, guid: 56be89a7018ac3644be8a5abc485ae54, type: 2}
-    Time: 7
+  BodyVFX:
+  - BodyVFX: 0
+    Time: 10
+    Toggle: 1
+  - BodyVFX: 0
+    Time: 120
+    Toggle: 0
+  SFX: []
   StateTransitions:
   - MaxTime: 120
     TransitionWindow: {x: 10, y: 120}
@@ -299,31 +303,7 @@ MonoBehaviour:
       m_RotationOrder: 4
     TurnAroundTime: 4
     TrackingResistance: 0.8
-  hitboxes:
-  - MaxTime: 120
-    ActionTarget: 2
-    RefreshID: 1
-    ShareID: 1
-    AttackBoxesIndividually: 0
-    ShareIncomingHitboxes: 1
-    Hitbox: 0
-    HitboxGroup: 1
-    ActiveFrames: {x: 8, y: 100}
-    StatusEffects: []
-    Damage: 6
-    FlatDamage: 0
-    IgnoreProtections: 0
-    UseMagic: 0
-    Unstoppable: 0
-    Hitstun: 15
-    HitStopTime: 0.04
-    HitstopType: 0
-    BreakthroughType: 0
-    KnockbackType: 0
-    KnockbackStrength: 1
-    KnockbackDirection: {x: 0, y: 1, z: 2}
-    HitboxProcesses:
-    - {fileID: 11400000, guid: c5f583890bd62744aaaa6cccd8409ef4, type: 2}
+  hitboxes: []
   TangibilityFrames: []
   HitParticles:
   - {fileID: 4431882959470827133, guid: 4aa7fec143d7c5345ae147d66d87bf6f, type: 3}
@@ -331,5 +311,5 @@ MonoBehaviour:
   - {fileID: 4431882959470827133, guid: 4aa7fec143d7c5345ae147d66d87bf6f, type: 3}
   - {fileID: 4431882959470827133, guid: 4aa7fec143d7c5345ae147d66d87bf6f, type: 3}
   HitFX: {fileID: 11400000, guid: 8143ff93377cd8b459947b83fe436c3f, type: 2}
-  EntryFriction: 0.2
+  EntryFriction: 0
   CollisionFriction: 0.3

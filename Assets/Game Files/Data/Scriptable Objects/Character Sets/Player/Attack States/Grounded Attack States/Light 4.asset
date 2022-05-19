@@ -405,8 +405,8 @@ MonoBehaviour:
     IgnoreProtections: 0
     UseMagic: 0
     Unstoppable: 0
-    Hitstun: 0
-    HitStopTime: 0
+    Hitstun: 40
+    HitStopTime: 0.06
     HitstopType: 0
     BreakthroughType: 0
     KnockbackType: 0

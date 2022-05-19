@@ -396,7 +396,7 @@ MonoBehaviour:
     HitstopType: 0
     BreakthroughType: 0
     KnockbackType: 0
-    KnockbackStrength: 6
+    KnockbackStrength: 2
     KnockbackDirection: {x: 0, y: 1, z: 0}
     HitboxProcesses:
     - {fileID: 11400000, guid: c5f583890bd62744aaaa6cccd8409ef4, type: 2}

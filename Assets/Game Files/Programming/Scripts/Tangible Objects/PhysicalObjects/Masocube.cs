@@ -7,6 +7,8 @@ using UnityEngine;
 public class Masocube : PhysicalObject
 {
 	public int massCount;
+	public AnimationCurve GravityCurve;
+	public float terminalVel;
 
 	private void FixedUpdate()
 	{
@@ -14,24 +16,35 @@ public class Masocube : PhysicalObject
 
 		if (massCount > 0)
 			massCount--;
+
+		RBody.AddForce(GravityCurve.Evaluate(RBody.velocity.y) * Gravity);
+		//RBody.useGravity
+		//if (RBody.velocity.y < terminalVel)
+		//	RBody.velocity = new Vector3(RBody.velocity.x, terminalVel, RBody.velocity.z);
+		Debug.Log(GravityCurve.Evaluate(RBody.velocity.y) * Gravity);
 	}
+
 	public override void TakeDamage(ref DamageInstance damageInstance)
 	{
 		massCount = damageInstance.hitStun;
-		StartCoroutine(TakeKnockback(((damageInstance.knockbackDirection.x * damageInstance.origin.transform.right) + (damageInstance.knockbackDirection.y * damageInstance.origin.transform.up) + (damageInstance.knockbackDirection.z * damageInstance.origin.transform.forward)) * damageInstance.knockbackStrength * RBody.mass));
+		RBody.mass = 2;
+		StartCoroutine(TakeKnockback(((damageInstance.knockbackDirection.x * damageInstance.origin.transform.right) + (damageInstance.knockbackDirection.y * damageInstance.origin.transform.up) + (damageInstance.knockbackDirection.z * damageInstance.origin.transform.forward)).normalized * damageInstance.knockbackStrength * RBody.mass, damageInstance));
 		//Debug.Log(((damageInstance.knockbackDirection.x * damageInstance.origin.transform.right) + (damageInstance.knockbackDirection.y * damageInstance.origin.transform.up) + (damageInstance.knockbackDirection.z * damageInstance.origin.transform.forward)) * damageInstance.knockbackStrength);
 	}
 
-	IEnumerator TakeKnockback(Vector3 knockback) 
+	IEnumerator TakeKnockback(Vector3 knockback ,DamageInstance damageInstance) 
 	{
 		RBody.velocity *= 0;
 		Vector3 startPos = transform.position;
-		transform.position = startPos + (Random.insideUnitSphere * 0.1f);
+		transform.position = Vector3.Lerp(startPos, damageInstance.origin.transform.position + damageInstance.origin.transform.forward, 0.0f) + (Random.insideUnitSphere * 0.1f);
 		yield return new WaitForSeconds(0.01f);
-		transform.position = startPos + (Random.insideUnitSphere * 0.1f);
+		RBody.velocity *= 0;
+		transform.position = Vector3.Lerp(startPos, damageInstance.origin.transform.position + damageInstance.origin.transform.forward, 0.0f) + (Random.insideUnitSphere * 0.1f);
 		yield return new WaitForSeconds(0.01f);
-		transform.position = startPos;
+		RBody.velocity *= 0;
+		transform.position = Vector3.Lerp(startPos, damageInstance.origin.transform.position + Vector3.Lerp(damageInstance.origin.transform.forward, knockback, 0.25f), 0.1f) + (Random.insideUnitSphere * 0.1f);
 		yield return new WaitForSeconds(0.01f);
+		RBody.velocity *= 0;
 		RBody.AddForce(knockback, ForceMode.Impulse);
 	}
 }

@@ -16,8 +16,29 @@ MonoBehaviour:
   AnimationTransitionTime: 0
   AnimationTransitionOffset: 0
   MaxTime: 46
-  VFX: []
-  BodyVFX: []
+  VFX:
+  - VFX: {fileID: 1494690074406284, guid: e4c8dc0c3dc2ab04e94c8f47a5089005, type: 3}
+    Position: {x: 0, y: 0.45, z: -0.5}
+    Rotation: {x: 90, y: 0, z: 0}
+    Time: 6
+    Local: 1
+  - VFX: {fileID: 1494690074406284, guid: e4c8dc0c3dc2ab04e94c8f47a5089005, type: 3}
+    Position: {x: 0, y: 0.4, z: 0.5}
+    Rotation: {x: 90, y: 0, z: 180}
+    Time: 16
+    Local: 1
+  - VFX: {fileID: 1494690074406284, guid: e4c8dc0c3dc2ab04e94c8f47a5089005, type: 3}
+    Position: {x: 0, y: 0.5, z: 0.25}
+    Rotation: {x: 90, y: 0, z: 0}
+    Time: 22
+    Local: 1
+  BodyVFX:
+  - BodyVFX: 0
+    Time: 8
+    Toggle: 1
+  - BodyVFX: 0
+    Time: 25
+    Toggle: 0
   SFX:
   - SFX: {fileID: 11400000, guid: 56be89a7018ac3644be8a5abc485ae54, type: 2}
     Time: 7
@@ -37,7 +58,7 @@ MonoBehaviour:
   - MaxTime: 46
     TransitionWindow: {x: 41, y: 46}
     TransitionType: 3
-    TransitionState: {fileID: 11400000, guid: bae3eff1fe4467847b3064184ccdce17, type: 2}
+    TransitionState: {fileID: 11400000, guid: 9076a10f599d3004fb47fe62450f363e, type: 2}
   - MaxTime: 46
     TransitionWindow: {x: 0, y: 30}
     TransitionType: 5
@@ -322,9 +343,9 @@ MonoBehaviour:
     ShareID: 1
     AttackBoxesIndividually: 0
     ShareIncomingHitboxes: 1
-    Hitbox: 0
+    Hitbox: 1
     HitboxGroup: 1
-    ActiveFrames: {x: 8, y: 20}
+    ActiveFrames: {x: 8, y: 25}
     StatusEffects: []
     Damage: 6
     FlatDamage: 0
@@ -347,5 +368,5 @@ MonoBehaviour:
   - {fileID: 4431882959470827133, guid: 4aa7fec143d7c5345ae147d66d87bf6f, type: 3}
   - {fileID: 4431882959470827133, guid: 4aa7fec143d7c5345ae147d66d87bf6f, type: 3}
   HitFX: {fileID: 11400000, guid: 8143ff93377cd8b459947b83fe436c3f, type: 2}
-  EntryFriction: 0.2
+  EntryFriction: 0
   CollisionFriction: 0.3

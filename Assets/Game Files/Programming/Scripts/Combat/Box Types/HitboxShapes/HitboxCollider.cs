@@ -17,4 +17,10 @@ public class HitboxCollider : Hitbox
 		PhysicsExtensions.OverlapColliderNonAlloc(Collider, HitColliders, EntityManager.Instance.GeoLayers);
 		
 	}
+
+	private void Update()
+	{
+		if (ShowDebug)
+			GetComponent<MeshRenderer>().enabled = Active;
+	}
 }

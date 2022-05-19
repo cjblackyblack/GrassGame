@@ -13,11 +13,22 @@ MonoBehaviour:
   m_Name: Aerial Heavy 4 Land
   m_EditorClassIdentifier: 
   AnimationState: Aerial Heavy 4 Land
-  AnimationTransitionTime: 0
+  AnimationTransitionTime: 0.05
   AnimationTransitionOffset: 0
   MaxTime: 40
-  VFX: []
-  BodyVFX: []
+  VFX:
+  - VFX: {fileID: 1494690074406284, guid: e4c8dc0c3dc2ab04e94c8f47a5089005, type: 3}
+    Position: {x: 0, y: 0, z: 0}
+    Rotation: {x: -45, y: -90, z: 0}
+    Time: 0
+    Local: 0
+  BodyVFX:
+  - BodyVFX: 0
+    Time: 0
+    Toggle: 1
+  - BodyVFX: 0
+    Time: 4
+    Toggle: 0
   SFX:
   - SFX: {fileID: 11400000, guid: 2a9e58d8fe4612142be5e65cca2fbbb4, type: 2}
     Time: 20
