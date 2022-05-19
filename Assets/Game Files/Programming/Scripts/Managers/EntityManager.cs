@@ -10,7 +10,9 @@ public class EntityManager : Singleton<EntityManager>
 	public List<SmartObject> Entities;
 
 	public bool grassBusy;
+	public bool rewardBusy;
 	public SFX GrassCut;
+	public SFX RewardFX;
 
 	private void Update()
 	{
@@ -20,7 +22,7 @@ public class EntityManager : Singleton<EntityManager>
 					Entities.RemoveAt(i);
 	}
 
-	public void GrassFX()
+	public void GrassSFX()
 	{
 		if (grassBusy)
 			return;
@@ -33,6 +35,22 @@ public class EntityManager : Singleton<EntityManager>
 			grassBusy = true;
 			yield return new WaitForSecondsRealtime(0.1f);
 			grassBusy = false;	
+		}
+	}
+
+	public void RewardSFX()
+	{
+		if (rewardBusy)
+			return;
+
+		RewardFX.PlaySFX(AudioManager.Instance.SFXSource2);
+		StartCoroutine(SetBusy());
+
+		IEnumerator SetBusy()
+		{
+			rewardBusy = true;
+			yield return new WaitForSecondsRealtime(0.1f);
+			rewardBusy = false;
 		}
 	}
 }

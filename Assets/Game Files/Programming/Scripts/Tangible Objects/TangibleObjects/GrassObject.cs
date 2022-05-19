@@ -12,6 +12,10 @@ public class GrassObject : TangibleObject
 
 	public LODGroup LODGroup;
 	public GameObject GrassVFX;
+	public GameObject Reward;
+
+	float rewardChance;
+	public float rewardThreshold;
 
 	private void FixedUpdate()
 	{
@@ -29,16 +33,22 @@ public class GrassObject : TangibleObject
 	}
 	public override void TakeDamage(ref DamageInstance damageInstance)
 	{
+		rewardChance = Random.Range(0f, 100f);
 		//base.TakeDamage(ref damageInstance);
 		if (regrowCounter > 0)
 			return;
 
 		Stats.HP--;
-		EntityManager.Instance.GrassFX();
+		EntityManager.Instance.GrassSFX();
 
 
 		if (Stats.HP <= 0)
 		{
+			if (rewardChance > rewardThreshold)
+			{
+				Instantiate(Reward, transform.position + (transform.up * 0.5f), Reward.transform.rotation);
+				EntityManager.Instance.RewardSFX();
+			}
 			Instantiate(GrassVFX, transform.position, GrassVFX.transform.rotation);
 			regrowCounter = regrowTime;
 			foreach (MeshRenderer meshRenderer in LODGroup.transform.GetComponentsInChildren<MeshRenderer>())

@@ -6,6 +6,7 @@ public class AudioManager : Singleton<AudioManager>
 {
 	public AudioSource MusicSource;
 	public AudioSource SFXSource;
+	public AudioSource SFXSource2;
 	public AudioClip MainTrack;
 	public AudioClip FightTrack;
 	public AudioClip WinTrack;
