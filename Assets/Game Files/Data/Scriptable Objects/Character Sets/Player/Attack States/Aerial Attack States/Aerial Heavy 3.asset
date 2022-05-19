@@ -74,13 +74,22 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 3
-        inSlope: 0
-        outSlope: 0
+        value: 5
+        inSlope: -0.55172414
+        outSlope: -0.55172414
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 3.625
+        value: 3
+        inSlope: -Infinity
+        outSlope: -Infinity
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
       - serializedVersion: 3
         time: 30
         value: 3
@@ -196,22 +205,22 @@ MonoBehaviour:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 36.368385
+        time: 14.42083
         value: -0.0059814453
-        inSlope: 0.14254597
-        outSlope: 0.14254597
+        inSlope: 0.058867496
+        outSlope: 0.058867496
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.12476781
+        outWeight: 0.07803829
       - serializedVersion: 3
         time: 45.408737
         value: 1
-        inSlope: -0.003121771
-        outSlope: -0.003121771
+        inSlope: 0.00067779556
+        outSlope: 0.00067779556
         tangentMode: 0
         weightedMode: 0
-        inWeight: 1
+        inWeight: 0.4518223
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -296,7 +305,7 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 2
+        value: 3
         inSlope: 0
         outSlope: 0
         tangentMode: 34
@@ -305,7 +314,7 @@ MonoBehaviour:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: 2
+        value: 3
         inSlope: 0
         outSlope: 0
         tangentMode: 34
@@ -368,13 +377,13 @@ MonoBehaviour:
     - {fileID: 11400000, guid: c5f583890bd62744aaaa6cccd8409ef4, type: 2}
   - MaxTime: 42
     ActionTarget: 2
-    RefreshID: 0
-    ShareID: 0
+    RefreshID: 1
+    ShareID: 1
     AttackBoxesIndividually: 0
-    ShareIncomingHitboxes: 0
-    Hitbox: 0
+    ShareIncomingHitboxes: 1
+    Hitbox: 1
     HitboxGroup: 1
-    ActiveFrames: {x: 21, y: 35}
+    ActiveFrames: {x: 21, y: 30}
     StatusEffects: []
     Damage: 0
     FlatDamage: 0

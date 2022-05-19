@@ -71,15 +71,15 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 0
         value: 5
-        inSlope: -1
-        outSlope: -1
+        inSlope: -0.4654082
+        outSlope: -0.4654082
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3
-        value: 2
+        time: 3.0000038
+        value: 3.6037736
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 0
@@ -87,7 +87,7 @@ MonoBehaviour:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 4.772727
+        time: 21.27273
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -98,8 +98,8 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 55
         value: 0
-        inSlope: -0.019909503
-        outSlope: -0.019909503
+        inSlope: -0.029649597
+        outSlope: -0.029649597
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
@@ -301,9 +301,9 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1.6375
-        inSlope: -0.27291667
-        outSlope: -0.27291667
+        value: 3
+        inSlope: -0.5
+        outSlope: -0.5
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
@@ -385,8 +385,8 @@ MonoBehaviour:
     HitstopType: 0
     BreakthroughType: 0
     KnockbackType: 0
-    KnockbackStrength: 0.5
-    KnockbackDirection: {x: 0, y: 1, z: 0.2}
+    KnockbackStrength: 4
+    KnockbackDirection: {x: 0, y: 1, z: 2}
     HitboxProcesses:
     - {fileID: 11400000, guid: c5f583890bd62744aaaa6cccd8409ef4, type: 2}
   - MaxTime: 40
@@ -409,8 +409,8 @@ MonoBehaviour:
     HitstopType: 0
     BreakthroughType: 0
     KnockbackType: 0
-    KnockbackStrength: 2
-    KnockbackDirection: {x: 0, y: 1, z: 0.2}
+    KnockbackStrength: 9
+    KnockbackDirection: {x: 0, y: 1, z: 2}
     HitboxProcesses:
     - {fileID: 11400000, guid: c5f583890bd62744aaaa6cccd8409ef4, type: 2}
   TangibilityFrames: []

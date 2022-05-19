@@ -350,7 +350,7 @@ MonoBehaviour:
     ShareIncomingHitboxes: 1
     Hitbox: 1
     HitboxGroup: 1
-    ActiveFrames: {x: 8, y: 20}
+    ActiveFrames: {x: 8, y: 16}
     StatusEffects: []
     Damage: 6
     FlatDamage: 0
@@ -362,8 +362,56 @@ MonoBehaviour:
     HitstopType: 0
     BreakthroughType: 0
     KnockbackType: 0
-    KnockbackStrength: 1
-    KnockbackDirection: {x: 0, y: 0, z: 0}
+    KnockbackStrength: 3
+    KnockbackDirection: {x: 0, y: 1, z: 0.25}
+    HitboxProcesses:
+    - {fileID: 11400000, guid: c5f583890bd62744aaaa6cccd8409ef4, type: 2}
+  - MaxTime: 58
+    ActionTarget: 2
+    RefreshID: 1
+    ShareID: 1
+    AttackBoxesIndividually: 0
+    ShareIncomingHitboxes: 1
+    Hitbox: 1
+    HitboxGroup: 1
+    ActiveFrames: {x: 17, y: 32}
+    StatusEffects: []
+    Damage: 6
+    FlatDamage: 0
+    IgnoreProtections: 0
+    UseMagic: 0
+    Unstoppable: 0
+    Hitstun: 15
+    HitStopTime: 0.04
+    HitstopType: 0
+    BreakthroughType: 0
+    KnockbackType: 0
+    KnockbackStrength: 3
+    KnockbackDirection: {x: 0, y: 1, z: 0.25}
+    HitboxProcesses:
+    - {fileID: 11400000, guid: c5f583890bd62744aaaa6cccd8409ef4, type: 2}
+  - MaxTime: 58
+    ActionTarget: 2
+    RefreshID: 1
+    ShareID: 1
+    AttackBoxesIndividually: 0
+    ShareIncomingHitboxes: 1
+    Hitbox: 3
+    HitboxGroup: 1
+    ActiveFrames: {x: 32, y: 36}
+    StatusEffects: []
+    Damage: 6
+    FlatDamage: 0
+    IgnoreProtections: 0
+    UseMagic: 0
+    Unstoppable: 0
+    Hitstun: 15
+    HitStopTime: 0.04
+    HitstopType: 0
+    BreakthroughType: 0
+    KnockbackType: 0
+    KnockbackStrength: 7
+    KnockbackDirection: {x: 0, y: 1, z: 1}
     HitboxProcesses:
     - {fileID: 11400000, guid: c5f583890bd62744aaaa6cccd8409ef4, type: 2}
   TangibilityFrames: []
