@@ -63,3 +63,4 @@ crashlytics-build.properties
 /[Uu]serSettings/
 ProjectSettings/Packages/com.unity.probuilder/Settings.json
 *.unitypackage.meta
+ProjectSettings/Packages/com.unity.probuilder/Settings.json

@@ -7,19 +7,19 @@ namespace TrailsFX.Demos {
 
 		public float speed = 100f;
 
-		Vector3 eulerAngles;
+		public Vector3 eulerAngles;
 
 		void Start ()
 		{
-			SetAngles ();
+			//SetAngles ();
 		}
 
 		void Update ()
 		{
 			transform.Rotate (eulerAngles * (Time.deltaTime * speed));
-			if (Random.value > 0.995f) {
-				SetAngles ();
-			}
+			//if (Random.value > 0.995f) {
+				//SetAngles ();
+			//}
 		}
 
 		void SetAngles ()

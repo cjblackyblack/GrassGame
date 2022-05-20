@@ -15,7 +15,7 @@ MonoBehaviour:
   AnimationState: Dodgeroll
   AnimationTransitionTime: 0
   AnimationTransitionOffset: 0
-  MaxTime: 40
+  MaxTime: 37
   VFX: []
   BodyVFX: []
   SFX: []
@@ -26,16 +26,16 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 10
-        inSlope: -Infinity
-        outSlope: -Infinity
+        value: 15
+        inSlope: Infinity
+        outSlope: Infinity
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 14.889176
-        value: 9.945879
+        time: 3.0828588
+        value: 10.534354
         inSlope: -0.043947913
         outSlope: -0.043947913
         tangentMode: 0
@@ -45,11 +45,11 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 35
         value: 0
-        inSlope: -0.14339346
-        outSlope: -0.14339346
+        inSlope: -0.45214748
+        outSlope: -0.45214748
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.64192253
+        inWeight: 0.17144658
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
