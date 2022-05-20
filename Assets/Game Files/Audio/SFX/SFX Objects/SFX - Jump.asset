@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SFX - Jump
   m_EditorClassIdentifier: 
   PossibleClips:
-  - {fileID: 8300000, guid: 6be1f80828a5e3548acbd62be7abdf6c, type: 3}
+  - {fileID: 8300000, guid: d27304e193fd30847a71f6f3c0a7613d, type: 3}
   PitchRange: {x: 1, y: 1}
