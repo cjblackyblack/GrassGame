@@ -15,6 +15,8 @@ public class AerialAttackState : SmartState
 	public SFX HitFX;
 	public float EntryFriction;
 	public float CollisionFriction;
+    public float ComboAmount = 1;
+
 	public override void OnEnter(SmartObject smartObject)
 	{
 		base.OnEnter(smartObject);
@@ -202,8 +204,10 @@ public class AerialAttackState : SmartState
 		switch (hurtBox.CurrentBoxTangibility)
 		{
 			case PhysicalObjectTangibility.Normal:
-				{
-					if (!hurtBox.SourceObject.IgnoreHitFX)
+				{ 
+                    ComboManager.Instance.AddCombo(ComboAmount * hurtBox.SourceObject.comboMultiplier);
+
+                    if (!hurtBox.SourceObject.IgnoreHitFX)
 						CreateHitFX(0, hitbox);
 				}
 				break;

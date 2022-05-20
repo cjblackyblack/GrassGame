@@ -22,7 +22,10 @@ public class TangibleObject : MonoBehaviour, IChemistryObject, ITimeScaleable
 
     public Collider[] Hitboxes = new Collider[8];
     public Collider[] TargetPosiitions;
-  public bool IgnoreHitFX;
+    public bool IgnoreHitFX;
+
+    public float comboMultiplier = 1;
+
     public virtual void Start()
 	{
         //Hurtboxes = new List<Collider>();

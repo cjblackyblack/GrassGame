@@ -15,6 +15,7 @@ public class AttackState : SmartState
 	public SFX HitFX;
 	public ProjectileContainer[] Projectiles;
 	public bool LockRotation;
+    public float comboAmount = 1;
 
 	public override void OnEnter(SmartObject smartObject)
 	{
@@ -166,7 +167,9 @@ public class AttackState : SmartState
 		{
 			case PhysicalObjectTangibility.Normal:
 				{
-					if (!hurtBox.SourceObject.IgnoreHitFX)
+                    ComboManager.Instance.AddCombo(comboAmount * hurtBox.SourceObject.comboMultiplier);
+
+                    if (!hurtBox.SourceObject.IgnoreHitFX)
 						CreateHitFX(0, hitbox);
 				}
 				break;
