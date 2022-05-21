@@ -16,27 +16,45 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using DG.Tweening;
 
 public class ComboManager : Singleton<ComboManager>
 {
     public float currentCombo = 0;
 
     [SerializeField] TMP_Text comboLetter;
+    [SerializeField] TMP_Text descriptionTMP;
+    [SerializeField] Slider comboFill;
     [SerializeField] float decreaseRate = 1;
     [SerializeField] float comboCap = 50;
     //[SerializeField] AnimationCurve letterCurve;
     [SerializeField] float[] letterSteps;
     [SerializeField] string[] letters;
+    [SerializeField] string[] descriptions;
 
     private int currentLetterIndex = 0;
+    private bool comboEmpty = false;
 
     private void Update()
     {
         if (currentCombo > 0) //Add a proper clamp
         {
             currentCombo -= Time.deltaTime * decreaseRate;
+            UpdateComboLetter();
+            UpdateFillAmount();
+            if (comboEmpty)
+            {
+                comboFill.gameObject.SetActive(true);
+                comboEmpty = false;
+            }
         }
-        UpdateComboLetter();
+        else if(!comboEmpty) //Change later, inefficent
+        {
+            comboFill.gameObject.SetActive(false);
+            comboLetter.text = "";
+            descriptionTMP.text = "";
+            comboEmpty = true;
+        }
     }
 
     public void AddCombo(float amount)
@@ -46,6 +64,7 @@ public class ComboManager : Singleton<ComboManager>
             currentCombo += amount;
         }
         UpdateComboLetter();
+        UpdateFillAmount();
     }
 
     private void UpdateComboLetter()
@@ -54,11 +73,31 @@ public class ComboManager : Singleton<ComboManager>
         {
             currentLetterIndex++;
             comboLetter.text = letters[currentLetterIndex];
+            descriptionTMP.text = descriptions[currentLetterIndex];
+            comboLetter.rectTransform.DOPunchScale(new Vector3(.5f, .5f), .5f, 10, 1f)
+                .OnComplete(() => comboLetter.rectTransform.DOScale(Vector3.one, .1f));
         }
         else if(currentLetterIndex > 0 && currentCombo < letterSteps[currentLetterIndex])
         {
             currentLetterIndex--;
             comboLetter.text = letters[currentLetterIndex];
+            descriptionTMP.text = descriptions[currentLetterIndex];
+            comboLetter.rectTransform.DOPunchScale(new Vector3(.5f, .5f), .5f, 10, 1f)
+                .OnComplete(() => comboLetter.rectTransform.DOScale(Vector3.one, .1f));
         }
+    }
+
+    private void UpdateFillAmount()
+    {
+        float fillPrecent;
+        if (currentLetterIndex < letterSteps.Length - 1)
+        {
+            fillPrecent = (currentCombo - letterSteps[currentLetterIndex]) / (letterSteps[currentLetterIndex + 1] - letterSteps[currentLetterIndex]);
+        }
+        else
+        {
+            fillPrecent = (currentCombo - letterSteps[currentLetterIndex]) / (comboCap - letterSteps[currentLetterIndex]);
+        }
+        comboFill.value = fillPrecent;
     }
 }
