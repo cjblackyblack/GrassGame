@@ -74,7 +74,7 @@ public class ComboManager : Singleton<ComboManager>
             currentLetterIndex++;
             comboLetter.text = letters[currentLetterIndex];
             descriptionTMP.text = descriptions[currentLetterIndex];
-            comboLetter.rectTransform.DOPunchScale(new Vector3(.5f, .5f), .5f, 10, 1f)
+            comboLetter.rectTransform.DOPunchScale(new Vector3(.25f, .25f), .25f, 10, 1f)
                 .OnComplete(() => comboLetter.rectTransform.DOScale(Vector3.one, .1f));
         }
         else if(currentLetterIndex > 0 && currentCombo < letterSteps[currentLetterIndex])
@@ -82,7 +82,7 @@ public class ComboManager : Singleton<ComboManager>
             currentLetterIndex--;
             comboLetter.text = letters[currentLetterIndex];
             descriptionTMP.text = descriptions[currentLetterIndex];
-            comboLetter.rectTransform.DOPunchScale(new Vector3(.5f, .5f), .5f, 10, 1f)
+            comboLetter.rectTransform.DOPunchScale(new Vector3(.25f, .25f), .25f, 10, 1f)
                 .OnComplete(() => comboLetter.rectTransform.DOScale(Vector3.one, .1f));
         }
     }
