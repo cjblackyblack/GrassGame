@@ -21,7 +21,8 @@ MonoBehaviour:
   SFX: []
   JumpFrame: 1
   JumpPower: 16
-  JumpScalableForwardSpeed: 10
+  JumpScalableForwardSpeed: 4
+  UnlockTime: 4
   TangibilityFrames:
   - Hurtbox: 1
     BoxGroup: 1

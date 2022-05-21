@@ -382,9 +382,9 @@ MonoBehaviour:
     ShareID: 1
     AttackBoxesIndividually: 0
     ShareIncomingHitboxes: 1
-    Hitbox: 0
+    Hitbox: 1
     HitboxGroup: 1
-    ActiveFrames: {x: 5, y: 25}
+    ActiveFrames: {x: 5, y: 14}
     StatusEffects: []
     Damage: 5
     FlatDamage: 0
@@ -409,3 +409,4 @@ MonoBehaviour:
   HitFX: {fileID: 11400000, guid: 8143ff93377cd8b459947b83fe436c3f, type: 2}
   Projectiles: []
   LockRotation: 0
+  comboAmount: 1

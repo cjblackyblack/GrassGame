@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Plugins/URP/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Game Files/Data/Scenes/Greybox.unity
+    guid: cb8d24f4dbf152d46bfabb1beb03fb52
   m_configObjects: {}

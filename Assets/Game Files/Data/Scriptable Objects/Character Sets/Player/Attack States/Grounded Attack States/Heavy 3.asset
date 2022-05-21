@@ -414,8 +414,8 @@ MonoBehaviour:
     HitstopType: 0
     BreakthroughType: 0
     KnockbackType: 0
-    KnockbackStrength: 7
-    KnockbackDirection: {x: 0, y: 0, z: 1}
+    KnockbackStrength: 8
+    KnockbackDirection: {x: 0, y: 0.25, z: 1}
     HitboxProcesses:
     - {fileID: 11400000, guid: c5f583890bd62744aaaa6cccd8409ef4, type: 2}
   TangibilityFrames: []
@@ -427,3 +427,4 @@ MonoBehaviour:
   HitFX: {fileID: 11400000, guid: 8143ff93377cd8b459947b83fe436c3f, type: 2}
   Projectiles: []
   LockRotation: 0
+  comboAmount: 1

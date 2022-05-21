@@ -8,6 +8,7 @@ public class AerialDodgeState : SmartState
 	public int JumpFrame;
 	public float JumpPower;
 	public float JumpScalableForwardSpeed;
+	public float UnlockTime;
 	public TangibilityFrames[] TangibilityFrames;
 	public MotionCurve MotionCurve;
 	public StateTransition[] StateTransitions;
@@ -19,7 +20,7 @@ public class AerialDodgeState : SmartState
 		smartObject.CurrentAirTime = 0;
 		smartObject.CurrentFrame = 0;
 		smartObject.AirJumps--;
-		smartObject.MovementVector = new Vector3(Mathf.RoundToInt(smartObject.InputVector.x), Mathf.RoundToInt(smartObject.InputVector.y), Mathf.RoundToInt(smartObject.InputVector.z));
+		smartObject.MovementVector = smartObject.InputVector;
 
 		if (smartObject.LocomotionStateMachine.CurrentLocomotionEnum != LocomotionStates.Aerial) //we came from a state like an attack
 		{
@@ -65,7 +66,12 @@ public class AerialDodgeState : SmartState
 			smartObject.Motor.RotateCharacter(MotionCurve.TurnAroundRotation(smartObject, ref currentVelocity, true));
 		}
 
-		if(smartObject.CurrentFrame <= JumpFrame)
+		if (smartObject.CurrentFrame > UnlockTime)
+		{
+			smartObject.MovementVector = smartObject.InputVector;
+		}
+
+		if (smartObject.CurrentFrame <= JumpFrame)
 		{
 			smartObject.CurrentAirTime = 0;
 			//smartObject.CurrentFrame = 0;
@@ -98,13 +104,13 @@ public class AerialDodgeState : SmartState
 	{
 		Vector3 jumpDirection = smartObject.Motor.CharacterUp;
 		currentVelocity *= 0;
-		if (smartObject.Motor.GroundingStatus.FoundAnyGround && !smartObject.Motor.GroundingStatus.IsStableOnGround)//&& (Vector3.Dot(Vector3.down, smartObject.Gravity.normalized) > 0.99f))
-		{
-			jumpDirection = smartObject.Motor.GroundingStatus.GroundNormal;
-		}
+		//if (smartObject.Motor.GroundingStatus.FoundAnyGround && !smartObject.Motor.GroundingStatus.IsStableOnGround)//&& (Vector3.Dot(Vector3.down, smartObject.Gravity.normalized) > 0.99f))
+		//{
+		//	jumpDirection = smartObject.Motor.GroundingStatus.GroundNormal;
+		//}
 
 		currentVelocity += (((jumpDirection.normalized * (JumpPower))) - (Vector3.Project(currentVelocity, smartObject.Motor.CharacterUp)));
-		currentVelocity += (smartObject.MovementVector.normalized * JumpScalableForwardSpeed);
+		currentVelocity += (smartObject.MovementVector * JumpScalableForwardSpeed);
 	}
 
 	private void OnValidate()

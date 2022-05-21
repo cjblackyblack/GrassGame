@@ -113,7 +113,8 @@ MonoBehaviour:
   GrassVFX: {fileID: 8596753428718819447, guid: cf108013385811a449e1b7934679bf78,
     type: 3}
   Reward: {fileID: 6679860498230988525, guid: 0d96e724e62495d47b4dd67b1a3ea4b6, type: 3}
-  rewardThreshold: 90
+  rewardThreshold: 93
+  comboRewardBonus: 0.5
 --- !u!1001 &5808594784722093639
 PrefabInstance:
   m_ObjectHideFlags: 0
