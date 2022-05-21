@@ -13,7 +13,5 @@ MonoBehaviour:
   m_Name: SFX - Melee Stab
   m_EditorClassIdentifier: 
   PossibleClips:
-  - {fileID: 8300000, guid: 4ef966b29ff76e14487f1f835af3930a, type: 3}
-  - {fileID: 8300000, guid: 78bfe2bdd5a19b946a7797a585355104, type: 3}
-  - {fileID: 8300000, guid: bfae7e9e040135d4cac9262b192f2b28, type: 3}
-  PitchRange: {x: 1, y: 1}
+  - {fileID: 8300000, guid: 702c44393a8327446aa8b8c839fd3865, type: 3}
+  PitchRange: {x: 0.9, y: 1.1}

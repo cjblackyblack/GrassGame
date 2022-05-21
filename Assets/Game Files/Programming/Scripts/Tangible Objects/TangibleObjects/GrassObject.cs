@@ -17,8 +17,20 @@ public class GrassObject : TangibleObject
 	float rewardChance;
 	public float rewardThreshold;
 
-	private void FixedUpdate()
+	new private void Start()
 	{
+		StartCoroutine(SubscribeToManager());
+
+		IEnumerator SubscribeToManager()
+		{
+			yield return new WaitForEndOfFrame();
+			GrassManager.grassObjects.Add(this);
+		}
+	}
+	public void OnFixedUpdate()
+	{
+
+
 		if (regrowCounter > 0)
 			regrowCounter--;
 

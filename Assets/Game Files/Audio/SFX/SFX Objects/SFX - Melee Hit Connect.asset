@@ -13,7 +13,5 @@ MonoBehaviour:
   m_Name: SFX - Melee Hit Connect
   m_EditorClassIdentifier: 
   PossibleClips:
-  - {fileID: 8300000, guid: 7bc47814a312b154fa070dc1a6774e5a, type: 3}
-  - {fileID: 8300000, guid: 70bf9d92495ae9643944b88217e4db45, type: 3}
-  - {fileID: 8300000, guid: 1167db48c35718d4bb5410eb3099201e, type: 3}
-  PitchRange: {x: 0.5, y: 0.7}
+  - {fileID: 8300000, guid: 42370cef071184bf9b703165f222d177, type: 3}
+  PitchRange: {x: 1.25, y: 1.5}

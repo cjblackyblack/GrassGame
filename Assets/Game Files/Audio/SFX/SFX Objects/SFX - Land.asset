@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SFX - Land
   m_EditorClassIdentifier: 
   PossibleClips:
-  - {fileID: 8300000, guid: 1466badab310342448499eb13b3e9186, type: 3}
-  PitchRange: {x: 1, y: 1}
+  - {fileID: 8300000, guid: a5831c865134c5746a807f602a2c4c4b, type: 3}
+  PitchRange: {x: 0.1, y: 0.15}
