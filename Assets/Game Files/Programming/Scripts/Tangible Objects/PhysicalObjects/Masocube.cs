@@ -21,7 +21,7 @@ public class Masocube : PhysicalObject
 		//RBody.useGravity
 		//if (RBody.velocity.y < terminalVel)
 		//	RBody.velocity = new Vector3(RBody.velocity.x, terminalVel, RBody.velocity.z);
-		Debug.Log(GravityCurve.Evaluate(RBody.velocity.y) * Gravity);
+		//Debug.Log(GravityCurve.Evaluate(RBody.velocity.y) * Gravity);
 	}
 
 	public override void TakeDamage(ref DamageInstance damageInstance)

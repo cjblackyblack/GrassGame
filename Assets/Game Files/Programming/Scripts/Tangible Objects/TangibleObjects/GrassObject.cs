@@ -16,6 +16,7 @@ public class GrassObject : TangibleObject
 
 	float rewardChance;
 	public float rewardThreshold;
+    public float comboRewardBonus = .5f;
 
 	private void FixedUpdate()
 	{
@@ -48,6 +49,7 @@ public class GrassObject : TangibleObject
 			{
 				Instantiate(Reward, transform.position + (transform.up * 0.5f), Reward.transform.rotation);
 				EntityManager.Instance.RewardSFX();
+                ComboManager.Instance.AddCombo(comboRewardBonus);
 			}
 			Instantiate(GrassVFX, transform.position, GrassVFX.transform.rotation);
 			regrowCounter = regrowTime;
