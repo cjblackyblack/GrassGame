@@ -8,7 +8,7 @@ public class DodgeState : SmartState
 {
 	public TangibilityFrames[] TangibilityFrames;
 	public MotionCurve MotionCurve;
-
+	public StateTransition[] StateTransitions;
 	public override void OnEnter(SmartObject smartObject)
 	{
 		base.OnEnter(smartObject);
@@ -126,7 +126,24 @@ public class DodgeState : SmartState
 	public override void AfterCharacterUpdate(SmartObject smartObject, float deltaTime)
 	{
 		base.AfterCharacterUpdate(smartObject, deltaTime);
+
+		if (StateTransitions != null)
+			for (int i = 0; i < StateTransitions.Length; i++)
+				if (StateTransitions[i].CanTransition(smartObject))
+					smartObject.ActionStateMachine.ChangeActionState(StateTransitions[i].TransitionState);
+
+
 		if (smartObject.CurrentFrame > MaxTime)
 			smartObject.ActionStateMachine.ChangeActionState(ActionStates.Idle);
+	}
+
+	private void OnValidate()
+	{
+
+		if (StateTransitions.Length > 0)
+		{
+			for (int i = 0; i < StateTransitions.Length; i++)
+				StateTransitions[i].MaxTime = MaxTime;
+		}
 	}
 }

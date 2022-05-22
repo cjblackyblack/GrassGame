@@ -16,7 +16,7 @@ public class AudioManager : Singleton<AudioManager>
 	public AudioClip Static;
 	public AudioClip[] Beeps;
 	public AudioClip[] Bangs;
-
+	public AudioClip[] BGTracks;
 	public void PlaySFX(AudioClip clip = null, bool loop = false)
 	{
 		if (clip != null)
@@ -37,6 +37,7 @@ public class AudioManager : Singleton<AudioManager>
 
 	public void PlayMusic(bool play, bool loop = false)
 	{
+		MusicSource.clip = BGTracks[Random.Range(0, BGTracks.Length)];
 		if(play)
 			MusicSource.Play();
 		else

@@ -35,11 +35,13 @@ public class ComboManager : Singleton<ComboManager>
     private int currentLetterIndex = 0;
     private bool comboEmpty = false;
 
+  public AnimationCurve DecreaseRate;
+
     private void Update()
     {
         if (currentCombo > 0) //Add a proper clamp
         {
-            currentCombo -= Time.deltaTime * decreaseRate;
+            currentCombo -= Time.deltaTime * DecreaseRate.Evaluate(currentCombo);
             UpdateComboLetter();
             UpdateFillAmount();
             if (comboEmpty)

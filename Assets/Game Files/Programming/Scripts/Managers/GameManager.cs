@@ -50,7 +50,7 @@ public class GameManager : Singleton<GameManager>
 		AudioManager.Instance.PlayMusic(false);
 		UnLoadSceneAsync(BattleScene);
 		SceneManager.SetActiveScene(SceneManager.GetSceneAt(0));
-		BattleScene = 1;
+		BattleScene = 0;
 		StartCoroutine(LoadMainMenuCoroutine());
 
 		IEnumerator LoadMainMenuCoroutine()
@@ -58,6 +58,11 @@ public class GameManager : Singleton<GameManager>
 			yield return new WaitForSecondsRealtime(3f);
 			ChangeGameState(GameState.Start);
 		}
+	}
+
+	public void ResetScene()
+	{
+		SceneManager.LoadScene(0);
 	}
 
 	public void GameWin()

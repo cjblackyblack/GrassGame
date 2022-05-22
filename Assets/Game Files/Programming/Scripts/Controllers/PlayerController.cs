@@ -180,7 +180,7 @@ public class PlayerController : BaseController
 	{
 		if (ctx.performed)
 		{
-
+			GameManager.Instance.ResetScene();
 		}
 	}
 
