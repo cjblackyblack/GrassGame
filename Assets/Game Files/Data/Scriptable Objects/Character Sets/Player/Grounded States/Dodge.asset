@@ -15,7 +15,7 @@ MonoBehaviour:
   AnimationState: Dodgeroll
   AnimationTransitionTime: 0
   AnimationTransitionOffset: 0
-  MaxTime: 37
+  MaxTime: 30
   VFX: []
   BodyVFX: []
   SFX: []

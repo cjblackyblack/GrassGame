@@ -108,7 +108,7 @@ MonoBehaviour:
   comboMultiplier: 0.1
   FullGrass: {fileID: 2100000, guid: 0d64e82f59d2e904ca2571013b2a88ae, type: 2}
   CutGrass: {fileID: 2100000, guid: 3281addfe7be9794bace75b1fcbdabac, type: 2}
-  regrowTime: 600
+  regrowTime: 900
   LODGroup: {fileID: 5506370609822926553}
   GrassVFX: {fileID: 8596753428718819447, guid: cf108013385811a449e1b7934679bf78,
     type: 3}

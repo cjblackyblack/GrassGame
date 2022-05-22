@@ -48,7 +48,9 @@ public class Masocube : PhysicalObject
 
 		if (resetTimer > ResetTime)
 		{
-			transform.position = StartPos;
+			resetTimer = 0;
+			RBody.velocity *= 0;
+			transform.position = StartPos + (Vector3.up * 0.25f);
 			transform.rotation = StartRot;
 		}
 	}

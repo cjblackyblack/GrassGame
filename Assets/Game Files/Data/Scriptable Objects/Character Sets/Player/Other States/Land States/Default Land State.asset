@@ -15,11 +15,11 @@ MonoBehaviour:
   AnimationState: Land
   AnimationTransitionTime: 0
   AnimationTransitionOffset: 0
-  MaxTime: 6
+  MaxTime: 3
   VFX: []
   BodyVFX: []
   SFX:
   - SFX: {fileID: 11400000, guid: a57e1c4f091cdc44aad795738fb80299, type: 2}
     Time: 0
-  LandingLag: 15
+  LandingLag: 6
   LandingFriction: 0.1
