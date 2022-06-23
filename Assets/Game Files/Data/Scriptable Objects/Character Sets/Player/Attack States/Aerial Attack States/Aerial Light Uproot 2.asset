@@ -311,26 +311,36 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 0
         value: 5
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
+        inSlope: -Infinity
+        outSlope: -Infinity
+        tangentMode: 0
         weightedMode: 0
         inWeight: 0
-        outWeight: 0.33333334
+        outWeight: 0
       - serializedVersion: 3
         time: 1
         value: 5
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
+        inSlope: -Infinity
+        outSlope: -Infinity
+        tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0
+      - serializedVersion: 3
+        time: 30
+        value: 0
+        inSlope: -0.1724138
+        outSlope: -0.1724138
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     TurnAroundTime: 4
     TrackingResistance: 0.8
+  KillYVelocityWhenZero: 1
   hitboxes:
   - MaxTime: 96
     ActionTarget: 2
@@ -437,3 +447,4 @@ MonoBehaviour:
   HitFX: {fileID: 11400000, guid: 8143ff93377cd8b459947b83fe436c3f, type: 2}
   EntryFriction: 0
   CollisionFriction: 0.3
+  ComboAmount: 1

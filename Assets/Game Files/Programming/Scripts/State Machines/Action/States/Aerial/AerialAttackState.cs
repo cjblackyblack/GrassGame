@@ -9,6 +9,8 @@ public class AerialAttackState : SmartState
 	public StateTransition[] StateTransitions;
 
 	public MotionCurve MotionCurve;
+	public bool KillYVelocityWhenZero;
+
 	public HitboxData[] hitboxes;
 	public TangibilityFrames[] TangibilityFrames;
 	public GameObject[] HitParticles = new GameObject[4];// match index to PhysicalTangibility Enum for reaction none for intangible ever
@@ -66,6 +68,7 @@ public class AerialAttackState : SmartState
 		Vector3 calculatedVelocity = Vector3.zero;
 		//Debug.Log(storedVerticalVelocity);
 		calculatedVelocity = MotionCurve.GetFixedTotalCurve(smartObject);
+
 		if (smartObject.Target != null)
 		{
 			if (smartObject.TrackingTime > 0)
@@ -79,6 +82,7 @@ public class AerialAttackState : SmartState
 				smartObject.TrackingTime++;
 			}
 		}
+
 
 		currentVelocity = calculatedVelocity + storedVerticalVelocity;
 		smartObject.CachedAerialVelocity = currentVelocity;
@@ -123,6 +127,17 @@ public class AerialAttackState : SmartState
 
 		// Apply added velocity
 		currentVelocity += addedVelocity;
+
+		if (KillYVelocityWhenZero)
+		{
+			if (MotionCurve.VerticalCurve.Evaluate(smartObject.CurrentFrame) == 0 && MotionCurve.GravityModCurve.Evaluate(smartObject.CurrentFrame) == 0 && MotionCurve.TrackingVelocity(smartObject) == Vector3.zero)
+			{
+				Debug.Log("killingYVelocity");
+				currentVelocity = Vector3.ProjectOnPlane(currentVelocity, smartObject.Motor.CharacterUp);
+			}
+		}
+
+
 	}
 
 	public override void OnMovementHit(SmartObject smartObject, Collider hitCollider, Vector3 hitNormal, Vector3 hitPoint, ref HitStabilityReport hitStabilityReport)

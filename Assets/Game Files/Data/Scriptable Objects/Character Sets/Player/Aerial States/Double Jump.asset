@@ -15,13 +15,13 @@ MonoBehaviour:
   AnimationState: Double Jump
   AnimationTransitionTime: 0
   AnimationTransitionOffset: 0
-  MaxTime: 30
+  MaxTime: 15
   VFX: []
   BodyVFX: []
   SFX: []
   JumpFrame: 1
   JumpPower: 16
-  JumpScalableForwardSpeed: 3
+  JumpScalableForwardSpeed: 5
   UnlockTime: 4
   TangibilityFrames:
   - Hurtbox: 1
@@ -134,8 +134,8 @@ MonoBehaviour:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.6535948
-        value: 0.9
+        time: 0
+        value: 0.7631978
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 0
@@ -143,22 +143,22 @@ MonoBehaviour:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 55.653595
-        value: 0.9
-        inSlope: 0.011503763
-        outSlope: 0.011503763
+        time: 12.068312
+        value: 0.9364311
+        inSlope: 0.01807102
+        outSlope: 0.01807102
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 60
+        time: 14.98597
         value: 1
-        inSlope: 0.023007525
-        outSlope: 0.023007525
-        tangentMode: 34
+        inSlope: 0.0020863288
+        outSlope: 0.0020863288
+        tangentMode: 0
         weightedMode: 0
-        inWeight: 0.33333334
+        inWeight: 0.64046997
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -199,11 +199,11 @@ MonoBehaviour:
     TurnAroundTime: 4
     TrackingResistance: 0
   StateTransitions:
-  - MaxTime: 30
+  - MaxTime: 15
     TransitionWindow: {x: 15, y: 30}
     TransitionType: 2
     TransitionState: {fileID: 11400000, guid: 1de7917f1b0f6f84b9f7708ec196d88e, type: 2}
-  - MaxTime: 30
+  - MaxTime: 15
     TransitionWindow: {x: 15, y: 30}
     TransitionType: 3
     TransitionState: {fileID: 11400000, guid: 1de7917f1b0f6f84b9f7708ec196d88e, type: 2}

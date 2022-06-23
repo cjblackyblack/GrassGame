@@ -409,9 +409,9 @@ public class MotionCurve
 
     public Vector3 GetFixedTotalCurve(SmartObject smartObject)
 	{
-        return (smartObject.Motor.CharacterForward * ForwardCurve.Evaluate(smartObject.CurrentFrame))
+        return ((smartObject.Motor.CharacterForward * ForwardCurve.Evaluate(smartObject.CurrentFrame))
          + (smartObject.Motor.CharacterRight * LateralCurve.Evaluate(smartObject.CurrentFrame))
-         + (smartObject.Motor.CharacterUp * VerticalCurve.Evaluate(smartObject.CurrentFrame))
+         + (smartObject.Motor.CharacterUp * VerticalCurve.Evaluate(smartObject.CurrentFrame)))
          + (smartObject.InputVector.normalized * FreeMoveCurve.Evaluate(smartObject.CurrentFrame));
     }
 

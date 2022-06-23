@@ -25,7 +25,7 @@ MonoBehaviour:
   OrientationSharpness: 15
   BonusOrientationSharpness: 1000
   MaxAirMoveSpeed: 10
-  AirAccelerationSpeed: 20
+  AirAccelerationSpeed: 10
   AirFriction: 0.95
   Drag: 1
   NoLandAnimationTime: 12

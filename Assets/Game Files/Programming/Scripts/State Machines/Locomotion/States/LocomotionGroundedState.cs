@@ -66,7 +66,7 @@ public class LocomotionGroundedState : LocomotionState
 	public override void PostGroundingUpdate(SmartObject smartObject, float deltaTime)
 	{
     if(smartObject.CurrentFrame > 0)
-		if (!smartObject.Motor.GroundingStatus.IsStableOnGround && smartObject.Motor.LastGroundingStatus.IsStableOnGround)
+		if (!smartObject.Motor.GroundingStatus.IsStableOnGround)// && smartObject.Motor.LastGroundingStatus.IsStableOnGround)
 		{
 			smartObject.LocomotionStateMachine.ChangeLocomotionState(LocomotionStates.Aerial);
             if (smartObject.ActionStateMachine.CurrentActionEnum != ActionStates.Dodge && smartObject.ActionStateMachine.CurrentActionEnum != ActionStates.Jump)
