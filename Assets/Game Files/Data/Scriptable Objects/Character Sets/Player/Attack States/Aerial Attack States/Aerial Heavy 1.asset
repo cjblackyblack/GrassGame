@@ -439,6 +439,6 @@ MonoBehaviour:
   - {fileID: 1879272669879180, guid: cf92e093b173f3d41a0b7a06cfed4706, type: 3}
   - {fileID: 1879272669879180, guid: cf92e093b173f3d41a0b7a06cfed4706, type: 3}
   HitFX: {fileID: 11400000, guid: 8143ff93377cd8b459947b83fe436c3f, type: 2}
-  EntryFriction: 1
+  EntryFriction: 0
   CollisionFriction: 0.3
   ComboAmount: 1

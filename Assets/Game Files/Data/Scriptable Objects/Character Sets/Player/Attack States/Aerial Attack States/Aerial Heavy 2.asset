@@ -336,6 +336,7 @@ MonoBehaviour:
       m_RotationOrder: 4
     TurnAroundTime: 4
     TrackingResistance: 0.8
+  KillYVelocityWhenZero: 0
   hitboxes:
   - MaxTime: 46
     ActionTarget: 2
@@ -370,3 +371,4 @@ MonoBehaviour:
   HitFX: {fileID: 11400000, guid: 8143ff93377cd8b459947b83fe436c3f, type: 2}
   EntryFriction: 0
   CollisionFriction: 0.3
+  ComboAmount: 1
