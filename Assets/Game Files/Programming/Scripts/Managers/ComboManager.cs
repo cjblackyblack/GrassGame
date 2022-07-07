@@ -27,6 +27,7 @@ public class ComboManager : Singleton<ComboManager>
     [SerializeField] Slider comboFill;
     [SerializeField] float decreaseRate = 1;
     [SerializeField] float comboCap = 50;
+    [SerializeField] float resetComboTime = 8f;
     //[SerializeField] AnimationCurve letterCurve;
     [SerializeField] float[] letterSteps;
     [SerializeField] string[] letters;
@@ -34,8 +35,9 @@ public class ComboManager : Singleton<ComboManager>
 
     private int currentLetterIndex = 0;
     private bool comboEmpty = false;
+    private float lastTimeComboAdded = 0;
 
-  public AnimationCurve DecreaseRate;
+    public AnimationCurve DecreaseRate;
 
     private void Update()
     {
@@ -57,6 +59,11 @@ public class ComboManager : Singleton<ComboManager>
             descriptionTMP.text = "";
             comboEmpty = true;
         }
+
+        if(Time.time > lastTimeComboAdded + resetComboTime)
+        {
+            currentCombo = 0;
+        }
     }
 
     public void AddCombo(float amount)
@@ -65,6 +72,7 @@ public class ComboManager : Singleton<ComboManager>
         {
             currentCombo += amount;
         }
+        lastTimeComboAdded = Time.time;
         UpdateComboLetter();
         UpdateFillAmount();
     }
