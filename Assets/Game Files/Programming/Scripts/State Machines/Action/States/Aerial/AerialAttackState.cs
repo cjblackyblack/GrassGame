@@ -64,7 +64,7 @@ public class AerialAttackState : SmartState
 
 	public override void UpdateVelocity(SmartObject smartObject, ref Vector3 currentVelocity, float deltaTime)
 	{
-		Vector3 storedVerticalVelocity = Vector3.ProjectOnPlane(currentVelocity, smartObject.Motor.CharacterForward);
+		Vector3 storedVerticalVelocity = Vector3.ProjectOnPlane(Vector3.ProjectOnPlane(currentVelocity, smartObject.Motor.CharacterForward), smartObject.Motor.CharacterRight);
 		Vector3 calculatedVelocity = Vector3.zero;
 		//Debug.Log(storedVerticalVelocity);
 		calculatedVelocity = MotionCurve.GetFixedTotalCurve(smartObject);
