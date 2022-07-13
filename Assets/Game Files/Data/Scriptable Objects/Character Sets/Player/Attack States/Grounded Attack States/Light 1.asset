@@ -34,11 +34,11 @@ MonoBehaviour:
     Time: 12
   StateTransitions:
   - MaxTime: 40
-    TransitionWindow: {x: 20, y: 32}
+    TransitionWindow: {x: 20, y: 28}
     TransitionType: 2
     TransitionState: {fileID: 11400000, guid: 283c52edb85941f40a4609cb09f8e5e5, type: 2}
   - MaxTime: 40
-    TransitionWindow: {x: 33, y: 40}
+    TransitionWindow: {x: 28, y: 40}
     TransitionType: 2
     TransitionState: {fileID: 11400000, guid: 351c699e78827834991b5b970f6a8337, type: 2}
   - MaxTime: 40
